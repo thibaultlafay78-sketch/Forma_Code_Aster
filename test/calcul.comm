@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+# Cas test : poutre acier 100 x 10 x 10 mm
+#  - face x=0   (groupe "encastrement") : bloquée
+#  - face x=100 (groupe "appui")        : pression de 10 MPa
+# Unités : mm, N, MPa
+
+DEBUT(LANG="FR")
+
+# Lecture du maillage (unité 20 = fichier mmed du .export)
+mail = LIRE_MAILLAGE(UNITE=20, FORMAT="MED")
+
+# Oriente les faces chargées vers l'extérieur (nécessaire pour la pression)
+mail = MODI_MAILLAGE(reuse=mail, MAILLAGE=mail,
+                     ORIE_PEAU=_F(GROUP_MA_PEAU=("appui",)))
+
+modele = AFFE_MODELE(MAILLAGE=mail,
+                     AFFE=_F(TOUT="OUI", PHENOMENE="MECANIQUE", MODELISATION="3D"))
+
+acier = DEFI_MATERIAU(ELAS=_F(E=210000.0, NU=0.3))
+
+chmat = AFFE_MATERIAU(MAILLAGE=mail, AFFE=_F(TOUT="OUI", MATER=acier))
+
+charge = AFFE_CHAR_MECA(MODELE=modele,
+                        DDL_IMPO=_F(GROUP_MA="encastrement", DX=0.0, DY=0.0, DZ=0.0),
+                        PRES_REP=_F(GROUP_MA="appui", PRES=10.0))
+
+resu = MECA_STATIQUE(MODELE=modele, CHAM_MATER=chmat, EXCIT=_F(CHARGE=charge))
+
+resu = CALC_CHAMP(reuse=resu, RESULTAT=resu,
+                  CONTRAINTE=("SIGM_NOEU",), CRITERES=("SIEQ_NOEU",))
+
+# Écriture des résultats (unité 80 = fichier rmed du .export)
+IMPR_RESU(FORMAT="MED", UNITE=80, RESU=_F(RESULTAT=resu))
+
+FIN()

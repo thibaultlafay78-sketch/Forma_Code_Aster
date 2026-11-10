@@ -1,0 +1,142 @@
+# -*- coding: utf-8 -*-
+# =============================================================================
+#  ÉTAPE 4 — Spectres de plancher, quatre hypothèses de sol
+#  Slide alimentée : Sujet 6 · démonstration
+#
+#  Cas | Raideurs de radier   | Amortisseurs de radier
+#  ----+----------------------+-----------------------
+#   A  | base encastrée       | —   (raideurs de sol ×1e4, cf. matrices_dyn)
+#   B  | raideurs de la note  | aucun
+#   C  | raideurs de la note  | valeurs de la note
+#   D  | raideurs ÷ 2         | valeurs de la note (cf. AMORT_CAS_D)
+#
+#  Béton : Rayleigh calé à 7 % sur f1 et sur le dernier mode significatif de
+#  l'étape 2, mêmes coefficients pour les 4 cas. Sol : discret A_TR_D_N
+#  (amortissement non proportionnel -> calcul sur base physique).
+#  DYNA_VIBRA TRAN/PHYS, Newmark accélération moyenne, mono-appui.
+#
+#  Entrées : 91 ../commun/brochette.comm          92 ../Etape1/resultats/E1_E_retenu.csv
+#            93 ../Etape2/resultats/E2_modes.csv   94 ../Etape3/resultats/E3_signaux.csv
+#  Sortie  : 31 resultats/E4_spectres.csv (cas, signal, niveau, amortissement, freq, Sa en g)
+# =============================================================================
+
+DEBUT(LANG="FR")
+
+# Modèle brochette commun (fort.91 = ../commun/brochette.comm). On n'utilise pas
+# INCLUDE, qui lit le fichier dans l'encodage local (cp1252 sous Windows) : lecture UTF-8.
+exec(compile(open("fort.91", encoding="utf-8").read(), "brochette.comm", "exec"))
+E = lire_E_cale(92)
+
+# -----------------------------------------------------------------------------
+# Paramètres
+# -----------------------------------------------------------------------------
+DIRECTION = {"DX": (1.0, 0.0, 0.0), "DY": (0.0, 1.0, 0.0)}[DIR_FOND]
+DT = 0.005                       # s (pas des signaux ; le cahier autorise plus fin)
+SEUIL_MASSE = 0.90               # « dernier mode significatif » : 90 % de masse cumulée (hypothèse)
+AMOR_EQUIPEMENT = None           # >>> À FOURNIR PAR BASILE (ex. 0.02) ; None = 5 % seul
+AMORT_CAS_D = "NOTE"             # "NOTE" : amortisseurs du cas C conservés
+                                 # "RECALCULE" : c ∝ √K -> c_C/√2  >>> POINT À VALIDER
+NIV_INTER = NOMS_NIV[len(NOMS_NIV) // 2]   # niveau intermédiaire (choix : niveau médian)
+NIV_SORTIE = (NIV_TETE, NIV_INTER)
+
+# -----------------------------------------------------------------------------
+# Rayleigh béton : C = AMOR_ALPHA·K + AMOR_BETA·M (convention Code_Aster)
+#   ξ(ω) = AMOR_ALPHA·ω/2 + AMOR_BETA/(2ω) = 7 % en ω1 et ω2
+# -----------------------------------------------------------------------------
+md = lire_csv(93)
+idx = [i for i, c in enumerate(md["config"]) if c == "RESSORTS"]
+frac = md["frac_" + DIR_FOND]
+cum = md["cumul_" + DIR_FOND]
+i1 = max(idx, key=lambda i: frac[i])
+f1 = md["freq_Hz"][i1]
+i2 = next((i for i in idx if cum[i] >= SEUIL_MASSE), idx[-1])
+f2 = md["freq_Hz"][i2]
+if f2 <= f1:
+    f2 = max(md["freq_Hz"][i] for i in idx)
+w1, w2 = 2 * math.pi * f1, 2 * math.pi * f2
+AMOR_ALPHA = 2.0 * XI_BETON / (w1 + w2)
+AMOR_BETA = 2.0 * XI_BETON * w1 * w2 / (w1 + w2)
+print("Rayleigh béton : f1 = %.3f Hz, f2 = %.3f Hz -> AMOR_ALPHA = %.4e s, AMOR_BETA = %.4e 1/s"
+      % (f1, f2, AMOR_ALPHA, AMOR_BETA))
+
+# Amortisseurs de sol (hypothèse c = 2ξK/ω_ref, ω_ref = fondamentale sur ressorts)
+C_SOL = amortisseurs_sol(f1)
+coef_d = 1.0 if AMORT_CAS_D == "NOTE" else 1.0 / math.sqrt(2.0)
+# Cas A : base encastrée représentée par des raideurs ×1e4 (fréquences de sol
+# ~100 fois plus hautes) plutôt que par DDL_IMPO, pour ne pas mêler de
+# multiplicateurs de Lagrange à la matrice C construite explicitement.
+CAS = {
+    "A": dict(facteur_k=1.0e4, amort=None),
+    "B": dict(facteur_k=1.0, amort=None),
+    "C": dict(facteur_k=1.0, amort=C_SOL),
+    "D": dict(facteur_k=0.5, amort={d: coef_d * v for d, v in C_SOL.items()}),
+}
+
+# -----------------------------------------------------------------------------
+# Signaux de l'étape 3 (m/s²)
+# -----------------------------------------------------------------------------
+sig = lire_csv(94)
+temps = sig["t_s"]
+noms_sig = [k for k in sig if k.startswith("acc")]
+ACC = []
+for k in noms_sig:
+    vale = []
+    for t, a in zip(temps, sig[k]):
+        vale += [t, a]
+    ACC.append(DEFI_FONCTION(NOM_PARA="INST", NOM_RESU="ACCE", VALE=vale,
+                             PROL_GAUCHE="CONSTANT", PROL_DROITE="CONSTANT"))
+T_FIN = temps[-1]
+LINST = DEFI_LIST_REEL(DEBUT=0.0, INTERVALLE=_F(JUSQU_A=T_FIN, PAS=DT))
+
+NF = 200
+FREQS = [0.5 * (100.0 / 0.5) ** (i / (NF - 1.0)) for i in range(NF)]
+LFREQ = DEFI_LIST_REEL(VALE=FREQS)
+AMORS = [0.05] + ([AMOR_EQUIPEMENT] if AMOR_EQUIPEMENT else [])
+
+# -----------------------------------------------------------------------------
+# Boucle cas × signaux
+# -----------------------------------------------------------------------------
+sortie = open("fort.31", "w")
+sortie.write("cas,signal,niveau,amor,freq_Hz,sa_g\n")
+
+for nom_cas, p in CAS.items():
+    # C = AMOR_ALPHA·K_structure + AMOR_BETA·M + C_sol (cf. commun/brochette.comm)
+    K, M, C = matrices_dyn(E, p["facteur_k"], p["amort"], AMOR_ALPHA, AMOR_BETA)
+
+    # Chargement sismique mono-appui : CALC_CHAR_SEISME rend -M·Δ (Δ = vecteur
+    # de direction ; signe vérifié : sous a_g = +1 m/s² constant, déplacement
+    # relatif statique négatif), à multiplier par a_g(t).
+    CHSEI = CALC_CHAR_SEISME(MATR_MASS=M, DIRECTION=DIRECTION, MONO_APPUI="OUI")
+
+    for js, acc in enumerate(ACC):
+        dyn = DYNA_VIBRA(
+            TYPE_CALCUL="TRAN", BASE_CALCUL="PHYS",
+            MATR_MASS=M, MATR_RIGI=K, MATR_AMOR=C,
+            SCHEMA_TEMPS=_F(SCHEMA="NEWMARK", BETA=0.25, GAMMA=0.5),  # accélération moyenne
+            INCREMENT=_F(LIST_INST=LINST),
+            EXCIT=_F(VECT_ASSE=CHSEI, FONC_MULT=acc),
+        )
+        for niv in NIV_SORTIE:
+            a_rel = RECU_FONCTION(RESULTAT=dyn, NOM_CHAM="ACCE", NOM_CMP=DIR_FOND,
+                                  GROUP_NO=niv, LIST_INST=LINST)
+            # accélération absolue = relative + signal de sol
+            a_abs = CALC_FONCTION(COMB=(_F(FONCTION=a_rel, COEF=1.0),
+                                        _F(FONCTION=acc, COEF=1.0)), LIST_PARA=LINST)
+            for xi in AMORS:
+                sro = CALC_FONCTION(SPEC_OSCI=_F(FONCTION=a_abs, AMOR_REDUIT=xi,
+                                                 LIST_FREQ=LFREQ, NORME=G,
+                                                 TYPE_RESU="FONCTION"))
+                fr, sa = sro.Valeurs()
+                for fk, sk in zip(fr, sa):
+                    sortie.write("%s,%d,%s,%.3f,%.6e,%.6e\n" % (nom_cas, js + 1, niv, xi, fk, sk))
+        print("cas %s, signal %d : terminé" % (nom_cas, js + 1))
+
+sortie.close()
+
+# Paramètres d'amortissement retenus (pour la note de synthèse)
+ecrire_csv(32, ["f1_Hz", "f2_Hz", "AMOR_ALPHA_s", "AMOR_BETA_1_s",
+                "cX", "cY", "cZ", "cRX", "cRY", "cRZ", "amort_cas_D"],
+           [(f1, f2, AMOR_ALPHA, AMOR_BETA) +
+            tuple(C_SOL[d] for d in ("X", "Y", "Z", "RX", "RY", "RZ")) + (AMORT_CAS_D,)])
+
+FIN()

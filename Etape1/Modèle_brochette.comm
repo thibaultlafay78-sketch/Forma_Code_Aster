@@ -1,0 +1,85 @@
+# -*- coding: utf-8 -*-
+# =============================================================================
+#  ÉTAPE 1 — Modèle brochette et calage du module du béton
+#  Cahier des charges « Démonstrations Code_Aster » (B. Coq, 06/11/2026)
+#
+#  Résultat attendu : un modèle qui retrouve 4,79 Hz (note Maurel) à 1 % près,
+#  avec le module E retenu. Contrôle de la masse totale (POST_ELEM/MASS_INER).
+#
+#  Entrées : ../commun/brochette.comm (unité 91) — données de la note Maurel
+#  Sorties : resultats/E1_calage.csv   (itérations E -> f)
+#            resultats/E1_E_retenu.csv (module retenu, lu par les étapes 2 et 4)
+#            resultats/E1_masse.csv    (contrôle de masse)
+#            resultats/E1_maillage.med (visualisation)
+# =============================================================================
+
+DEBUT(LANG="FR")
+
+# Modèle brochette commun (fort.91 = ../commun/brochette.comm). On n'utilise pas
+# INCLUDE, qui lit le fichier dans l'encodage local (cp1252 sous Windows) : lecture UTF-8.
+exec(compile(open("fort.91", encoding="utf-8").read(), "brochette.comm", "exec"))
+
+IMPR_RESU(FORMAT="MED", UNITE=80, RESU=_F(MAILLAGE=MAIL))
+
+# -----------------------------------------------------------------------------
+# Calage de E par essais successifs (CALC_MODES), configuration CONFIG_CALAGE.
+# Mise à jour : E <- E·(f_cible/f)². Exacte en base encastrée (f ∝ √E) ;
+# sur ressorts, la convergence est plus lente car le sol ne dépend pas de E.
+# -----------------------------------------------------------------------------
+E = 30000.0e6          # valeur de départ [Pa]
+TOL = 0.001            # critère d'arrêt interne (le cahier demande 1 %)
+historique = []
+for it in range(1, 16):
+    chmat, cara, charge = construire(E, CONFIG_CALAGE)
+    K, M, _, _ = matrices(chmat, cara, charge)
+    _, tab = calc_modes(K, M, nmax=10)
+    f1, num = freq_fondamentale(tab)
+    historique.append((it, E, f1, num))
+    print("CALAGE it=%d  E=%.0f MPa  f(%s)=%.4f Hz (mode %d)" % (it, E / 1e6, DIR_FOND, f1, num))
+    if abs(f1 / F_NOTE - 1.0) < TOL:
+        break
+    E = E * (F_NOTE / f1) ** 2
+    if E > 1.0e12:
+        # Sur ressorts, la fréquence plafonne à celle du bloc rigide sur sol :
+        # si elle est < 4,79 Hz, aucun E ne convient.
+        print("ALARME : E diverge — 4,79 Hz inatteignable dans la configuration %s" % CONFIG_CALAGE)
+        break
+
+E_RETENU = historique[-1][1]
+f_retenu = historique[-1][2]
+# Contrôle de la lecture I/OX / I/OY : mode X attendu à 6,65 Hz (note §III, mode 2)
+f_x, _ = freq_fondamentale(tab, "DX")
+print("CONTROLE mode X : %.3f Hz (note : %.2f Hz)" % (f_x, F_NOTE_X))
+ecart = f_retenu / F_NOTE - 1.0
+dans_plage = E_MIN_ASN <= E_RETENU <= E_MAX_ASN
+if not dans_plage:
+    # Consigne du cahier : signaler à Basile, ne pas forcer le calage.
+    print("ALARME : E = %.0f MPa hors plage ASN 2/01 annexe 1 (20 000 – 33 000 MPa). "
+          "A SIGNALER A BASILE." % (E_RETENU / 1e6))
+
+# Fréquence dans l'autre configuration, même E (information pour l'étape 2)
+autre = "ENCASTRE" if CONFIG_CALAGE == "RESSORTS" else "RESSORTS"
+chmat, cara, charge = construire(E_RETENU, autre)
+K, M, _, _ = matrices(chmat, cara, charge)
+_, tab_autre = calc_modes(K, M, nmax=10)
+f_autre, _ = freq_fondamentale(tab_autre)
+
+ecrire_csv(31, ["iteration", "E_Pa", "f_Hz", "nume_mode"], historique)
+ecrire_csv(32, ["E_Pa", "E_MPa", "config_calage", "f_calee_Hz", "f_note_Hz",
+                "ecart_rel", "dans_plage_ASN", "config_autre", "f_autre_Hz",
+                "f_X_Hz", "f_X_note_Hz"],
+           [(E_RETENU, E_RETENU / 1e6, CONFIG_CALAGE, f_retenu, F_NOTE, ecart,
+             "OUI" if dans_plage else "NON", autre, f_autre, f_x, F_NOTE_X)])
+
+# -----------------------------------------------------------------------------
+# Contrôle : masse totale du modèle = somme des masses de la note
+# -----------------------------------------------------------------------------
+chmat, cara, charge = construire(E_RETENU, CONFIG_CALAGE)
+masse = POST_ELEM(MODELE=MODELE, CHAM_MATER=chmat, CARA_ELEM=cara,
+                  MASS_INER=_F(TOUT="OUI"))
+IMPR_TABLE(TABLE=masse)
+m_modele = masse.EXTR_TABLE().values()["MASSE"][0]
+ecrire_csv(33, ["masse_modele_kg", "masse_note_kg", "ecart_rel"],
+           [(m_modele, MASSE_TOTALE_NOTE, m_modele / MASSE_TOTALE_NOTE - 1.0)])
+
+FIN()

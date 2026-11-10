@@ -1,0 +1,1839 @@
+setting '--memory' value to 1843.20 MB (keyword RESERVE_MEMOIRE)
+copying (shutil) 'E:\\Forma_Basile\\Forma_Code_Aster\\Etape2\\../commun/brochette.comm' to 'fort.91'...
+copying (shutil) 'E:\\Forma_Basile\\Forma_Code_Aster\\Etape2\\../Etape1/resultats/E1_E_retenu.csv' to 'fort.92'...
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                       -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --                       
+                               Version 18.1.11 modifiée le 21/10/2026                               
+                                    révision n/a - branche 'n/a'                                    
+                                     Copyright EDF 1991 - 2026                                      
+                                                                                                    
+                              Exécution du : Tue Nov 10 15:46:28 2026                               
+                                        Nom de la machine :                                         
+                                              WF-0078                                               
+                                        Architecture : 64bit                                        
+                                     Type de processeur : AMD64                                     
+                                      Système d'exploitation :                                      
+                                     Windows-10-10.0.19045-SP0                                      
+                                 Langue des messages : fr (cp1252)                                  
+                                    Version de Python : 3.14.10                                     
+                                      Version de NumPy : 2.5.3                                      
+                                  Version de MEDCoupling : 9.16.0                                   
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 1                               
+                                Version de la librairie HDF5 : 2.2.0                                
+                                Version de la librairie MED : 4.2.0                                 
+                               Version de la librairie MFront : 5.1.0                               
+                               Version de la librairie MUMPS : 5.8.2                                
+                                  Librairie PETSc : non disponible                                  
+                              Version de la librairie SCOTCH : 7.0.11                               
+
+starting the execution...
+Valeur initiale du temps CPU maximum =   900 secondes
+  Valeur du temps CPU maximum passé aux
+commandes =   810 secondes
+  Réserve CPU prévue = 90 secondes
+
+Ouverture en écriture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Ouverture en lecture du fichier F:\miniforge3\envs\aster\Library\lib/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Créée avec la version                   : 
+18.01.11
+     Nombre d'enregistrements utilisés       :  55
+     Nombre d'enregistrements maximum   
+    :  512
+     Nombre d'enregistrements par fichier    :  512
+     Longueur d'enregistrement
+(octets)      :  819200
+     Nombre d'identificateurs utilisés       :  123
+     Taille maximum du
+répertoire            :  300
+     Pourcentage d'utilisation du répertoire :  41 %
+
+Ouverture en lecture du fichier F:\miniforge3\envs\aster\Library\lib/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Nombre d'enregistrements utilisés       : 
+55
+     Nombre d'enregistrements maximum        :  512
+     Nombre d'enregistrements par fichier   
+:  512
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture  
+      :  77
+     Volume des accès en lecture             :         60.16 Mo.
+     Nombre total
+d'accès en écriture        :  0
+     Volume des accès en écriture            :          0.00 Mo.
+   
+ Nombre d'identificateurs utilisés       :  123
+     Taille maximum du répertoire            :  300
+
+    Pourcentage d'utilisation du répertoire :  41 %
+
+Relecture des catalogues des éléments faite.
+
+Fin de lecture (durée  0.000000  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 2355.20 Mo                       
+                              ajouté à l'initialisation du processus :                              
+                                             322.33 Mo                                              
+                               Limite cible du processus : 2677.53 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+# Mémoire (Mo) :   322.33 /   314.32 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.06s (syst:        0.17s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py:33: ResourceWarning: unclosed file <_io.TextIOWrapper name='fort.91' mode='r' encoding='utf-8'>
+  exec(compile(open("fort.91", encoding="utf-8").read(), "brochette.comm", "exec"))
+
+.. _stg1_txt142
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de brochette.comm, ligne 142
+LIRE_MAILLAGE(FORMAT='ASTER',
+              INFO=1,
+              UNITE=20,
+              VERI_MAIL=_F(APLAT=0.001,
+                           VERIF='OUI'))
+
+Vérification du maillage.
+
+
+ ╔================================================================================================╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 6 est incluse dans une autre.                                                   ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 7 est incluse dans une autre.                                                   ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 8 est incluse dans une autre.                                                   ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 9 est incluse dans une autre.                                                   ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <MODELISA8_14>                                                                             ║
+ ║                                                                                                ║
+ ║ La maille POI1 10 est incluse dans une autre.                                                  ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚================================================================================================╝
+
+
+ ╔================================================================================================╗
+ ║ <A> <CATAMESS_41>                                                                              ║
+ ║                                                                                                ║
+ ║ Le message d'alarme 'MODELISA8_14' a été émis 5 fois, il ne sera plus affiché.                 ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚================================================================================================╝
+
+
+------------ MAILLAGE 00000001 - IMPRESSIONS NIVEAU  1 ------------
+
+Modele brochette - note Maurel                                                  
+
+NOMBRE DE NOEUDS                           6
+
+NOMBRE DE MAILLES                         11
+                              POI1                    6
+                              SEG2                    5
+
+NOMBRE DE GROUPES DE NOEUDS                8
+
+NOMBRE DE GROUPES DE MAILLES              13
+
+--------------------------------------------------------------------------------
+
+# Résultat commande #0002 (LIRE_MAILLAGE): '<00000001>' de type <Mesh>
+# Mémoire (Mo) :   322.33 /   315.98 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.00s (syst:        0.06s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt147
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de brochette.comm, ligne 147
+AFFE_MODELE(AFFE=(_F(GROUP_MA='POUTRE',
+                     MODELISATION='POU_D_T',
+                     PHENOMENE='MECANIQUE'),
+                  _F(GROUP_MA='MASSES',
+                     MODELISATION='DIS_T',
+                     PHENOMENE='MECANIQUE'),
+                  _F(GROUP_MA='RADIER',
+                     MODELISATION='DIS_TR',
+                     PHENOMENE='MECANIQUE')),
+            DISTRIBUTION=_F(METHODE='SOUS_DOMAINE',
+                            PARTITIONNEUR='METIS'),
+            INFO=1,
+            MAILLAGE='<00000001>',
+            VERI_FORMULATION_IFS='OUI',
+            VERI_JACOBIEN='OUI',
+            VERI_NORM_IFS='OUI',
+            VERI_PLAN='OUI')
+
+Sur les 11 mailles du maillage 00000001, on a demandé l'affectation de 11, on a pu en affecter 11.
+Modélisation     Formulation      Type maille  Élément fini     Nombre
+DIS_TR           _                POI1         MECA_DIS_TR_N    1
+DIS_T            _                POI1         MECA_DIS_T_N     5
+POU_D_T          _                SEG2         MECA_POU_D_T     5
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0003 (AFFE_MODELE): '<00000002>' de type <Model>
+# Mémoire (Mo) :   322.33 /   319.01 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.02s (syst:        0.12s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt162
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de brochette.comm, ligne 162
+DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
+                      AMOR_BETA=0.0,
+                      B_ENDOGE=0.0,
+                      COEF_AMOR=1.0,
+                      E=25140550000.0,
+                      K_DESSIC=0.0,
+                      NU=0.2,
+                      RHO=0.0),
+              INFO=1)
+
+# Résultat commande #0004 (DEFI_MATERIAU): '<00000003>' de type <Material>
+# Mémoire (Mo) :   322.33 /   319.09 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.02s (syst:        0.06s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt164
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de brochette.comm, ligne 164
+AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
+                      MATER='<00000003>'),
+              INFO=1,
+              MAILLAGE='<00000001>')
+
+# Résultat commande #0005 (AFFE_MATERIAU): '<00000004>' de type <MaterialField>
+# Mémoire (Mo) :   322.33 /   319.25 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt208
+# ----------------------------------------------------------------------------------------------
+# Commande #0006 de brochette.comm, ligne 208
+AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
+                           GROUP_MA='N2',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=1269000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N2',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N3',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=1144000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N3',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N4',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=720000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N4',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N5',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=635000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N5',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N6',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=351000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N6',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='K_TR_D_N',
+                           GROUP_MA='RADIER',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(34500000000.0, 38000000000.0, 41000000000.0, 1900000000000.0, 5100000000000.0, 3800000000000.0)),
+                        _F(CARA='M_TR_D_N',
+                           GROUP_MA='RADIER',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(1251000.0, 15012000.0, 60048000.0, 75060000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0))),
+               INFO=1,
+               MODELE='<00000002>',
+               ORIENTATION=_F(CARA='VECT_Y',
+                              GROUP_MA='POUTRE',
+                              VALE=(0.0, 1.0, 0.0)),
+               POUTRE=(_F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN2',
+                          SECTION='GENERALE',
+                          VALE=(51.28, 3261.0, 1029.0, 4290.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN3',
+                          SECTION='GENERALE',
+                          VALE=(54.69, 3405.0, 1053.0, 4458.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN4',
+                          SECTION='GENERALE',
+                          VALE=(30.54, 1938.0, 582.0, 2520.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN5',
+                          SECTION='GENERALE',
+                          VALE=(23.4, 1658.0, 554.0, 2212.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN6',
+                          SECTION='GENERALE',
+                          VALE=(18.1, 1233.0, 421.0, 1654.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT')))
+
+
+     LE MODELE 00000002 CONTIENT : 
+                                        5 ELEMENT(S) POUTRE          
+                                        6 ELEMENT(S) DISCRET         
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0006 (AFFE_CARA_ELEM): '<00000005>' de type <ElementaryCharacteristics>
+# Dépend de :
+# - '<00000002>' de type <Model>
+# Mémoire (Mo) :   322.33 /   320.02 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.06s (syst:        0.06s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt231
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de brochette.comm, ligne 231
+CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
+               CARA_ELEM='<00000005>',
+               CHAM_MATER='<00000004>',
+               INST=0.0,
+               MODELE='<00000002>',
+               MODE_FOURIER=0,
+               OPTION='RIGI_MECA')
+
+# Résultat commande #0007 (CALC_MATR_ELEM): '<00000007>' de type <ElementaryMatrixDisplacementReal>
+# Mémoire (Mo) :   322.33 /   320.53 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.02s (syst:        0.08s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt232
+# ----------------------------------------------------------------------------------------------
+# Commande #0008 de brochette.comm, ligne 232
+CALC_MATR_ELEM(CARA_ELEM='<00000005>',
+               CHAM_MATER='<00000004>',
+               INST=0.0,
+               MODELE='<00000002>',
+               OPTION='MASS_MECA')
+
+# Résultat commande #0008 (CALC_MATR_ELEM): '<0000000e>' de type <ElementaryMatrixDisplacementReal>
+# Mémoire (Mo) :   322.33 /   320.57 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0008   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt233
+# ----------------------------------------------------------------------------------------------
+# Commande #0009 de brochette.comm, ligne 233
+NUME_DDL(INFO=1,
+         MATR_RIGI='<00000007>')
+
+Le système linéaire à résoudre a 36 degrés de liberté:
+   - 36 sont des degrés de liberté physiques
+
+    (ils sont portés par 6 noeuds du maillage)
+   - 0 sont les couples de paramètres de Lagrange
+associés
+     aux 0 relations linéaires dualisées.
+La matrice est de taille 36 équations.
+  Elle contient 306 termes non nuls si elle est symétrique et
+576 termes non nuls si elle n'est pas symétrique.
+  Soit un taux de remplissage de  44.444 %.
+# Résultat commande #0009 (NUME_DDL): '<00000012>' de type <DOFNumbering>
+# Mémoire (Mo) :   322.33 /   320.80 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.03s (syst:        0.14s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt234
+# ----------------------------------------------------------------------------------------------
+# Commande #0010 de brochette.comm, ligne 234
+ASSE_MATRICE(INFO=1,
+             MATR_ELEM='<00000007>',
+             NUME_DDL='<00000012>')
+
+# Résultat commande #0010 (ASSE_MATRICE): '<00000014>' de type <AssemblyMatrixDisplacementReal>
+# Mémoire (Mo) :   322.33 /   320.97 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0010   user+syst:        0.05s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt235
+# ----------------------------------------------------------------------------------------------
+# Commande #0011 de brochette.comm, ligne 235
+ASSE_MATRICE(INFO=1,
+             MATR_ELEM='<0000000e>',
+             NUME_DDL='<00000012>')
+
+# Résultat commande #0011 (ASSE_MATRICE): '<00000015>' de type <AssemblyMatrixDisplacementReal>
+# Mémoire (Mo) :   322.33 /   320.97 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0011   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt282
+# ----------------------------------------------------------------------------------------------
+# Commande #0012 de brochette.comm, ligne 282
+CALC_MODES(AMELIORATION='NON',
+           CALC_FREQ=_F(FREQ=(0.05, 33.0),
+                        NMAX_ITER_SHIFT=3,
+                        PREC_SHIFT=0.05,
+                        SEUIL_FREQ=0.01),
+           INFO=1,
+           MATR_MASS='<00000015>',
+           MATR_RIGI='<00000014>',
+           OPTION='BANDE',
+           SOLVEUR=_F(ACCELERATION='FR',
+                      ELIM_LAGR='LAGR2',
+                      GESTION_MEMOIRE='AUTO',
+                      LOW_RANK_SEUIL=0.0,
+                      METHODE='MUMPS',
+                      NB_RHS=1,
+                      NPREC=8,
+                      PCENT_PIVOT=35,
+                      POSTTRAITEMENTS='AUTO',
+                      PRETRAITEMENTS='AUTO',
+                      RENUM='AUTO',
+                      RESI_RELA=-1.0,
+                      TYPE_RESOL='AUTO'),
+           SOLVEUR_MODAL=_F(APPROCHE='REEL',
+                            METHODE='SORENSEN',
+                            NMAX_ITER_SOREN=20,
+                            PARA_ORTHO_SOREN=0.717,
+                            PREC_SOREN=0.0),
+           STOP_BANDE_VIDE='OUI',
+           TYPE_RESU='DYNAMIQUE',
+           VERI_MODE=_F(PREC_SHIFT=0.005,
+                        SEUIL=1e-06,
+                        STOP_ERREUR='OUI',
+                        STURM='GLOBAL'))
+
+Le nombre total de DDL est       :         36
+  Le nombre de DDL de Lagrange est :          0
+  Le
+nombre de DDL actifs est      :         36
+
+L'option choisie est : BANDE
+
+------------------------------------------------------------------------
+
+Vérification du spectre de fréquences (Méthode de Sturm)
+
+
+Nombre de fréquences dans la bande numéro 1 de bornes ( 5.000E-02 , 3.300E+01 ) : 6
+
+------------------------------------------------------------------------
+
+La valeur minimale en fréquence est :  5.00000E-02
+  La valeur maximale en fréquence est : 
+3.30000E+01
+
+La valeur de décalage en fréquence est :  2.33346E+01
+
+------------------------------------------------------------------------
+
+Informations sur le calcul demandé:
+
+  Nombre de modes recherchés  : 6
+
+
+La dimension de l'espace réduit est : 0
+
+Elle est inférieure au nombre de modes, on la prend égale à : 12
+
+=============================================
+     =       Méthode de Sorensen (code ARPACK)   =
+   
+ =       Version :  2.4                      =
+     =          Date :  07/31/96                 =
+  
+  =============================================
+
+     Nombre de redémarrages                     =  
+  4
+     Nombre de produits OP*X                    =    26
+     Nombre de produits B*X             
+       =    77
+     Nombre de réorthogonalisations  (étape 1)  =    23
+     Nombre de
+réorthogonalisations  (étape 2)  =     0
+     Nombre de redémarrages du a un V0 nul      =     0
+
+
+------------------------------------------------------------------------
+Les fréquences calculées sont comprises entre :
+      Fréquence inférieure :  4.79391E+00
+     
+Fréquence supérieure :  3.29668E+01
+
+
+------------------------------------------------------------------------
+Calcul modal : Méthode d'itération simultanée
+                    Méthode de Sorensen
+
+numéro   
+fréquence (HZ)     norme d'erreur
+
+1       4.79391E+00        3.43177E-13
+
+2       6.91322E+00        1.60889E-13
+
+3       1.25272E+01        2.79044E-14
+
+4       1.71115E+01        1.70819E-14
+
+5       1.89402E+01        2.57969E-14
+
+6       3.29668E+01        5.22204E-15
+
+Norme d'erreur moyenne   :  9.66786E-14
+
+------------------------------------------------------------------------
+
+Vérification à posteriori des modes
+
+
+Dans l'intervalle ( 4.78191E+00 , 3.30491E+01 ) il y a bien 6 fréquence(s).
+
+------------------------------------------------------------------------
+
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.01      0.00      0.00
+# Résultat commande #0012 (CALC_MODES): '<00000016>' de type <ModeResult>
+# Mémoire (Mo) :   324.10 /   324.10 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0012   user+syst:        0.16s (syst:        0.11s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt287
+# ----------------------------------------------------------------------------------------------
+# Commande #0014 de brochette.comm, ligne 287
+RECU_TABLE(CO='<00000016>',
+           NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
+
+# Résultat commande #0014 (RECU_TABLE): '<00000017>' de type <Table>
+# Mémoire (Mo) :   324.14 /   324.14 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0014   user+syst:        0.05s (syst:        0.14s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt285
+# ----------------------------------------------------------------------------------------------
+# Commande #0015 de brochette.comm, ligne 285
+CALC_MODES(AMELIORATION='NON',
+           CALC_FREQ=_F(NMAX_FREQ=10,
+                        NMAX_ITER_SHIFT=3,
+                        PREC_SHIFT=0.05,
+                        SEUIL_FREQ=0.01),
+           INFO=1,
+           MATR_MASS='<00000015>',
+           MATR_RIGI='<00000014>',
+           OPTION='PLUS_PETITE',
+           SOLVEUR=_F(ACCELERATION='FR',
+                      ELIM_LAGR='LAGR2',
+                      GESTION_MEMOIRE='AUTO',
+                      LOW_RANK_SEUIL=0.0,
+                      METHODE='MUMPS',
+                      NB_RHS=1,
+                      NPREC=8,
+                      PCENT_PIVOT=35,
+                      POSTTRAITEMENTS='AUTO',
+                      PRETRAITEMENTS='AUTO',
+                      RENUM='AUTO',
+                      RESI_RELA=-1.0,
+                      TYPE_RESOL='AUTO'),
+           SOLVEUR_MODAL=_F(APPROCHE='REEL',
+                            METHODE='SORENSEN',
+                            NMAX_ITER_SOREN=20,
+                            PARA_ORTHO_SOREN=0.717,
+                            PREC_SOREN=0.0),
+           STOP_BANDE_VIDE='OUI',
+           TYPE_RESU='DYNAMIQUE',
+           VERI_MODE=_F(PREC_SHIFT=0.005,
+                        SEUIL=1e-06,
+                        STOP_ERREUR='OUI',
+                        STURM='OUI'))
+
+Le nombre total de DDL est       :         36
+  Le nombre de DDL de Lagrange est :          0
+  Le
+nombre de DDL actifs est      :         36
+
+L'option choisie est : PLUS_PETITE
+
+La valeur de décalage en fréquence est :  0.00000E+00
+
+------------------------------------------------------------------------
+
+Informations sur le calcul demandé:
+
+  Nombre de modes recherchés  : 10
+
+
+La dimension de l'espace réduit est : 0
+
+Elle est inférieure au nombre de modes, on la prend égale à : 20
+
+=============================================
+     =       Méthode de Sorensen (code ARPACK)   =
+   
+ =       Version :  2.4                      =
+     =          Date :  07/31/96                 =
+  
+  =============================================
+
+     Nombre de redémarrages                     =  
+  3
+     Nombre de produits OP*X                    =    31
+     Nombre de produits B*X             
+       =    93
+     Nombre de réorthogonalisations  (étape 1)  =    30
+     Nombre de
+réorthogonalisations  (étape 2)  =     0
+     Nombre de redémarrages du a un V0 nul      =     0
+
+
+------------------------------------------------------------------------
+Les fréquences calculées sont comprises entre :
+      Fréquence inférieure :  4.79391E+00
+     
+Fréquence supérieure :  4.95800E+01
+
+
+------------------------------------------------------------------------
+Calcul modal : Méthode d'itération simultanée
+                    Méthode de Sorensen
+
+numéro   
+fréquence (HZ)     norme d'erreur
+
+1       4.79391E+00        2.43379E-13
+
+2       6.91322E+00        7.82382E-14
+
+3       1.25272E+01        2.04656E-14
+
+4       1.71115E+01        2.99482E-14
+
+5       1.89402E+01        2.95921E-14
+
+6       3.29668E+01        1.20372E-14
+
+7       3.58103E+01        3.43883E-15
+
+8       3.83934E+01        2.14165E-14
+
+9       3.85032E+01        7.75755E-15
+
+10       4.95800E+01        1.52189E-14
+
+Norme d'erreur moyenne   :  4.61492E-14
+
+------------------------------------------------------------------------
+
+Vérification à posteriori des modes
+
+
+Dans l'intervalle ( 4.78191E+00 , 4.97038E+01 ) il y a bien 10 fréquence(s).
+
+------------------------------------------------------------------------
+
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0015 (CALC_MODES): '<00000018>' de type <ModeResult>
+# Mémoire (Mo) :   324.35 /   324.34 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0015   user+syst:        0.11s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt287
+# ----------------------------------------------------------------------------------------------
+# Commande #0017 de brochette.comm, ligne 287
+RECU_TABLE(CO='<00000018>',
+           NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
+
+# Résultat commande #0017 (RECU_TABLE): '<00000019>' de type <Table>
+# Mémoire (Mo) :   324.35 /   324.34 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0017   user+syst:        0.02s (syst:        0.12s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+ ╔================================================================================================╗
+ ║ <A> <MED3_2>                                                                                   ║
+ ║                                                                                                ║
+ ║ Le nom utilisateur n'a pas été trouvé, on utilise le nom automatique à la place                ║
+ ║ 00000018.                                                                                      ║
+ ║                                                                                                ║
+ ║ Ceci peut engendrer des problèmes lors du post-traitement avec PARAVIS.                        ║
+ ║ Il est                                                                                         ║
+ ║ possible de changer manuellement le nom avec NOM_CHAM_MED et NOM_RESU_MED.                     ║
+ ║                                                                                                ║
+ ║                                                                                                ║
+ ║ Ceci est une alarme. Si vous ne comprenez pas le sens de cette                                 ║
+ ║ alarme, vous pouvez obtenir des                                                                ║
+ ║ résultats inattendus !                                                                         ║
+ ╚================================================================================================╝
+
+
+.. _stg1_txt58
+# ----------------------------------------------------------------------------------------------
+# Commande #0018 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 58
+IMPR_RESU(FICHIER_UNIQUE='NON',
+          FORMAT='MED',
+          INFO=1,
+          PROC0='OUI',
+          RESU=_F(IMPR_NOM_VARI='OUI',
+                  INFO_MAILLAGE='NON',
+                  RESULTAT='<00000018>',
+                  TOUT_CHAM='OUI'),
+          UNITE=80,
+          VERSION_MED='3.3.1')
+
+Création du fichier au format MED 3.3.1.
+
+# Mémoire (Mo) :   327.00 /   327.00 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0018   user+syst:        0.06s (syst:        0.03s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt65
+# ----------------------------------------------------------------------------------------------
+# Commande #0019 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 65
+chf = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
+                     FORCE_NODALE=(_F(FY=12448890.0,
+                                      GROUP_NO='N2'),
+                                   _F(FY=11222640.0,
+                                      GROUP_NO='N3'),
+                                   _F(FY=7063200.0,
+                                      GROUP_NO='N4'),
+                                   _F(FY=6229350.0,
+                                      GROUP_NO='N5'),
+                                   _F(FY=3443310.0,
+                                      GROUP_NO='N6'),
+                                   _F(FY=12272310.0,
+                                      GROUP_NO='RADIER')),
+                     INFO=1,
+                     MODELE='<00000002>',
+                     SYNTAXE='NON',
+                     VERI_AFFE='OUI',
+                     VERI_NORM='OUI')
+
+# Résultat commande #0019 (AFFE_CHAR_MECA): chf ('<0000001a>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   327.27 /   327.27 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0019   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt67
+# ----------------------------------------------------------------------------------------------
+# Commande #0020 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 67
+stat = MECA_STATIQUE(CARA_ELEM='<00000005>',
+                     CHAM_MATER='<00000004>',
+                     EXCIT=_F(CHARGE=chf,
+                              TYPE_CHARGE='FIXE_CSTE'),
+                     INFO=1,
+                     INST=0.0,
+                     MODELE='<00000002>',
+                     OPTION='SIEF_ELGA',
+                     SOLVEUR=_F(ACCELERATION='AUTO',
+                                ELIM_LAGR='LAGR2',
+                                GESTION_MEMOIRE='AUTO',
+                                LOW_RANK_SEUIL=0.0,
+                                MATR_DISTRIBUEE='NON',
+                                METHODE='MUMPS',
+                                NB_RHS=1,
+                                NPREC=8,
+                                PCENT_PIVOT=35,
+                                POSTTRAITEMENTS='AUTO',
+                                PRETRAITEMENTS='AUTO',
+                                REDUCTION_MPI=0,
+                                RENUM='AUTO',
+                                RESI_RELA=1e-06,
+                                STOP_SINGULIER='OUI',
+                                TYPE_RESOL='AUTO'))
+
+Le système linéaire à résoudre a 36 degrés de liberté:
+   - 36 sont des degrés de liberté physiques
+
+    (ils sont portés par 6 noeuds du maillage)
+   - 0 sont les couples de paramètres de Lagrange
+associés
+     aux 0 relations linéaires dualisées.
+La matrice est de taille 36 équations.
+  Elle contient 306 termes non nuls si elle est symétrique et
+576 termes non nuls si elle n'est pas symétrique.
+  Soit un taux de remplissage de  44.444 %.
+Champ stocké <DEPL> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
+Champ stocké <SIEF_ELGA> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
+# Résultat commande #0020 (MECA_STATIQUE): stat ('<0000001b>') de type <ElasticResult>
+# Mémoire (Mo) :   328.16 /   328.15 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0020   user+syst:        0.06s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0021 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N2',
+                            INTITULE='N2',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0021 (POST_RELEVE_T): t ('<00000041>') de type <Table>
+# Mémoire (Mo) :   328.40 /   328.40 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0021   user+syst:        0.00s (syst:        0.03s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0022 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N3',
+                            INTITULE='N3',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0022 (POST_RELEVE_T): t ('<00000042>') de type <Table>
+# Mémoire (Mo) :   328.41 /   328.41 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0022   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0023 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N4',
+                            INTITULE='N4',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0023 (POST_RELEVE_T): t ('<00000043>') de type <Table>
+# Mémoire (Mo) :   328.41 /   328.41 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0023   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0024 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N5',
+                            INTITULE='N5',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0024 (POST_RELEVE_T): t ('<00000044>') de type <Table>
+# Mémoire (Mo) :   328.45 /   328.45 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0024   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0025 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N6',
+                            INTITULE='N6',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0025 (POST_RELEVE_T): t ('<00000045>') de type <Table>
+# Mémoire (Mo) :   328.45 /   328.45 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0025   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0026 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='RADIER',
+                            INTITULE='RADIER',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0026 (POST_RELEVE_T): t ('<00000046>') de type <Table>
+# Mémoire (Mo) :   328.45 /   328.45 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0026   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+RESSORTS : f CALC_MODES = 4.794 Hz | f Rayleigh = 4.898 Hz | note = 4.79 Hz
+
+.. _stg1_txt162
+# ----------------------------------------------------------------------------------------------
+# Commande #0027 de brochette.comm, ligne 162
+DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
+                      AMOR_BETA=0.0,
+                      B_ENDOGE=0.0,
+                      COEF_AMOR=1.0,
+                      E=25140550000.0,
+                      K_DESSIC=0.0,
+                      NU=0.2,
+                      RHO=0.0),
+              INFO=1)
+
+# Résultat commande #0027 (DEFI_MATERIAU): '<00000047>' de type <Material>
+# Mémoire (Mo) :   328.47 /   328.46 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0027   user+syst:        0.06s (syst:        0.05s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt164
+# ----------------------------------------------------------------------------------------------
+# Commande #0028 de brochette.comm, ligne 164
+AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
+                      MATER='<00000047>'),
+              INFO=1,
+              MAILLAGE='<00000001>')
+
+# Résultat commande #0028 (AFFE_MATERIAU): '<00000048>' de type <MaterialField>
+# Mémoire (Mo) :   328.47 /   328.46 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0028   user+syst:        0.05s (syst:        0.05s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt208
+# ----------------------------------------------------------------------------------------------
+# Commande #0029 de brochette.comm, ligne 208
+AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
+                           GROUP_MA='N2',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=1269000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N2',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N3',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=1144000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N3',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N4',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=720000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N4',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N5',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=635000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N5',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='M_T_D_N',
+                           GROUP_MA='N6',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=351000.0),
+                        _F(CARA='K_T_D_N',
+                           GROUP_MA='N6',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(0.0, 0.0, 0.0)),
+                        _F(CARA='K_TR_D_N',
+                           GROUP_MA='RADIER',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(34500000000.0, 38000000000.0, 41000000000.0, 1900000000000.0, 5100000000000.0, 3800000000000.0)),
+                        _F(CARA='M_TR_D_N',
+                           GROUP_MA='RADIER',
+                           REPERE='GLOBAL',
+                           SYME='OUI',
+                           VALE=(1251000.0, 15012000.0, 60048000.0, 75060000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0))),
+               INFO=1,
+               MODELE='<00000002>',
+               ORIENTATION=_F(CARA='VECT_Y',
+                              GROUP_MA='POUTRE',
+                              VALE=(0.0, 1.0, 0.0)),
+               POUTRE=(_F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN2',
+                          SECTION='GENERALE',
+                          VALE=(51.28, 3261.0, 1029.0, 4290.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN3',
+                          SECTION='GENERALE',
+                          VALE=(54.69, 3405.0, 1053.0, 4458.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN4',
+                          SECTION='GENERALE',
+                          VALE=(30.54, 1938.0, 582.0, 2520.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN5',
+                          SECTION='GENERALE',
+                          VALE=(23.4, 1658.0, 554.0, 2212.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT'),
+                       _F(CARA=('A', 'IY', 'IZ', 'JX', 'AY', 'AZ'),
+                          GROUP_MA='TN6',
+                          SECTION='GENERALE',
+                          VALE=(18.1, 1233.0, 421.0, 1654.0, 1.0, 1.0),
+                          VARI_SECT='CONSTANT')))
+
+
+     LE MODELE 00000002 CONTIENT : 
+                                        5 ELEMENT(S) POUTRE          
+                                        6 ELEMENT(S) DISCRET         
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0029 (AFFE_CARA_ELEM): '<00000049>' de type <ElementaryCharacteristics>
+# Dépend de :
+# - '<00000002>' de type <Model>
+# Mémoire (Mo) :   328.68 /   328.68 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0029   user+syst:        0.08s (syst:        0.05s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt219
+# ----------------------------------------------------------------------------------------------
+# Commande #0030 de brochette.comm, ligne 219
+AFFE_CHAR_MECA(DDL_IMPO=_F(DRX=0.0,
+                           DRY=0.0,
+                           DRZ=0.0,
+                           DX=0.0,
+                           DY=0.0,
+                           DZ=0.0,
+                           GROUP_NO='RADIER'),
+               DOUBLE_LAGRANGE='OUI',
+               INFO=1,
+               MODELE='<00000002>',
+               SYNTAXE='NON',
+               VERI_AFFE='OUI',
+               VERI_NORM='OUI')
+
+# Résultat commande #0030 (AFFE_CHAR_MECA): '<0000004a>' de type <MechanicalLoadReal>
+# Mémoire (Mo) :   329.08 /   329.07 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0030   user+syst:        0.06s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt231
+# ----------------------------------------------------------------------------------------------
+# Commande #0031 de brochette.comm, ligne 231
+CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
+               CARA_ELEM='<00000049>',
+               CHAM_MATER='<00000048>',
+               CHARGE='<0000004a>',
+               INST=0.0,
+               MODELE='<00000002>',
+               MODE_FOURIER=0,
+               OPTION='RIGI_MECA')
+
+# Résultat commande #0031 (CALC_MATR_ELEM): '<0000004c>' de type <ElementaryMatrixDisplacementReal>
+# Mémoire (Mo) :   329.09 /   329.09 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0031   user+syst:        0.03s (syst:        0.11s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt232
+# ----------------------------------------------------------------------------------------------
+# Commande #0032 de brochette.comm, ligne 232
+CALC_MATR_ELEM(CARA_ELEM='<00000049>',
+               CHAM_MATER='<00000048>',
+               CHARGE='<0000004a>',
+               INST=0.0,
+               MODELE='<00000002>',
+               OPTION='MASS_MECA')
+
+# Résultat commande #0032 (CALC_MATR_ELEM): '<00000054>' de type <ElementaryMatrixDisplacementReal>
+# Mémoire (Mo) :   329.09 /   329.09 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0032   user+syst:        0.08s (syst:        0.05s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt233
+# ----------------------------------------------------------------------------------------------
+# Commande #0033 de brochette.comm, ligne 233
+NUME_DDL(INFO=1,
+         MATR_RIGI='<0000004c>')
+
+Le système linéaire à résoudre a 48 degrés de liberté:
+   - 36 sont des degrés de liberté physiques
+
+    (ils sont portés par 6 noeuds du maillage)
+   - 12 sont les couples de paramètres de Lagrange
+associés
+     aux 6 relations linéaires dualisées.
+La matrice est de taille 48 équations.
+  Elle contient 396 termes non nuls si elle est symétrique et
+744 termes non nuls si elle n'est pas symétrique.
+  Soit un taux de remplissage de  32.292 %.
+# Résultat commande #0033 (NUME_DDL): '<00000058>' de type <DOFNumbering>
+# Mémoire (Mo) :   329.09 /   329.09 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0033   user+syst:        0.03s (syst:        0.11s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt234
+# ----------------------------------------------------------------------------------------------
+# Commande #0034 de brochette.comm, ligne 234
+ASSE_MATRICE(INFO=1,
+             MATR_ELEM='<0000004c>',
+             NUME_DDL='<00000058>')
+
+# Résultat commande #0034 (ASSE_MATRICE): '<0000005a>' de type <AssemblyMatrixDisplacementReal>
+# Mémoire (Mo) :   329.14 /   329.14 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0034   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt235
+# ----------------------------------------------------------------------------------------------
+# Commande #0035 de brochette.comm, ligne 235
+ASSE_MATRICE(INFO=1,
+             MATR_ELEM='<00000054>',
+             NUME_DDL='<00000058>')
+
+# Résultat commande #0035 (ASSE_MATRICE): '<0000005b>' de type <AssemblyMatrixDisplacementReal>
+# Mémoire (Mo) :   329.14 /   329.14 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0035   user+syst:        0.05s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt282
+# ----------------------------------------------------------------------------------------------
+# Commande #0036 de brochette.comm, ligne 282
+CALC_MODES(AMELIORATION='NON',
+           CALC_FREQ=_F(FREQ=(0.05, 33.0),
+                        NMAX_ITER_SHIFT=3,
+                        PREC_SHIFT=0.05,
+                        SEUIL_FREQ=0.01),
+           INFO=1,
+           MATR_MASS='<0000005b>',
+           MATR_RIGI='<0000005a>',
+           OPTION='BANDE',
+           SOLVEUR=_F(ACCELERATION='FR',
+                      ELIM_LAGR='LAGR2',
+                      GESTION_MEMOIRE='AUTO',
+                      LOW_RANK_SEUIL=0.0,
+                      METHODE='MUMPS',
+                      NB_RHS=1,
+                      NPREC=8,
+                      PCENT_PIVOT=35,
+                      POSTTRAITEMENTS='AUTO',
+                      PRETRAITEMENTS='AUTO',
+                      RENUM='AUTO',
+                      RESI_RELA=-1.0,
+                      TYPE_RESOL='AUTO'),
+           SOLVEUR_MODAL=_F(APPROCHE='REEL',
+                            METHODE='SORENSEN',
+                            NMAX_ITER_SOREN=20,
+                            PARA_ORTHO_SOREN=0.717,
+                            PREC_SOREN=0.0),
+           STOP_BANDE_VIDE='OUI',
+           TYPE_RESU='DYNAMIQUE',
+           VERI_MODE=_F(PREC_SHIFT=0.005,
+                        SEUIL=1e-06,
+                        STOP_ERREUR='OUI',
+                        STURM='GLOBAL'))
+
+Le nombre total de DDL est       :         48
+  Le nombre de DDL de Lagrange est :         12
+  Le
+nombre de DDL actifs est      :         30
+
+L'option choisie est : BANDE
+
+------------------------------------------------------------------------
+
+Vérification du spectre de fréquences (Méthode de Sturm)
+
+
+Nombre de fréquences dans la bande numéro 1 de bornes ( 5.000E-02 , 3.300E+01 ) : 5
+
+------------------------------------------------------------------------
+
+La valeur minimale en fréquence est :  5.00000E-02
+  La valeur maximale en fréquence est : 
+3.30000E+01
+
+La valeur de décalage en fréquence est :  2.33346E+01
+
+------------------------------------------------------------------------
+
+Informations sur le calcul demandé:
+
+  Nombre de modes recherchés  : 5
+
+
+La dimension de l'espace réduit est : 0
+
+Elle est inférieure au nombre de modes, on la prend égale à : 10
+
+=============================================
+     =       Méthode de Sorensen (code ARPACK)   =
+   
+ =       Version :  2.4                      =
+     =          Date :  07/31/96                 =
+  
+  =============================================
+
+     Nombre de redémarrages                     =  
+  3
+     Nombre de produits OP*X                    =    17
+     Nombre de produits B*X             
+       =    51
+     Nombre de réorthogonalisations  (étape 1)  =    16
+     Nombre de
+réorthogonalisations  (étape 2)  =     0
+     Nombre de redémarrages du a un V0 nul      =     0
+
+
+------------------------------------------------------------------------
+Les fréquences calculées sont comprises entre :
+      Fréquence inférieure :  7.66693E+00
+     
+Fréquence supérieure :  2.97258E+01
+
+
+------------------------------------------------------------------------
+Calcul modal : Méthode d'itération simultanée
+                    Méthode de Sorensen
+
+numéro   
+fréquence (HZ)     norme d'erreur
+
+1       7.66693E+00        1.94465E-13
+
+2       1.11296E+01        4.90447E-14
+
+3       2.41490E+01        2.91474E-15
+
+4       2.50600E+01        3.96810E-15
+
+5       2.97258E+01        5.60111E-15
+
+Norme d'erreur moyenne   :  5.11988E-14
+
+------------------------------------------------------------------------
+
+Vérification à posteriori des modes
+
+
+Dans l'intervalle ( 7.64774E+00 , 2.98000E+01 ) il y a bien 5 fréquence(s).
+
+------------------------------------------------------------------------
+
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0036 (CALC_MODES): '<0000005c>' de type <ModeResult>
+# Mémoire (Mo) :   329.54 /   329.53 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0036   user+syst:        0.09s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt287
+# ----------------------------------------------------------------------------------------------
+# Commande #0038 de brochette.comm, ligne 287
+RECU_TABLE(CO='<0000005c>',
+           NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
+
+# Résultat commande #0038 (RECU_TABLE): '<0000005d>' de type <Table>
+# Mémoire (Mo) :   329.54 /   329.53 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0038   user+syst:        0.00s (syst:        0.11s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt285
+# ----------------------------------------------------------------------------------------------
+# Commande #0039 de brochette.comm, ligne 285
+CALC_MODES(AMELIORATION='NON',
+           CALC_FREQ=_F(NMAX_FREQ=10,
+                        NMAX_ITER_SHIFT=3,
+                        PREC_SHIFT=0.05,
+                        SEUIL_FREQ=0.01),
+           INFO=1,
+           MATR_MASS='<0000005b>',
+           MATR_RIGI='<0000005a>',
+           OPTION='PLUS_PETITE',
+           SOLVEUR=_F(ACCELERATION='FR',
+                      ELIM_LAGR='LAGR2',
+                      GESTION_MEMOIRE='AUTO',
+                      LOW_RANK_SEUIL=0.0,
+                      METHODE='MUMPS',
+                      NB_RHS=1,
+                      NPREC=8,
+                      PCENT_PIVOT=35,
+                      POSTTRAITEMENTS='AUTO',
+                      PRETRAITEMENTS='AUTO',
+                      RENUM='AUTO',
+                      RESI_RELA=-1.0,
+                      TYPE_RESOL='AUTO'),
+           SOLVEUR_MODAL=_F(APPROCHE='REEL',
+                            METHODE='SORENSEN',
+                            NMAX_ITER_SOREN=20,
+                            PARA_ORTHO_SOREN=0.717,
+                            PREC_SOREN=0.0),
+           STOP_BANDE_VIDE='OUI',
+           TYPE_RESU='DYNAMIQUE',
+           VERI_MODE=_F(PREC_SHIFT=0.005,
+                        SEUIL=1e-06,
+                        STOP_ERREUR='OUI',
+                        STURM='OUI'))
+
+Le nombre total de DDL est       :         48
+  Le nombre de DDL de Lagrange est :         12
+  Le
+nombre de DDL actifs est      :         30
+
+L'option choisie est : PLUS_PETITE
+
+La valeur de décalage en fréquence est :  0.00000E+00
+
+------------------------------------------------------------------------
+
+Informations sur le calcul demandé:
+
+  Nombre de modes recherchés  : 10
+
+
+La dimension de l'espace réduit est : 0
+
+Elle est inférieure au nombre de modes, on la prend égale à : 20
+
+=============================================
+     =       Méthode de Sorensen (code ARPACK)   =
+   
+ =       Version :  2.4                      =
+     =          Date :  07/31/96                 =
+  
+  =============================================
+
+     Nombre de redémarrages                     =  
+  1
+     Nombre de produits OP*X                    =    21
+     Nombre de produits B*X             
+       =    66
+     Nombre de réorthogonalisations  (étape 1)  =    20
+     Nombre de
+réorthogonalisations  (étape 2)  =     5
+     Nombre de redémarrages du a un V0 nul      =     0
+
+
+------------------------------------------------------------------------
+Les fréquences calculées sont comprises entre :
+      Fréquence inférieure :  7.66693E+00
+     
+Fréquence supérieure :  6.73100E+01
+
+
+------------------------------------------------------------------------
+Calcul modal : Méthode d'itération simultanée
+                    Méthode de Sorensen
+
+numéro   
+fréquence (HZ)     norme d'erreur
+
+1       7.66693E+00        9.93700E-14
+
+2       1.11296E+01        3.88580E-14
+
+3       2.41490E+01        8.36761E-15
+
+4       2.50600E+01        1.33845E-14
+
+5       2.97258E+01        7.13447E-15
+
+6       4.67690E+01        5.62365E-15
+
+7       5.14093E+01        2.64866E-15
+
+8       5.35760E+01        4.32317E-15
+
+9       6.41284E+01        2.71796E-15
+
+10       6.73100E+01        2.75902E-15
+
+Norme d'erreur moyenne   :  1.85187E-14
+
+------------------------------------------------------------------------
+
+Vérification à posteriori des modes
+
+
+Dans l'intervalle ( 7.64774E+00 , 6.74780E+01 ) il y a bien 10 fréquence(s).
+
+------------------------------------------------------------------------
+
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.01      0.00      0.00
+# Résultat commande #0039 (CALC_MODES): '<0000005e>' de type <ModeResult>
+# Mémoire (Mo) :   329.59 /   329.57 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0039   user+syst:        0.09s (syst:        0.09s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt287
+# ----------------------------------------------------------------------------------------------
+# Commande #0041 de brochette.comm, ligne 287
+RECU_TABLE(CO='<0000005e>',
+           NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
+
+# Résultat commande #0041 (RECU_TABLE): '<0000005f>' de type <Table>
+# Mémoire (Mo) :   329.59 /   329.57 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0041   user+syst:        0.02s (syst:        0.11s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt65
+# ----------------------------------------------------------------------------------------------
+# Commande #0042 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 65
+chf = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
+                     FORCE_NODALE=(_F(FY=12448890.0,
+                                      GROUP_NO='N2'),
+                                   _F(FY=11222640.0,
+                                      GROUP_NO='N3'),
+                                   _F(FY=7063200.0,
+                                      GROUP_NO='N4'),
+                                   _F(FY=6229350.0,
+                                      GROUP_NO='N5'),
+                                   _F(FY=3443310.0,
+                                      GROUP_NO='N6')),
+                     INFO=1,
+                     MODELE='<00000002>',
+                     SYNTAXE='NON',
+                     VERI_AFFE='OUI',
+                     VERI_NORM='OUI')
+
+# Résultat commande #0042 (AFFE_CHAR_MECA): chf ('<00000060>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   329.59 /   329.57 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0042   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt67
+# ----------------------------------------------------------------------------------------------
+# Commande #0043 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 67
+stat = MECA_STATIQUE(CARA_ELEM='<00000049>',
+                     CHAM_MATER='<00000048>',
+                     EXCIT=(_F(CHARGE=chf,
+                               TYPE_CHARGE='FIXE_CSTE'),
+                            _F(CHARGE='<0000004a>',
+                               TYPE_CHARGE='FIXE_CSTE')),
+                     INFO=1,
+                     INST=0.0,
+                     MODELE='<00000002>',
+                     OPTION='SIEF_ELGA',
+                     SOLVEUR=_F(ACCELERATION='AUTO',
+                                ELIM_LAGR='LAGR2',
+                                GESTION_MEMOIRE='AUTO',
+                                LOW_RANK_SEUIL=0.0,
+                                MATR_DISTRIBUEE='NON',
+                                METHODE='MUMPS',
+                                NB_RHS=1,
+                                NPREC=8,
+                                PCENT_PIVOT=35,
+                                POSTTRAITEMENTS='AUTO',
+                                PRETRAITEMENTS='AUTO',
+                                REDUCTION_MPI=0,
+                                RENUM='AUTO',
+                                RESI_RELA=1e-06,
+                                STOP_SINGULIER='OUI',
+                                TYPE_RESOL='AUTO'))
+
+Le système linéaire à résoudre a 48 degrés de liberté:
+   - 36 sont des degrés de liberté physiques
+
+    (ils sont portés par 6 noeuds du maillage)
+   - 12 sont les couples de paramètres de Lagrange
+associés
+     aux 6 relations linéaires dualisées.
+La matrice est de taille 48 équations.
+  Elle contient 396 termes non nuls si elle est symétrique et
+744 termes non nuls si elle n'est pas symétrique.
+  Soit un taux de remplissage de  32.292 %.
+Champ stocké <DEPL> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
+Champ stocké <SIEF_ELGA> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
+# Résultat commande #0043 (MECA_STATIQUE): stat ('<00000061>') de type <ElasticResult>
+# Mémoire (Mo) :   329.82 /   329.38 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0043   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0044 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N2',
+                            INTITULE='N2',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0044 (POST_RELEVE_T): t ('<00000089>') de type <Table>
+# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0044   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0045 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N3',
+                            INTITULE='N3',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0045 (POST_RELEVE_T): t ('<0000008a>') de type <Table>
+# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0045   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0046 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N4',
+                            INTITULE='N4',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0046 (POST_RELEVE_T): t ('<0000008b>') de type <Table>
+# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0046   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0047 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N5',
+                            INTITULE='N5',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0047 (POST_RELEVE_T): t ('<0000008c>') de type <Table>
+# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0047   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0048 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='N6',
+                            INTITULE='N6',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0048 (POST_RELEVE_T): t ('<0000008d>') de type <Table>
+# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0048   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt72
+# ----------------------------------------------------------------------------------------------
+# Commande #0049 de
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+ligne 72
+t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
+                            FORMAT_C='MODULE',
+                            GROUP_NO='RADIER',
+                            INTITULE='RADIER',
+                            MOYE_NOEUD='OUI',
+                            NOM_CHAM='DEPL',
+                            NOM_CMP='DY',
+                            OPERATION='EXTRACTION',
+                            PRECISION=1e-06,
+                            REPERE='GLOBAL',
+                            RESULTAT=stat),
+                  INFO=1)
+
+# Résultat commande #0049 (POST_RELEVE_T): t ('<0000008e>') de type <Table>
+# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0049   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+ENCASTRE : f CALC_MODES = 7.667 Hz | f Rayleigh = 7.831 Hz | note = 4.79 Hz
+
+.. _stg1_txt76
+# ----------------------------------------------------------------------------------------------
+# Commande #0050 de F:\miniforge3\envs\aster\Lib\site-packages\code_aster\CodeCommands\fin.py, ligne
+76
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+No database in results, objects not saved on processor #0
+
+ ╔================================================================================================╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez                                                                  ║
+ ║ choisies d'ignorer sont précédées de (*).                                                      ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║                                                                                                ║
+ ║           MED3_2               émise    1 fois                                                 ║
+ ║            MODELISA8_14         émise    6                                                     ║
+ ║ fois                                                                                           ║
+ ╚================================================================================================╝
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     204.38 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     216.94 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     329.82 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                   217  Mo.
+     TAILLE CUMULEE LIBEREE            :                     5  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :                 37513
+     NOMBRE TOTAL DE LIBERATIONS       :                 36800
+     APPELS AU MECANISME DE LIBERATION :                     0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                     0  Mo.
+     VOLUME DES LECTURES               :                     0  Mo.
+     VOLUME DES ECRITURES              :                     0  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     204.38 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     216.94 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     329.82 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : MA-10-NOVE-2026 15:46:33
+INFO './glob.1' deleted
+Deleting './glob.2': No such file or directory
+INFO './vola.1' deleted
+Deleting './vola.2': No such file or directory
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.06 :       0.17 :       0.23 :       0.00 *
+ * LIRE_MAILLAGE            :       0.00 :       0.06 :       0.06 :       0.00 *
+ * AFFE_MODELE              :       0.02 :       0.12 :       0.14 :       0.00 *
+ * DEFI_MATERIAU            :       0.02 :       0.06 :       0.08 :       0.00 *
+ * AFFE_MATERIAU            :       0.02 :       0.05 :       0.06 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.06 :       0.06 :       0.12 :       0.00 *
+ * CALC_MATR_ELEM           :       0.02 :       0.08 :       0.09 :       0.00 *
+ * CALC_MATR_ELEM           :       0.02 :       0.09 :       0.11 :       0.00 *
+ * NUME_DDL                 :       0.03 :       0.14 :       0.17 :       0.00 *
+ * ASSE_MATRICE             :       0.05 :       0.09 :       0.14 :       0.00 *
+ * ASSE_MATRICE             :       0.03 :       0.09 :       0.12 :       0.00 *
+ * CALC_MODES               :       0.16 :       0.11 :       0.27 :       0.00 *
+ * RECU_TABLE               :       0.05 :       0.14 :       0.19 :       0.00 *
+ * CALC_MODES               :       0.11 :       0.09 :       0.20 :       0.00 *
+ * RECU_TABLE               :       0.02 :       0.12 :       0.14 :       0.00 *
+ * IMPR_RESU                :       0.06 :       0.03 :       0.09 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MECA_STATIQUE            :       0.06 :       0.00 :       0.06 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.03 :       0.03 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DEFI_MATERIAU            :       0.06 :       0.05 :       0.11 :       0.00 *
+ * AFFE_MATERIAU            :       0.05 :       0.05 :       0.09 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.08 :       0.05 :       0.12 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.06 :       0.09 :       0.16 :       0.00 *
+ * CALC_MATR_ELEM           :       0.03 :       0.11 :       0.14 :       0.00 *
+ * CALC_MATR_ELEM           :       0.08 :       0.05 :       0.12 :       0.00 *
+ * NUME_DDL                 :       0.03 :       0.11 :       0.14 :       0.00 *
+ * ASSE_MATRICE             :       0.03 :       0.08 :       0.11 :       0.00 *
+ * ASSE_MATRICE             :       0.05 :       0.09 :       0.14 :       0.00 *
+ * CALC_MODES               :       0.09 :       0.09 :       0.19 :       0.00 *
+ * RECU_TABLE               :       0.00 :       0.11 :       0.11 :       0.00 *
+ * CALC_MODES               :       0.09 :       0.09 :       0.19 :       0.00 *
+ * RECU_TABLE               :       0.02 :       0.11 :       0.12 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MECA_STATIQUE            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * FIN                      :       0.05 :       0.03 :       0.08 :       0.00 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.22 :       0.00 :       0.22 :       0.00 *
+ *  . fortran               :       0.31 :       0.31 :       0.62 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ ********************************************************************************
+ * TOTAL_JOB                :       1.70 :       2.80 :       4.50 :       0.00 *
+ ********************************************************************************
+
+# Mémoire (Mo) :   329.82 /   329.44 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0050   user+syst:        0.05s (syst:        0.03s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_30992=0
+
+
+
+------------------------------------------------------------
+--- DIAGNOSTIC JOB : <A>_ALARM
+------------------------------------------------------------
+

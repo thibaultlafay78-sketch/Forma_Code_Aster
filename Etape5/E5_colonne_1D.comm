@@ -1,0 +1,124 @@
+# -*- coding: utf-8 -*-
+# =============================================================================
+#  ÉTAPE 5 — Colonne 1D, influence du type de mouvement d'entrée
+#  Slide alimentée : Sujet 2 · démonstration
+#
+#  Colonne didactique (profil fictif, cahier des charges) : 35 m sur substratum
+#  (Vs = 1500 m/s), 11 sous-couches, courbes de Darendeli (2001).
+#  NE PAS MODIFIER LE PROFIL SANS ACCORD DE BASILE.
+#
+#  Calcul 1 : LIEU_SIGNAL='AFFLEURANT'  (signal = rocher affleurant, RA)
+#  Calcul 2 : LIEU_SIGNAL='CHAMP_LIBRE' (signal = surface, CL -> déconvolution,
+#             R4.05.06 §6)
+#  Calcul 3 (signal en profondeur sur base rigide) : non disponible —
+#  le catalogue 18.1.11 de DEFI_SOL_EQUI n'accepte que LIEU_SIGNAL ∈
+#  {AFFLEURANT, CHAMP_LIBRE}. Il est fait dans E5_reference_python.py.
+#
+#  Mots-clés vérifiés sur le catalogue installé (defi_sol_equi.py, v18.1.11).
+#  Maillage : automatique (MAILLAGE absent, colonne 2D de largeur 1 m).
+#
+#  Entrées : 21 donnees/E5_colonne.csv, 22 donnees/E5_darendeli.csv,
+#            23 ../Etape3/resultats/E3_signaux.csv
+#  Sorties : 40/55 résultats temporels/spectres calcul RA (IMPR_FONCTION TABLEAU)
+#            41/56 idem calcul CL ; 31 resultats/E5_proprietes.csv
+# =============================================================================
+
+DEBUT(LANG="FR")
+
+
+def lire_csv(unite):
+    with open("fort.%d" % unite) as f:
+        ent = f.readline().strip().split(",")
+        d = {h: [] for h in ent}
+        for l in f:
+            if l.strip():
+                for h, v in zip(ent, l.strip().split(",")):
+                    try:
+                        d[h].append(float(v))
+                    except ValueError:
+                        d[h].append(v)
+    return d
+
+
+SIGNAL = 1          # numéro de l'accélérogramme de l'étape 3 utilisé
+NU_SOL = 0.33       # sans effet en ondes SH verticales (sert à passer de G à E)
+NU_SUBST = 0.25
+
+# -----------------------------------------------------------------------------
+# Courbes G/Gmax et D (Darendeli 2001) — γ et D convertis de % en fraction
+# -----------------------------------------------------------------------------
+cv = lire_csv(22)
+gam = [g / 100.0 for g in cv["gamma_pct"]]
+mats = []
+for nom in ("limon", "sable", "sable_tres_dense", "marne"):
+    mats.append(_F(GAMMA=gam, G_GMAX=cv["GG_" + nom],
+                   D=[x / 100.0 for x in cv["D_%s_pct" % nom]]))
+# Matériau 5 : substratum linéaire (G/Gmax = 1, D = 1 %, choix du cahier)
+mats.append(_F(GAMMA=gam, G_GMAX=[1.0] * len(gam), D=[0.01] * len(gam)))
+
+# -----------------------------------------------------------------------------
+# Couches : E = 2·ρ·Vs²·(1+ν), AMOR_HYST initial = 2·Dmin (convention de la macro)
+# La dernière COUCHE est le substratum (épaisseur arbitraire, cf. U4.84.31).
+# -----------------------------------------------------------------------------
+col = lire_csv(21)
+couches = []
+for i, nom in enumerate(col["sous_couche"]):
+    rho, vs = col["rho_kg_m3"][i], col["vs_m_s"][i]
+    subst = nom == "SUBST"
+    nu = NU_SUBST if subst else NU_SOL
+    ep = 5.0 if subst else col["z_bas_m"][i] - col["z_haut_m"][i]
+    couches.append(_F(GROUP_MA=nom, EPAIS=ep, RHO=rho, E=2.0 * rho * vs ** 2 * (1 + nu),
+                      NU=nu, AMOR_HYST=2.0 * col["Dmin_pct"][i] / 100.0,
+                      NUME_MATE=int(col["nume_mate"][i])))
+
+# -----------------------------------------------------------------------------
+# Signal (m/s²)
+# -----------------------------------------------------------------------------
+sig = lire_csv(23)
+vale = []
+for t, a in zip(sig["t_s"], sig["acc%d_m_s2" % SIGNAL]):
+    vale += [t, a]
+ACC = DEFI_FONCTION(NOM_PARA="INST", NOM_RESU="ACCE", VALE=vale,
+                    PROL_GAUCHE="CONSTANT", PROL_DROITE="CONSTANT")
+
+NF = 200
+LFREQ = DEFI_LIST_REEL(VALE=[0.5 * (100.0 / 0.5) ** (i / (NF - 1.0)) for i in range(NF)])
+
+COMMUN = dict(
+    CHARGEMENT="MONO_APPUI",
+    FONC_SIGNAL=ACC,
+    GROUP_MA_DROITE="DROITE", GROUP_MA_GAUCHE="GAUCHE",
+    GROUP_MA_SUBSTR="BAS", GROUP_MA_COL="COLONNE",
+    SURF="OUI",                    # pas de couche enfoncée (sortie en surface libre)
+    MATERIAU=mats, COUCHE=couches,
+    COEF_GAMMA=0.65,               # γeff = 0,65·γmax (valeur usuelle, défaut de la macro)
+    NMAX_ITER=20, RESI_RELA=0.02,
+    LIST_FREQ_SPEC_OSCI=LFREQ,
+    INFO=1,
+)
+
+# --- Calcul 1 : rocher affleurant ---------------------------------------------
+TAB_RA = DEFI_SOL_EQUI(LIEU_SIGNAL="AFFLEURANT", TITRE="E5 entree RA",
+                       UNITE_RESU_TRAN=40, UNITE_RESU_SPEC=55, **COMMUN)
+# --- Calcul 2 : champ libre (déconvolution) -----------------------------------
+# FREQ_COUP : sans coupure, la déconvolution diverge à haute fréquence (premier
+# essai : 74 g au rocher affleurant déconvolué). 30 Hz < Vs/(4h) ≥ 34 Hz partout.
+TAB_CL = DEFI_SOL_EQUI(LIEU_SIGNAL="CHAMP_LIBRE", TITRE="E5 entree CL",
+                       FREQ_COUP=30.0,
+                       UNITE_RESU_TRAN=41, UNITE_RESU_SPEC=56, **COMMUN)
+
+# -----------------------------------------------------------------------------
+# Propriétés convergées par couche : G = E/(2(1+ν)), ξ = AMOR_HYST/2
+# -----------------------------------------------------------------------------
+with open("fort.31", "w") as f:
+    f.write("calcul,nume_couche,epais_m,rho_kg_m3,G_MPa,xi_pct,Vs_m_s,substratum\n")
+    for nom, tab in (("RA", TAB_RA), ("CL", TAB_CL)):
+        IMPR_TABLE(TABLE=tab)
+        v = tab.EXTR_TABLE().values()
+        for k in range(len(v["NUME_COUCHE"])):
+            Gk = v["E"][k] / (2.0 * (1.0 + v["NU"][k]))
+            f.write("%s,%d,%.3f,%.1f,%.3f,%.3f,%.1f,%s\n" % (
+                nom, v["NUME_COUCHE"][k], v["EPAIS"][k], v["RHO"][k], Gk / 1e6,
+                50.0 * v["AMOR_HYST"][k], (Gk / v["RHO"][k]) ** 0.5, v["SUBSTRATUM"][k]))
+
+FIN()

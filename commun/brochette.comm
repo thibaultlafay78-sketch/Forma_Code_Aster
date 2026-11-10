@@ -1,0 +1,332 @@
+# -*- coding: utf-8 -*-
+# =============================================================================
+#  MODÈLE BROCHETTE COMMUN — inclus par les étapes 1, 2 et 4
+#  (lu par exec en UTF-8 sur fort.91, fichier déclaré dans chaque .export :
+#   F libr ../commun/brochette.comm D 91)
+#
+#  Contenu :
+#    1. Données de la note Ph. Maurel (phmaurel.fr), § d'origine en commentaire
+#    2. Écriture et lecture du maillage (format ASTER, fort.20)
+#    3. Fonctions Python de construction du modèle et des matrices
+#    4. Outils d'écriture/lecture CSV (fichiers fort.N déclarés dans le .export)
+#
+#  Unités SI : N, m, kg, s, Pa.
+#  Version Code_Aster : 18.1.11 (mots-clés vérifiés sur le catalogue installé).
+# =============================================================================
+
+import math
+
+G = 9.81  # m/s²
+
+# -----------------------------------------------------------------------------
+# 1. DONNÉES DE LA NOTE MAUREL
+# -----------------------------------------------------------------------------
+# Source : note Ph. Maurel SEIS-SPEC001-A-06-2010, §II, figure 2 « modèle poutre ».
+# Nœud 1 = radier (z = 0, ressorts de sol 6 DDL, masse M1) ; nœuds 2 à 6 tous les 6 m.
+# Un tuple par niveau au-dessus du radier, du bas vers le haut :
+#   (nom, cote z [m], masse [kg], A [m²], IY [m⁴], IZ [m⁴], JX [m⁴], AY, AZ)
+# A, IY, IZ, JX, AY, AZ = caractéristiques du tronçon SOUS le niveau
+# (ex. N2 porte la « poutre 12 »).
+# Orientation : axe de la poutre = Z global, repère local y = Y global
+# => IY gouverne la flexion dans le plan XZ (déplacement DX),
+#    IZ gouverne la flexion dans le plan YZ (déplacement DY).
+# Lecture des inerties de la note (HYPOTHÈSE, à reporter dans la note de synthèse) :
+#   « I/OX » = inertie de flexion selon X (la plus forte, 24 m de long) -> IY
+#   « I/OY » = inertie de flexion selon Y (la plus faible, 12 m de large) -> IZ
+#   Lecture cohérente avec la note §III : mode 1 en Y (4,79 Hz), mode 2 en X (6,65 Hz).
+# JX non donnée : JX = IY + IZ (hypothèse ; la torsion est hors sujet, modes
+# de torsion sans masse de rotation dans ce modèle).
+# AY = AZ = 1 : coefficients de cisaillement non donnés (hypothèse).
+T = 1.0e3   # t -> kg
+NIVEAUX = [
+    # nom   z     masse      A      IY(I/OX) IZ(I/OY) JX            AY   AZ
+    ("N2",  6.0, 1269 * T, 51.28, 3261.0, 1029.0, 3261.0 + 1029.0, 1.0, 1.0),  # poutre 12
+    ("N3", 12.0, 1144 * T, 54.69, 3405.0, 1053.0, 3405.0 + 1053.0, 1.0, 1.0),  # poutre 23
+    ("N4", 18.0,  720 * T, 30.54, 1938.0,  582.0, 1938.0 +  582.0, 1.0, 1.0),  # poutre 34
+    ("N5", 24.0,  635 * T, 23.40, 1658.0,  554.0, 1658.0 +  554.0, 1.0, 1.0),  # poutre 45
+    ("N6", 30.0,  351 * T, 18.10, 1233.0,  421.0, 1233.0 +  421.0, 1.0, 1.0),  # poutre 56
+]
+
+# Radier : 24 × 12 m, X selon la longueur 24 m, Y selon la largeur 12 m (note §II).
+RADIER_LX, RADIER_LY = 24.0, 12.0
+RADIER_Z = 0.0           # nœud 1 (note §II, figure 2)
+RADIER_MASSE = 1251 * T  # M1 = 1251 t (note §II, figure 2)
+# Inerties de rotation du radier non données : plaque mince (hypothèse)
+# Ixx = m·LY²/12, Iyy = m·LX²/12, Izz = m(LX²+LY²)/12.
+RADIER_INERTIES = None  # (Ixx, Iyy, Izz) [kg·m²] ou None
+
+# Sol (note §II) : G = 345 MPa, ρ = 2100 kg/m³, ν = 0,45, amortissement interne 5 %.
+# Raideurs dynamiques de sol, 6 DDL (note §II, tableau) — MN/m, MN·m/rad
+K_SOL = {
+    "X": 3.45e4 * 1e6, "Y": 3.80e4 * 1e6, "Z": 4.10e4 * 1e6,          # N/m
+    "RX": 1.90e6 * 1e6, "RY": 5.10e6 * 1e6, "RZ": 3.80e6 * 1e6,       # N·m/rad
+}
+# Amortissements de sol calculés par DDL (note §II, même tableau)
+XI_SOL = {"X": 0.25, "Y": 0.25, "Z": 0.30, "RX": 0.10, "RY": 0.10, "RZ": 0.10}
+
+XI_BETON = 0.07     # amortissement du béton ηb = 7 % (note §II) ; ρb = 2500 kg/m³
+                    # non utilisé : les masses de la figure 2 sont déjà condensées
+F_NOTE = 4.79       # mode 1 (note §III, tableau des modes)
+F_NOTE_X = 6.65     # mode 2, direction X (note §III) — contrôle de l'interprétation I/OX
+NU_BETON = 0.2
+
+# Mode 1 à 4,79 Hz : direction Y, 60,1 % de masse (note §III, « direction transversale »)
+DIR_FOND = "DY"
+
+# 4,79 Hz est obtenu sur le modèle avec ressorts de sol (note §II-III : la base
+# modale inclut l'ISS, amortissement modal du mode 1 = 10 %).
+CONFIG_CALAGE = "RESSORTS"
+
+# Plage conventionnelle du module (guide ASN 2/01, annexe 1)
+E_MIN_ASN, E_MAX_ASN = 20000.0e6, 33000.0e6   # Pa (A.1.2 fissuré … A.1.1)
+
+
+def _verifier_donnees():
+    if not NIVEAUX:
+        raise ValueError(
+            "commun/brochette.comm : la table NIVEAUX est vide. Relever masses, "
+            "sections et inerties dans la note Maurel avant de lancer le calcul.")
+
+
+_verifier_donnees()
+
+NOMS_NIV = [n[0] for n in NIVEAUX]
+NIV_TETE = NOMS_NIV[-1]
+MASSES = {n[0]: n[2] for n in NIVEAUX}
+if RADIER_MASSE:
+    MASSES["RADIER"] = RADIER_MASSE
+MASSE_TOTALE_NOTE = sum(MASSES.values())
+
+# -----------------------------------------------------------------------------
+# 2. MAILLAGE (format ASTER écrit dans fort.20 puis relu)
+#    Un nœud par niveau + un nœud de radier ; SEG2 entre niveaux ; POI1 par
+#    nœud massique ; POI1 au radier. Groupes : POUTRE, MASSES, RADIER, N1, N2…
+# -----------------------------------------------------------------------------
+def _ecrire_maillage(nom_fichier="fort.20"):
+    # Numérotation de la note : NO1 = radier, NO2…NO6 = niveaux ; mailles
+    # SEG2 « S12 », « S23 »… comme les « poutre 12 », « poutre 23 » de la figure 2.
+    n = len(NIVEAUX)
+    lignes = ["TITRE", "Modele brochette - note Maurel", "FINSF", "COOR_3D"]
+    lignes.append("NO1  0.0  0.0  %.6f" % RADIER_Z)
+    for i, niv in enumerate(NIVEAUX):
+        lignes.append("NO%d  0.0  0.0  %.6f" % (i + 2, niv[1]))
+    lignes.append("FINSF")
+    lignes.append("SEG2")
+    for i in range(n):
+        lignes.append("S%d%d  NO%d  NO%d" % (i + 1, i + 2, i + 1, i + 2))
+    lignes.append("FINSF")
+    lignes.append("POI1")
+    for i in range(n + 1):
+        lignes.append("M%d  NO%d" % (i + 1, i + 1))   # M1 = radier
+    lignes.append("FINSF")
+
+    def grp(kind, nom, membres):
+        lignes.extend([kind, nom] + list(membres) + ["FINSF"])
+
+    grp("GROUP_MA", "POUTRE", ["S%d%d" % (i + 1, i + 2) for i in range(n)])
+    grp("GROUP_MA", "MASSES", ["M%d" % (i + 2) for i in range(n)])
+    grp("GROUP_MA", "RADIER", ["M1"])
+    grp("GROUP_NO", "RADIER", ["NO1"])
+    grp("GROUP_NO", "N1", ["NO1"])
+    grp("GROUP_NO", "MASSES", ["NO%d" % (i + 2) for i in range(n)])
+    for i, niv in enumerate(NIVEAUX):
+        grp("GROUP_MA", niv[0], ["M%d" % (i + 2)])                  # maille POI1 du niveau
+        grp("GROUP_MA", "T" + niv[0], ["S%d%d" % (i + 1, i + 2)])   # tronçon sous le niveau
+        grp("GROUP_NO", niv[0], ["NO%d" % (i + 2)])
+    lignes.append("FIN")
+    with open(nom_fichier, "w") as f:
+        f.write("\n".join(lignes) + "\n")
+
+
+_ecrire_maillage()
+MAIL = LIRE_MAILLAGE(UNITE=20, FORMAT="ASTER")
+
+# -----------------------------------------------------------------------------
+# 3. CONSTRUCTION DU MODÈLE
+# -----------------------------------------------------------------------------
+MODELE = AFFE_MODELE(
+    MAILLAGE=MAIL,
+    AFFE=(
+        _F(GROUP_MA="POUTRE", PHENOMENE="MECANIQUE", MODELISATION="POU_D_T"),
+        _F(GROUP_MA="MASSES", PHENOMENE="MECANIQUE", MODELISATION="DIS_T"),
+        _F(GROUP_MA="RADIER", PHENOMENE="MECANIQUE", MODELISATION="DIS_TR"),
+    ),
+)
+
+
+def materiau_beton(E, amor_alpha=0.0, amor_beta=0.0):
+    """Béton : RHO = 0, toutes les masses étant portées par les discrets
+    (>>> à vérifier dans la note : si la note donne des masses linéiques de
+    fûts, mettre RHO ≠ 0 et retirer ces masses des discrets).
+    Attention à la convention Code_Aster : C = AMOR_ALPHA·K + AMOR_BETA·M."""
+    mat = DEFI_MATERIAU(ELAS=_F(E=E, NU=NU_BETON, RHO=0.0,
+                                AMOR_ALPHA=amor_alpha, AMOR_BETA=amor_beta))
+    return AFFE_MATERIAU(MAILLAGE=MAIL, AFFE=_F(GROUP_MA="POUTRE", MATER=mat))
+
+
+def amortisseurs_sol(f_ref, coef_c=1.0):
+    """Amortisseurs de radier (cas C et D de l'étape 4).
+    Hypothèse (à reporter dans la note) : c_i = 2·ξ_i·K_i / ω_ref, avec
+    ω_ref = 2π·f_ref, f_ref = fréquence fondamentale sur ressorts (étape 2).
+    coef_c permet d'appliquer un facteur global (cas D)."""
+    if any(v is None for v in XI_SOL.values()):
+        raise ValueError("XI_SOL incomplet : relever les amortissements de sol dans la note.")
+    w = 2.0 * math.pi * f_ref
+    return {d: coef_c * 2.0 * XI_SOL[d] * K_SOL[d] / w for d in K_SOL}
+
+
+def cara_elem(facteur_k=1.0, amort=None):
+    """facteur_k : multiplicateur des raideurs de sol (cas D : 0.5).
+    amort : dict des amortisseurs {X,Y,Z,RX,RY,RZ} en N·s/m ou None."""
+    poutres = []
+    for niv in NIVEAUX:
+        nom, z, m, A, IY, IZ, JX, AY, AZ = niv
+        poutres.append(_F(GROUP_MA="T" + nom, SECTION="GENERALE",
+                          CARA=("A", "IY", "IZ", "JX", "AY", "AZ"),
+                          VALE=(A, IY, IZ, JX, AY, AZ)))
+    discrets = []
+    for niv in NIVEAUX:
+        discrets.append(_F(GROUP_MA=niv[0], CARA="M_T_D_N", VALE=niv[2]))
+        discrets.append(_F(GROUP_MA=niv[0], CARA="K_T_D_N", VALE=(0.0, 0.0, 0.0)))
+    k = K_SOL
+    # Sur une maille POI1 : K_TR_D_N / A_TR_D_N / M_TR_D_N (les variantes _L
+    # citées dans le cahier des charges sont réservées aux mailles SEG2).
+    discrets.append(_F(GROUP_MA="RADIER", CARA="K_TR_D_N",
+                       VALE=tuple(facteur_k * k[d] for d in ("X", "Y", "Z", "RX", "RY", "RZ"))))
+    if amort is not None:
+        discrets.append(_F(GROUP_MA="RADIER", CARA="A_TR_D_N",
+                           VALE=tuple(amort[d] for d in ("X", "Y", "Z", "RX", "RY", "RZ"))))
+    if RADIER_MASSE:
+        if RADIER_INERTIES:
+            ixx, iyy, izz = RADIER_INERTIES
+        else:
+            m = RADIER_MASSE
+            ixx, iyy = m * RADIER_LY ** 2 / 12.0, m * RADIER_LX ** 2 / 12.0
+            izz = m * (RADIER_LX ** 2 + RADIER_LY ** 2) / 12.0
+        discrets.append(_F(GROUP_MA="RADIER", CARA="M_TR_D_N",
+                           VALE=(RADIER_MASSE, ixx, iyy, izz, 0., 0., 0., 0., 0., 0.)))
+    return AFFE_CARA_ELEM(
+        MODELE=MODELE,
+        POUTRE=poutres,
+        ORIENTATION=_F(GROUP_MA="POUTRE", CARA="VECT_Y", VALE=(0.0, 1.0, 0.0)),
+        DISCRET=discrets,
+    )
+
+
+def conditions_limites(config):
+    """config = 'RESSORTS' (base libre sur ressorts) ou 'ENCASTRE'."""
+    if config == "ENCASTRE":
+        return AFFE_CHAR_MECA(MODELE=MODELE, DDL_IMPO=_F(
+            GROUP_NO="RADIER", DX=0., DY=0., DZ=0., DRX=0., DRY=0., DRZ=0.))
+    if config == "RESSORTS":
+        return None
+    raise ValueError("config inconnue : %s" % config)
+
+
+def matrices(chmat, cara, charge, amor=False):
+    """Retourne (K, M, C ou None, nume) assemblées."""
+    kw = dict(MODELE=MODELE, CHAM_MATER=chmat, CARA_ELEM=cara)
+    if charge is not None:
+        kw["CHARGE"] = charge
+    kel = CALC_MATR_ELEM(OPTION="RIGI_MECA", **kw)
+    mel = CALC_MATR_ELEM(OPTION="MASS_MECA", **kw)
+    nume = NUME_DDL(MATR_RIGI=kel)
+    K = ASSE_MATRICE(MATR_ELEM=kel, NUME_DDL=nume)
+    M = ASSE_MATRICE(MATR_ELEM=mel, NUME_DDL=nume)
+    C = None
+    if amor:
+        ael = CALC_MATR_ELEM(OPTION="AMOR_MECA", RIGI_MECA=kel, MASS_MECA=mel, **kw)
+        C = ASSE_MATRICE(MATR_ELEM=ael, NUME_DDL=nume)
+    return K, M, C, nume
+
+
+def matrices_dyn(E, facteur_k=1.0, amort=None, amor_alpha=0.0, amor_beta=0.0):
+    """Matrices (K, M, C) pour le calcul transitoire de l'étape 4, base sur ressorts.
+
+    C = AMOR_ALPHA·K_structure + AMOR_BETA·M + C_sol, construite explicitement :
+    - les discrets (masses, radier) ignorent l'AMOR_ALPHA/AMOR_BETA du matériau
+      (vérifié en v18.1.11 : la matrice AMOR_MECA est nulle) ; or toute la masse
+      est portée par les discrets, donc la part β·M serait perdue ;
+    - K_structure = raideur des poutres seules (ressorts de sol mis à zéro) :
+      le Rayleigh béton n'amortit pas le sol ;
+    - β·M porte sur toutes les masses, radier compris (hypothèse) ;
+    - C_sol = amortisseurs A_TR_D_N du radier (cas C, D).
+    Pas de CHARGE (blocage) : la base encastrée est obtenue par raideurs ×1e4."""
+    chmat = materiau_beton(E)
+    cara = cara_elem(facteur_k, amort)
+    cara_s = cara_elem(0.0, None)        # structure seule (ressorts nuls)
+    kw = dict(MODELE=MODELE, CHAM_MATER=chmat)
+    kel = CALC_MATR_ELEM(OPTION="RIGI_MECA", CARA_ELEM=cara, **kw)
+    mel = CALC_MATR_ELEM(OPTION="MASS_MECA", CARA_ELEM=cara, **kw)
+    kel_s = CALC_MATR_ELEM(OPTION="RIGI_MECA", CARA_ELEM=cara_s, **kw)
+    nume = NUME_DDL(MATR_RIGI=kel)
+    K = ASSE_MATRICE(MATR_ELEM=kel, NUME_DDL=nume)
+    M = ASSE_MATRICE(MATR_ELEM=mel, NUME_DDL=nume)
+    Ks = ASSE_MATRICE(MATR_ELEM=kel_s, NUME_DDL=nume)
+    termes = [_F(MATR_ASSE=Ks, COEF_R=amor_alpha), _F(MATR_ASSE=M, COEF_R=amor_beta)]
+    if amort is not None:
+        ael = CALC_MATR_ELEM(OPTION="AMOR_MECA", RIGI_MECA=kel, MASS_MECA=mel,
+                             CARA_ELEM=cara, **kw)
+        termes.append(_F(MATR_ASSE=ASSE_MATRICE(MATR_ELEM=ael, NUME_DDL=nume), COEF_R=1.0))
+    C = COMB_MATR_ASSE(COMB_R=termes)
+    return K, M, C
+
+
+PARA_MODES = ("NUME_MODE", "FREQ", "MASS_GENE",
+              "MASS_EFFE_DX", "MASS_EFFE_DY", "MASS_EFFE_DZ",
+              "MASS_EFFE_UN_DX", "MASS_EFFE_UN_DY", "MASS_EFFE_UN_DZ")
+
+
+def calc_modes(K, M, fmax=None, nmax=10):
+    if fmax is not None:
+        modes = CALC_MODES(MATR_RIGI=K, MATR_MASS=M, OPTION="BANDE",
+                           CALC_FREQ=_F(FREQ=(0.05, fmax)))
+    else:
+        modes = CALC_MODES(MATR_RIGI=K, MATR_MASS=M, OPTION="PLUS_PETITE",
+                           CALC_FREQ=_F(NMAX_FREQ=nmax))
+    tab = RECU_TABLE(CO=modes, NOM_PARA=PARA_MODES).EXTR_TABLE().values()
+    return modes, tab
+
+
+def freq_fondamentale(tab, direction=DIR_FOND):
+    """Fréquence du mode de plus grande masse effective dans la direction."""
+    col = tab["MASS_EFFE_UN_" + direction]
+    i = max(range(len(col)), key=lambda j: col[j])
+    return tab["FREQ"][i], tab["NUME_MODE"][i]
+
+
+def construire(E, config, facteur_k=1.0, amort=None, amor_alpha=0.0, amor_beta=0.0):
+    chmat = materiau_beton(E, amor_alpha, amor_beta)
+    cara = cara_elem(facteur_k, amort)
+    charge = conditions_limites(config)
+    return chmat, cara, charge
+
+
+# -----------------------------------------------------------------------------
+# 4. ENTRÉES / SORTIES CSV (fort.N <-> fichiers du .export)
+# -----------------------------------------------------------------------------
+def ecrire_csv(unite, entetes, lignes):
+    with open("fort.%d" % unite, "w") as f:
+        f.write(",".join(entetes) + "\n")
+        for l in lignes:
+            f.write(",".join(("%.6e" % v) if isinstance(v, float) else str(v) for v in l) + "\n")
+
+
+def lire_csv(unite):
+    with open("fort.%d" % unite) as f:
+        entetes = f.readline().strip().split(",")
+        data = {h: [] for h in entetes}
+        for l in f:
+            if not l.strip():
+                continue
+            for h, v in zip(entetes, l.strip().split(",")):
+                try:
+                    data[h].append(float(v))
+                except ValueError:
+                    data[h].append(v)
+    return data
+
+
+def lire_E_cale(unite=92):
+    """Module calé à l'étape 1 (Etape1/resultats/E1_E_retenu.csv)."""
+    return lire_csv(unite)["E_Pa"][0]

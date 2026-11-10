@@ -1,0 +1,399 @@
+setting '--memory' value to 1843.20 MB (keyword RESERVE_MEMOIRE)
+copying (shutil) 'E:\\Forma_Basile\\Forma_Code_Aster\\maillage.med' to 'fort.20'...
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                       -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --                       
+                               Version 18.1.11 modifiée le 21/10/2026                               
+                                    révision n/a - branche 'n/a'                                    
+                                     Copyright EDF 1991 - 2026                                      
+                                                                                                    
+                              Exécution du : Tue Nov 10 13:59:19 2026                               
+                                        Nom de la machine :                                         
+                                              WF-0078                                               
+                                        Architecture : 64bit                                        
+                                     Type de processeur : AMD64                                     
+                                      Système d'exploitation :                                      
+                                     Windows-10-10.0.19045-SP0                                      
+                                 Langue des messages : fr (cp1252)                                  
+                                    Version de Python : 3.14.10                                     
+                                      Version de NumPy : 2.5.4                                      
+                                  Version de MEDCoupling : 9.16.0                                   
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 1                               
+                                Version de la librairie HDF5 : 2.2.0                                
+                                Version de la librairie MED : 4.2.0                                 
+                               Version de la librairie MFront : 5.1.0                               
+                               Version de la librairie MUMPS : 5.8.2                                
+                                  Librairie PETSc : non disponible                                  
+                              Version de la librairie SCOTCH : 7.0.11                               
+
+starting the execution...
+Valeur initiale du temps CPU maximum =   900 secondes
+  Valeur du temps CPU maximum passé aux
+commandes =   810 secondes
+  Réserve CPU prévue = 90 secondes
+
+Ouverture en écriture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Ouverture en lecture du fichier F:\miniforge3\envs\aster\Library\lib/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Créée avec la version                   : 
+18.01.11
+     Nombre d'enregistrements utilisés       :  55
+     Nombre d'enregistrements maximum   
+    :  512
+     Nombre d'enregistrements par fichier    :  512
+     Longueur d'enregistrement
+(octets)      :  819200
+     Nombre d'identificateurs utilisés       :  123
+     Taille maximum du
+répertoire            :  300
+     Pourcentage d'utilisation du répertoire :  41 %
+
+Ouverture en lecture du fichier F:\miniforge3\envs\aster\Library\lib/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Nombre d'enregistrements utilisés       : 
+55
+     Nombre d'enregistrements maximum        :  512
+     Nombre d'enregistrements par fichier   
+:  512
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture  
+      :  77
+     Volume des accès en lecture             :         60.16 Mo.
+     Nombre total
+d'accès en écriture        :  0
+     Volume des accès en écriture            :          0.00 Mo.
+   
+ Nombre d'identificateurs utilisés       :  123
+     Taille maximum du répertoire            :  300
+
+    Pourcentage d'utilisation du répertoire :  41 %
+
+Relecture des catalogues des éléments faite.
+
+Fin de lecture (durée  0.000000  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 2355.28 Mo                       
+                              ajouté à l'initialisation du processus :                              
+                                             325.75 Mo                                              
+                               Limite cible du processus : 2681.03 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+# Mémoire (Mo) :   325.75 /   317.73 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.03s (syst:        0.42s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt21
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 21
+mail = LIRE_MAILLAGE(FORMAT='MED',
+                     INFO=1,
+                     INFO_MED=0,
+                     PARTITIONNEUR='SANS',
+                     UNITE=20,
+                     VERI_MAIL=_F(APLAT=0.001,
+                                  VERIF='OUI'))
+
+Nom MED du maillage : poutre
+
+
+------------ MAILLAGE 00000001 - IMPRESSIONS NIVEAU  1 ------------
+
+
+NOMBRE DE NOEUDS                         525
+
+NOMBRE DE MAILLES                        672
+                              QUAD4                 352
+                              HEXA8                 320
+
+NOMBRE DE GROUPES DE MAILLES               3
+
+--------------------------------------------------------------------------------
+
+Vérification du maillage.
+
+# Résultat commande #0002 (LIRE_MAILLAGE): mail ('<00000001>') de type <Mesh>
+# Mémoire (Mo) :   325.75 /   320.66 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.02s (syst:        0.03s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt24
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 24
+mail = MODI_MAILLAGE(INFO=1,
+                     MAILLAGE=mail,
+                     ORIE_PEAU=_F(GROUP_MA_PEAU='appui'),
+                     reuse=mail)
+
+TRAITEMENT DU GROUP_MA: appui                    DE      16 MAILLES
+                              0 MAILLE(S) ONT ETE ORIENTEE(S)
+# Résultat commande #0003 (MODI_MAILLAGE): mail ('<00000001>') de type <Mesh>
+# Mémoire (Mo) :   325.75 /   320.89 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt27
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 27
+modele = AFFE_MODELE(AFFE=_F(MODELISATION='3D',
+                             PHENOMENE='MECANIQUE',
+                             TOUT='OUI'),
+                     DISTRIBUTION=_F(METHODE='SOUS_DOMAINE',
+                                     PARTITIONNEUR='METIS'),
+                     INFO=1,
+                     MAILLAGE=mail,
+                     VERI_FORMULATION_IFS='OUI',
+                     VERI_JACOBIEN='OUI',
+                     VERI_NORM_IFS='OUI',
+                     VERI_PLAN='OUI')
+
+Sur les 672 mailles du maillage 00000001, on a demandé l'affectation de 672, on a pu en affecter
+672.
+Modélisation     Formulation      Type maille  Élément fini     Nombre
+_                _                QUAD4        MECA_FACE4       352
+3D               _                HEXA8        MECA_HEXA8       320
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0004 (AFFE_MODELE): modele ('<00000002>') de type <Model>
+# Mémoire (Mo) :   325.75 /   323.38 /   216.94 /   205.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.02s (syst:        0.02s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt30
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 30
+acier = DEFI_MATERIAU(ELAS=_F(B_ENDOGE=0.0,
+                              COEF_AMOR=1.0,
+                              E=210000.0,
+                              K_DESSIC=0.0,
+                              NU=0.3),
+                      INFO=1)
+
+# Résultat commande #0005 (DEFI_MATERIAU): acier ('<00000003>') de type <Material>
+# Mémoire (Mo) :   325.75 /   323.52 /   216.94 /   205.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt32
+# ----------------------------------------------------------------------------------------------
+# Commande #0006 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 32
+chmat = AFFE_MATERIAU(AFFE=_F(MATER=acier,
+                              TOUT='OUI'),
+                      INFO=1,
+                      MAILLAGE=mail)
+
+# Résultat commande #0006 (AFFE_MATERIAU): chmat ('<00000004>') de type <MaterialField>
+# Mémoire (Mo) :   325.75 /   323.80 /   216.94 /   205.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.00s (syst:        0.02s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt34
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 34
+charge = AFFE_CHAR_MECA(DDL_IMPO=_F(DX=0.0,
+                                    DY=0.0,
+                                    DZ=0.0,
+                                    GROUP_MA='encastrement'),
+                        DOUBLE_LAGRANGE='OUI',
+                        INFO=1,
+                        MODELE=modele,
+                        PRES_REP=_F(GROUP_MA='appui',
+                                    PRES=10.0),
+                        SYNTAXE='NON',
+                        VERI_AFFE='OUI',
+                        VERI_NORM='OUI')
+
+# Résultat commande #0007 (AFFE_CHAR_MECA): charge ('<00000005>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   325.75 /   324.43 /   216.94 /   205.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt38
+# ----------------------------------------------------------------------------------------------
+# Commande #0008 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 38
+resu = MECA_STATIQUE(CHAM_MATER=chmat,
+                     EXCIT=_F(CHARGE=charge,
+                              TYPE_CHARGE='FIXE_CSTE'),
+                     INFO=1,
+                     INST=0.0,
+                     MODELE=modele,
+                     OPTION='SIEF_ELGA',
+                     SOLVEUR=_F(ACCELERATION='AUTO',
+                                ELIM_LAGR='LAGR2',
+                                GESTION_MEMOIRE='AUTO',
+                                LOW_RANK_SEUIL=0.0,
+                                MATR_DISTRIBUEE='NON',
+                                METHODE='MUMPS',
+                                NB_RHS=1,
+                                NPREC=8,
+                                PCENT_PIVOT=35,
+                                POSTTRAITEMENTS='AUTO',
+                                PRETRAITEMENTS='AUTO',
+                                REDUCTION_MPI=0,
+                                RENUM='AUTO',
+                                RESI_RELA=1e-06,
+                                STOP_SINGULIER='OUI',
+                                TYPE_RESOL='AUTO'))
+
+Le système linéaire à résoudre a 1725 degrés de liberté:
+   - 1575 sont des degrés de liberté
+physiques
+     (ils sont portés par 525 noeuds du maillage)
+   - 150 sont les couples de paramètres
+de Lagrange associés
+     aux 75 relations linéaires dualisées.
+La matrice est de taille 1725 équations.
+  Elle contient 47853 termes non nuls si elle est
+symétrique et 93981 termes non nuls si elle n'est pas symétrique.
+  Soit un taux de remplissage de  
+3.158 %.
+Champ stocké <DEPL> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
+Champ stocké <SIEF_ELGA> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
+# Résultat commande #0008 (MECA_STATIQUE): resu ('<00000006>') de type <ElasticResult>
+# Mémoire (Mo) :   333.68 /   328.79 /   216.94 /   207.12 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0008   user+syst:        0.08s (syst:        0.02s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt184
+# ----------------------------------------------------------------------------------------------
+# Commande #0009 de
+F:\miniforge3\envs\aster\lib\site-packages\code_aster\Supervis\ExecuteCommand.py, ligne 184
+CALC_CHAMP(CONTRAINTE='SIGM_NOEU',
+           CRITERE='RELATIF',
+           CRITERES='SIEQ_NOEU',
+           INFO=1,
+           PARALLELISME_TEMPS='NON',
+           PRECISION=1e-06,
+           RESULTAT=resu,
+           reuse=resu)
+
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0009 (CALC_CHAMP): resu ('<00000006>') de type <ElasticResult>
+# Mémoire (Mo) :   333.68 /   330.46 /   216.94 /   207.12 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt44
+# ----------------------------------------------------------------------------------------------
+# Commande #0010 de C:\Users\tlafay\AppData\Local\Temp\run_aster_5qtvciag\calcul.comm.changed.py,
+ligne 44
+IMPR_RESU(FICHIER_UNIQUE='NON',
+          FORMAT='MED',
+          INFO=1,
+          PROC0='OUI',
+          RESU=_F(IMPR_NOM_VARI='OUI',
+                  INFO_MAILLAGE='NON',
+                  NOM_RESU_MED='resu',
+                  RESULTAT=resu,
+                  TOUT_CHAM='OUI'),
+          UNITE=80,
+          VERSION_MED='3.3.1')
+
+Création du fichier au format MED 3.3.1.
+
+# Mémoire (Mo) :   333.68 /   332.20 /   216.94 /   207.12 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0010   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt76
+# ----------------------------------------------------------------------------------------------
+# Commande #0011 de F:\miniforge3\envs\aster\lib\site-packages\code_aster\CodeCommands\fin.py, ligne
+76
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+No database in results, objects not saved on processor #0
+
+ ╔================================================================================================╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez                                                                  ║
+ ║ choisies d'ignorer sont précédées de (*).                                                      ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║                                                                                                ║
+ ║           aucune alarme                                                                        ║
+ ╚================================================================================================╝
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     207.12 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     216.94 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     333.68 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                   217  Mo.
+     TAILLE CUMULEE LIBEREE            :                     5  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :                 22169
+     NOMBRE TOTAL DE LIBERATIONS       :                 21756
+     APPELS AU MECANISME DE LIBERATION :                     0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                     0  Mo.
+     VOLUME DES LECTURES               :                     0  Mo.
+     VOLUME DES ECRITURES              :                     1  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     207.12 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     216.94 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     333.68 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : MA-10-NOVE-2026 13:59:23
+INFO './glob.1' deleted
+Deleting './glob.2': No such file or directory
+INFO './vola.1' deleted
+Deleting './vola.2': No such file or directory
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.03 :       0.42 :       0.45 :       0.00 *
+ * LIRE_MAILLAGE            :       0.02 :       0.03 :       0.05 :       0.00 *
+ * MODI_MAILLAGE            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * AFFE_MODELE              :       0.02 :       0.02 :       0.03 :       0.00 *
+ * DEFI_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * AFFE_MATERIAU            :       0.00 :       0.02 :       0.02 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MECA_STATIQUE            :       0.08 :       0.02 :       0.09 :       0.00 *
+ * CALC_CHAMP               :       0.03 :       0.00 :       0.03 :       0.00 *
+ * IMPR_RESU                :       0.02 :       0.05 :       0.06 :       0.00 *
+ * FIN                      :       0.06 :       0.02 :       0.08 :       0.00 *
+ *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
+ *  . check syntax          :       0.06 :       0.00 :       0.06 :       0.00 *
+ *  . fortran               :       0.12 :       0.48 :       0.61 :       0.00 *
+ *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
+ ********************************************************************************
+ * TOTAL_JOB                :       0.53 :       0.81 :       1.34 :       0.00 *
+ ********************************************************************************
+
+# Mémoire (Mo) :   333.68 /   332.24 /   216.94 /   207.12 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0011   user+syst:        0.06s (syst:        0.02s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_31608=0
+
+
+
+------------------------------------------------------------
+--- DIAGNOSTIC JOB : OK
+------------------------------------------------------------
+

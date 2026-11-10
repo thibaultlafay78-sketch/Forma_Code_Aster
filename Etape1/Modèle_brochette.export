@@ -1,0 +1,13 @@
+P actions make_etude
+P mode interactif
+P ncpus 1
+P mpi_nbcpu 1
+P memory_limit 2048
+P time_limit 900
+F comm Modèle_brochette.comm D 1
+F libr ../commun/brochette.comm D 91
+F mess resultats/E1.mess R 6
+F rmed resultats/E1_maillage.med R 80
+F libr resultats/E1_calage.csv R 31
+F libr resultats/E1_E_retenu.csv R 32
+F libr resultats/E1_masse.csv R 33

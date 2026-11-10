@@ -1,0 +1,190 @@
+# -*- coding: utf-8 -*-
+# =============================================================================
+#  ÉTAPE 3 — Génération et contrôle de 3 accélérogrammes
+#  Slide alimentée : Sujet 1 · critères du guide ASN 2/01 §2.2.3
+#
+#  1. Spectre cible à 5 % (note Maurel §IV : EC8 zone 3, sol B, asymptote 0,333 g)
+#  2. GENE_ACCE_SEISME, spectre médian, dt = 0,005 s, 3 tirages
+#  3. Ligne de base : intégration vitesse/déplacement, correction si dérive
+#  4. SPEC_OSCI à 2, 5, 7, 10 % sur chaque signal + spectres cibles
+#  Le tableau de contrôle (critères ASN) est rempli par E3_post.py.
+#
+#  Sorties : resultats/E3_signaux.csv  (t, acc1..3 en m/s², corrigés)
+#            resultats/E3_spectres.csv (freq, cible et signaux par amortissement, en g)
+#            resultats/E3_derive.csv   (vitesse/déplacement finaux avant/après correction)
+# =============================================================================
+
+import math
+
+DEBUT(LANG="FR")
+
+G = 9.81
+
+# -----------------------------------------------------------------------------
+# 1. Spectre cible (note Maurel §IV)
+# -----------------------------------------------------------------------------
+# Note Maurel §IV, figure 3 (EC8, application française, décret du 23/06/2009,
+# zone 3, sol B, spectres minimaux, construction nouvelle) :
+#   S = 1,35 ; TB = 0,05 s ; TC = 0,25 s ; TD = 2,5 s ;
+#   accélération asymptotique a_g·S = 0,333 g (a_g = 2,42 m/s²) ;
+#   pic à 2 % = 0,9951 g, retrouvé avec η(2 %) = √(10/7) -> règle η de l'EC8.
+AGS = 0.333          # g
+TB, TC, TD = 0.05, 0.25, 2.5
+
+
+def eta(xi):
+    """Correction d'amortissement EC8 : η = √(10/(5+ξ%)) ≥ 0,55.
+    >>> RÈGLE DE PASSAGE À FIXER AVEC BASILE (point ouvert de l'étape 3)."""
+    return max(math.sqrt(10.0 / (5.0 + 100.0 * xi)), 0.55)
+
+
+def spectre_ec8(f, xi=0.05):
+    T = 1.0 / f
+    e = eta(xi)
+    if T <= TB:
+        return AGS * (1.0 + T / TB * (2.5 * e - 1.0))
+    if T <= TC:
+        return AGS * 2.5 * e
+    if T <= TD:
+        return AGS * 2.5 * e * TC / T
+    return AGS * 2.5 * e * TC * TD / T ** 2
+
+
+NF = 200
+FREQS = [0.5 * (100.0 / 0.5) ** (i / (NF - 1.0)) for i in range(NF)]   # log 0,5–100 Hz
+AMORS = (0.02, 0.05, 0.07, 0.10)
+
+LFREQ = DEFI_LIST_REEL(VALE=FREQS)
+
+
+# Liste de génération plus large que la liste de contrôle (0,1–100 Hz) : sans
+# cette marge, le générateur corrige mal le bas de la plage (déficit à 0,5 Hz).
+FREQS_GENE = [0.1 * (100.0 / 0.1) ** (i / 299.0) for i in range(300)]
+LFREQ_GENE = DEFI_LIST_REEL(VALE=FREQS_GENE)
+
+
+def defi_cible(xi, freqs=FREQS_GENE):
+    vale = []
+    for f in freqs:
+        vale += [f, spectre_ec8(f, xi)]
+    return DEFI_FONCTION(NOM_PARA="FREQ", NOM_RESU="ACCE", VALE=vale,
+                         INTERPOL=("LOG", "LOG"), PROL_GAUCHE="CONSTANT",
+                         PROL_DROITE="CONSTANT")
+
+
+SPEC5 = defi_cible(0.05)
+
+# -----------------------------------------------------------------------------
+# 2. Génération (spectre médian, en g ; les signaux produits sont en m/s²)
+# -----------------------------------------------------------------------------
+DT = 0.005                 # note §IV : pas de temps de 0,005 s pour les signaux artificiels
+DUREE_PHASE_FORTE = 10.0   # s  >>> À FIXER AVEC BASILE (point ouvert)
+NB_SIGNAUX = 3
+NB_ITER = 20               # itérations de correction spectrale du générateur
+
+TAB_ACC = GENE_ACCE_SEISME(
+    INIT_ALEA=200,                      # graine : rend le tirage reproductible
+    PAS_INST=DT,
+    PESANTEUR=G,
+    DUREE_PHASE_FORTE=DUREE_PHASE_FORTE,
+    NB_TIRAGE=NB_SIGNAUX,
+    FREQ_FILTRE=0.05,                   # filtre passe-haut (Hz) — limite la dérive
+    SPEC_MEDIANE=_F(SPEC_OSCI=SPEC5, AMOR_REDUIT=0.05, LIST_FREQ=LFREQ_GENE,
+                    NB_ITER=NB_ITER, METHODE="NIGAM"),
+    MODULATION=_F(TYPE="GAMMA", INST_INI=0.0),
+)
+IMPR_TABLE(TABLE=TAB_ACC)
+
+# -----------------------------------------------------------------------------
+# 3. Ligne de base : vitesse et déplacement en fin de signal
+# -----------------------------------------------------------------------------
+SEUIL_DEPL = 0.01   # m : dérive finale jugée inacceptable au-delà (choix, à documenter)
+
+
+def fin(fonc):
+    return fonc.Valeurs()[1][-1]
+
+
+def integrer(acc):
+    vit = CALC_FONCTION(INTEGRE=_F(FONCTION=acc))
+    dep = CALC_FONCTION(INTEGRE=_F(FONCTION=vit))
+    return fin(vit), fin(dep), max(abs(x) for x in dep.Valeurs()[1])
+
+
+signaux, derive = [], []
+for i in range(1, NB_SIGNAUX + 1):
+    acc = RECU_FONCTION(TABLE=TAB_ACC, NOM_PARA_TABL="FONCTION",
+                        FILTRE=_F(NOM_PARA="NUME_ORDRE", VALE_I=i))
+    v0, d0, dmax0 = integrer(acc)
+    choix = ("SANS", acc, v0, d0, dmax0)
+    if abs(d0) > SEUIL_DEPL:
+        # Correction CALC_FONCTION/CORR_ACCE : deux méthodes essayées, on garde
+        # celle qui réduit le plus le déplacement final, et seulement si elle
+        # l'améliore (la méthode POLYNOME peut l'aggraver sur un signal court).
+        candidats = [
+            ("POLYNOME", CALC_FONCTION(CORR_ACCE=_F(FONCTION=acc, METHODE="POLYNOME",
+                                                    CORR_DEPL="OUI"))),
+            ("FILTRAGE", CALC_FONCTION(CORR_ACCE=_F(FONCTION=acc, METHODE="FILTRAGE",
+                                                    FREQ_FILTRE=0.10))),
+        ]
+        for nom, a in candidats:
+            v, d, dm = integrer(a)
+            if abs(d) < abs(choix[3]):
+                choix = (nom, a, v, d, dm)
+    derive.append((i, v0, d0, dmax0, choix[0], choix[2], choix[3], choix[4]))
+    signaux.append(choix[1])
+
+# -----------------------------------------------------------------------------
+# 3 bis. Mise à l'échelle commune pour que le spectre moyen à 5 % enveloppe la
+# cible (critère ASN 2/01 §2.2.3). Le générateur cale le spectre MÉDIAN : avec
+# 3 tirages, le spectre moyen passe localement sous la cible (≈ -5 %).
+# Facteur unique pour les 3 signaux : forme et intercorrélation inchangées.
+# -----------------------------------------------------------------------------
+def sro(acc, xi):
+    return CALC_FONCTION(SPEC_OSCI=_F(FONCTION=acc, AMOR_REDUIT=xi, LIST_FREQ=LFREQ,
+                                      NORME=G, TYPE_RESU="FONCTION")).Valeurs()[1]
+
+
+s5 = [sro(a, 0.05) for a in signaux]
+ratio_min = min(sum(s[k] for s in s5) / len(s5) / spectre_ec8(FREQS[k], 0.05)
+                for k in range(NF))
+FACTEUR = max(1.0, 1.0 / ratio_min)
+print("Mise à l'échelle des signaux : min(moyen/cible) = %.4f -> facteur %.4f"
+      % (ratio_min, FACTEUR))
+if FACTEUR > 1.0:
+    signaux = [CALC_FONCTION(COMB=_F(FONCTION=a, COEF=FACTEUR)) for a in signaux]
+
+with open("fort.33", "w") as f:
+    f.write("signal,v_fin_brut_m_s,d_fin_brut_m,d_max_brut_m,correction,"
+            "v_fin_m_s,d_fin_m,d_max_m,facteur_echelle\n")
+    for l in derive:
+        # déplacements après correction multipliés par le facteur d'échelle
+        l2 = l[:5] + (l[5] * FACTEUR, l[6] * FACTEUR, l[7] * FACTEUR, FACTEUR)
+        f.write("%d,%.6e,%.6e,%.6e,%s,%.6e,%.6e,%.6e,%.5f\n" % l2)
+
+t0 = signaux[0].Valeurs()[0]
+vals = [s.Valeurs()[1] for s in signaux]
+n = min(len(v) for v in vals)
+with open("fort.31", "w") as f:
+    f.write("t_s," + ",".join("acc%d_m_s2" % (i + 1) for i in range(NB_SIGNAUX)) + "\n")
+    for k in range(n):
+        f.write("%.4f," % t0[k] + ",".join("%.6e" % v[k] for v in vals) + "\n")
+
+# -----------------------------------------------------------------------------
+# 4. Spectres de réponse (NORME = g => spectres en g)
+# -----------------------------------------------------------------------------
+cols, entetes = [FREQS], ["freq_Hz"]
+for xi in AMORS:
+    tag = "%02d" % round(100 * xi)
+    entetes.append("cible_%s" % tag)
+    cols.append([spectre_ec8(f, xi) for f in FREQS])
+    for i, acc in enumerate(signaux):
+        entetes.append("s%d_%s" % (i + 1, tag))
+        cols.append(sro(acc, xi))
+
+with open("fort.32", "w") as f:
+    f.write(",".join(entetes) + "\n")
+    for k in range(NF):
+        f.write(",".join("%.6e" % c[k] for c in cols) + "\n")
+
+FIN()

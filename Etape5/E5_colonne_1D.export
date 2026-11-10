@@ -1,0 +1,16 @@
+P actions make_etude
+P mode interactif
+P ncpus 1
+P mpi_nbcpu 1
+P memory_limit 4096
+P time_limit 3600
+F comm E5_colonne_1D.comm D 1
+F libr donnees/E5_colonne.csv D 21
+F libr donnees/E5_darendeli.csv D 22
+F libr ../Etape3/resultats/E3_signaux.csv D 23
+F mess resultats/E5.mess R 6
+F libr resultats/E5_RA_tran.txt R 40
+F libr resultats/E5_RA_spec.txt R 55
+F libr resultats/E5_CL_tran.txt R 41
+F libr resultats/E5_CL_spec.txt R 56
+F libr resultats/E5_proprietes.csv R 31

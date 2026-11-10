@@ -1,0 +1,81 @@
+# -*- coding: utf-8 -*-
+# =============================================================================
+#  ÉTAPE 2 — Analyse modale et contrôle par quotient de Rayleigh
+#  Slide alimentée : Sujet 5 · contrôle de la fréquence fondamentale
+#
+#  Pour chaque configuration (RESSORTS, ENCASTRE) :
+#    1. CALC_MODES jusqu'à 33 Hz (au moins 10 modes) ;
+#    2. fréquences + masses effectives par direction, masse effective cumulée ;
+#    3. MECA_STATIQUE : Fi = mi·g horizontale (direction DIR_FOND) aux nœuds massiques ;
+#    4. quotient de Rayleigh  ω² = g·Σ mi·ui / Σ mi·ui²  ;
+#    5. comparaison CALC_MODES / Rayleigh / note (4,79 Hz).
+#  Référence méthode : Chopra, Dynamics of Structures, ch. 8 (§ à confirmer).
+#
+#  Entrées : ../commun/brochette.comm (91), ../Etape1/resultats/E1_E_retenu.csv (92)
+#  Sorties : resultats/E2_modes.csv, resultats/E2_rayleigh.csv, resultats/E2_modes.rmed
+# =============================================================================
+
+DEBUT(LANG="FR")
+
+# Modèle brochette commun (fort.91 = ../commun/brochette.comm). On n'utilise pas
+# INCLUDE, qui lit le fichier dans l'encodage local (cp1252 sous Windows) : lecture UTF-8.
+exec(compile(open("fort.91", encoding="utf-8").read(), "brochette.comm", "exec"))
+E = lire_E_cale(92)
+
+COMP = DIR_FOND                         # "DX" ou "DY"
+FMAX = 33.0                             # Hz
+lignes_modes, lignes_rayl = [], []
+
+for config in ("RESSORTS", "ENCASTRE"):
+    chmat, cara, charge = construire(E, config)
+    K, M, _, _ = matrices(chmat, cara, charge)
+
+    # --- 1-2. Modes jusqu'à 33 Hz, au moins 10 ---------------------------------
+    modes, tab = calc_modes(K, M, fmax=FMAX)
+    if len(tab["FREQ"]) < 10:
+        modes, tab = calc_modes(K, M, nmax=10)
+    cumul = {d: 0.0 for d in ("DX", "DY", "DZ")}
+    for i in range(len(tab["FREQ"])):
+        for d in cumul:
+            cumul[d] += tab["MASS_EFFE_UN_" + d][i]
+        lignes_modes.append((config, tab["NUME_MODE"][i], tab["FREQ"][i],
+                             tab["MASS_EFFE_DX"][i], tab["MASS_EFFE_DY"][i], tab["MASS_EFFE_DZ"][i],
+                             tab["MASS_EFFE_UN_DX"][i], tab["MASS_EFFE_UN_DY"][i],
+                             tab["MASS_EFFE_UN_DZ"][i], cumul["DX"], cumul["DY"], cumul["DZ"]))
+    f_modes, _ = freq_fondamentale(tab, COMP)
+    if config == "RESSORTS":
+        IMPR_RESU(FORMAT="MED", UNITE=80, RESU=_F(RESULTAT=modes))
+
+    # --- 3. Statique : Fi = mi·g ------------------------------------------------
+    cmp_force = {"DX": "FX", "DY": "FY"}[COMP]
+    forces = [_F(GROUP_NO=n, **{cmp_force: MASSES[n] * G}) for n in NOMS_NIV]
+    if RADIER_MASSE and config == "RESSORTS":
+        forces.append(_F(GROUP_NO="RADIER", **{cmp_force: RADIER_MASSE * G}))
+    chf = AFFE_CHAR_MECA(MODELE=MODELE, FORCE_NODALE=forces)
+    excit = [_F(CHARGE=chf)] + ([_F(CHARGE=charge)] if charge is not None else [])
+    stat = MECA_STATIQUE(MODELE=MODELE, CHAM_MATER=chmat, CARA_ELEM=cara, EXCIT=excit)
+
+    # --- Relevé des déplacements ui --------------------------------------------
+    u = {}
+    for n in NOMS_NIV + (["RADIER"] if RADIER_MASSE else []):
+        t = POST_RELEVE_T(ACTION=_F(OPERATION="EXTRACTION", INTITULE=n, RESULTAT=stat,
+                                    NOM_CHAM="DEPL", GROUP_NO=n, NOM_CMP=COMP))
+        u[n] = t.EXTR_TABLE().values()[COMP][0]
+
+    # --- 4. Quotient de Rayleigh -----------------------------------------------
+    num = sum(MASSES[n] * u[n] for n in u)
+    den = sum(MASSES[n] * u[n] ** 2 for n in u)
+    f_rayl = math.sqrt(G * num / den) / (2.0 * math.pi)
+    print("%s : f CALC_MODES = %.3f Hz | f Rayleigh = %.3f Hz | note = %.2f Hz"
+          % (config, f_modes, f_rayl, F_NOTE))
+    lignes_rayl.append((config, f_modes, f_rayl, F_NOTE, f_rayl / f_modes - 1.0,
+                        f_modes / F_NOTE - 1.0))
+
+ecrire_csv(31, ["config", "nume_mode", "freq_Hz",
+                "mass_effe_DX_kg", "mass_effe_DY_kg", "mass_effe_DZ_kg",
+                "frac_DX", "frac_DY", "frac_DZ", "cumul_DX", "cumul_DY", "cumul_DZ"],
+           lignes_modes)
+ecrire_csv(32, ["config", "f_calc_modes_Hz", "f_rayleigh_Hz", "f_note_Hz",
+                "ecart_rayleigh_vs_modes", "ecart_modes_vs_note"], lignes_rayl)
+
+FIN()

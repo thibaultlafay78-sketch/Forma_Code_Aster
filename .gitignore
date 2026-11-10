@@ -1,0 +1,4 @@
+.aster_tmp/
+__pycache__/
+*.pyc
+.aster_tmp_E*.log

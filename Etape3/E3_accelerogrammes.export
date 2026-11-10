@@ -1,0 +1,11 @@
+P actions make_etude
+P mode interactif
+P ncpus 1
+P mpi_nbcpu 1
+P memory_limit 2048
+P time_limit 1800
+F comm E3_accelerogrammes.comm D 1
+F mess resultats/E3.mess R 6
+F libr resultats/E3_signaux.csv R 31
+F libr resultats/E3_spectres.csv R 32
+F libr resultats/E3_derive.csv R 33
