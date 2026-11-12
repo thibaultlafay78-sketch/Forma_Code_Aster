@@ -28,7 +28,7 @@ import post_utils as pu  # noqa: E402
 SIGNAL = 1
 COEF_GAMMA = 0.65
 NMAX_ITER = 20
-TOL = 0.01
+TOL = 0.02           # H5.5, comme RESI_RELA de DEFI_SOL_EQUI
 F_COUPURE = 30.0      # Hz
 
 col = pu.lire_csv(pu.chemin("Etape5", "donnees", "E5_colonne.csv"))

@@ -174,11 +174,11 @@ PGA : 0,41 à 0,46 g, contre 0,438 g pour le signal de la note. Le dépassement 
 |---|---|---|---|---|---|
 | RA : signal au rocher affleurant | 8 | 1,02 g | 0,45 g (signal) | 0,22 (limon, 1,5–3 m) | 15,7 % |
 | CL : signal en surface (déconvolution) | 4 | 0,46 g (signal) | 0,21 g (déconvolué) | 0,58 | 7,8 % |
-| Profondeur, base rigide (Python seul) | 9 | 1,09 g | — | 0,17 | 17,4 % |
+| Profondeur, base rigide (Python seul) | 7 | 1,09 g | — | 0,17 | 17,3 % |
 
 Spectres en surface à 5 % : le rapport RA/CL vaut 1,35 à 1 Hz, 2,9 vers 3 Hz, environ 2,2 de 5 à 10 Hz et 1,5 à 20 Hz. **Un même signal, lu comme mouvement au rocher plutôt qu'en surface, donne en surface un spectre 2 à 3 fois plus fort sur la plage des fréquences du bâtiment.** C'est le message de la slide.
 
-**Contrôle croisé.** DEFI_SOL_EQUI et la référence Python concordent à moins de 1 % sous 7 Hz et à moins de 8 % jusqu'à 20 Hz (spectres en surface, lectures RA et CL).
+**Contrôle croisé.** DEFI_SOL_EQUI et la référence Python concordent à moins de 2 % sous 7 Hz et à moins de 10 % jusqu'à 20 Hz (spectres en surface, lectures RA et CL ; écarts max 1,5 % et 9,3 %, en RA). Les deux appliquent le même critère d'arrêt (H5.5, 2 %) ; les nombres d'itérations restent légèrement différents (RA : 8 pour Aster, 9 pour Python), les deux codes ne mesurant pas l'écart de la même façon.
 
 **Déconvolution (H5.7).** Sans coupure, le mouvement déconvolué au rocher divergeait à haute fréquence (74 g). Le calcul CL utilise donc FREQ_COUP = 30 Hz. Le signal de surface filtré a alors un PGA de 0,475 g, contre 0,455 g pour le signal brut.
 

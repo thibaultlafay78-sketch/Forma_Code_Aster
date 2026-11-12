@@ -10,7 +10,7 @@ Ouverture en écriture du fichier ./vola.1
                                     révision n/a - branche 'n/a'                                    
                                      Copyright EDF 1991 - 2026                                      
                                                                                                     
-                              Exécution du : Tue Nov 10 15:46:28 2026                               
+                              Exécution du : Thu Nov 12 09:54:52 2026                               
                                         Nom de la machine :                                         
                                               WF-0078                                               
                                         Architecture : 64bit                                        
@@ -84,13 +84,13 @@ Fin de lecture (durée  0.000000  s.)
 
                       Mémoire limite pour l'allocation dynamique : 2355.20 Mo                       
                               ajouté à l'initialisation du processus :                              
-                                             322.33 Mo                                              
-                               Limite cible du processus : 2677.53 Mo                               
+                                             351.07 Mo                                              
+                               Limite cible du processus : 2706.27 Mo                               
                          Taille limite des fichiers d'échange : 2048.00 Go                          
-# Mémoire (Mo) :   322.33 /   314.32 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0001   user+syst:        0.06s (syst:        0.17s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   343.06 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.05s (syst:        0.16s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py:33: ResourceWarning: unclosed file <_io.TextIOWrapper name='fort.91' mode='r' encoding='utf-8'>
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py:33: ResourceWarning: unclosed file <_io.TextIOWrapper name='fort.91' mode='r' encoding='utf-8'>
   exec(compile(open("fort.91", encoding="utf-8").read(), "brochette.comm", "exec"))
 
 .. _stg1_txt142
@@ -194,8 +194,8 @@ NOMBRE DE GROUPES DE MAILLES              13
 --------------------------------------------------------------------------------
 
 # Résultat commande #0002 (LIRE_MAILLAGE): '<00000001>' de type <Mesh>
-# Mémoire (Mo) :   322.33 /   315.98 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0002   user+syst:        0.00s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   344.17 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.00s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt147
@@ -226,8 +226,8 @@ DIS_T            _                POI1         MECA_DIS_T_N     5
 POU_D_T          _                SEG2         MECA_POU_D_T     5
 #2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
 # Résultat commande #0003 (AFFE_MODELE): '<00000002>' de type <Model>
-# Mémoire (Mo) :   322.33 /   319.01 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0003   user+syst:        0.02s (syst:        0.12s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   347.26 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.00s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt162
@@ -244,8 +244,8 @@ DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
               INFO=1)
 
 # Résultat commande #0004 (DEFI_MATERIAU): '<00000003>' de type <Material>
-# Mémoire (Mo) :   322.33 /   319.09 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0004   user+syst:        0.02s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   347.33 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.00s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt164
@@ -257,8 +257,8 @@ AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
               MAILLAGE='<00000001>')
 
 # Résultat commande #0005 (AFFE_MATERIAU): '<00000004>' de type <MaterialField>
-# Mémoire (Mo) :   322.33 /   319.25 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0005   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   347.50 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.03s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -363,8 +363,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0006 (AFFE_CARA_ELEM): '<00000005>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   322.33 /   320.02 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0006   user+syst:        0.06s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   348.25 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.16s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt231
@@ -379,8 +379,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0007 (CALC_MATR_ELEM): '<00000007>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   322.33 /   320.53 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0007   user+syst:        0.02s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   348.76 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt232
@@ -393,7 +393,7 @@ CALC_MATR_ELEM(CARA_ELEM='<00000005>',
                OPTION='MASS_MECA')
 
 # Résultat commande #0008 (CALC_MATR_ELEM): '<0000000e>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   322.33 /   320.57 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   351.07 /   348.80 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0008   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -415,8 +415,8 @@ La matrice est de taille 36 équations.
 576 termes non nuls si elle n'est pas symétrique.
   Soit un taux de remplissage de  44.444 %.
 # Résultat commande #0009 (NUME_DDL): '<00000012>' de type <DOFNumbering>
-# Mémoire (Mo) :   322.33 /   320.80 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0009   user+syst:        0.03s (syst:        0.14s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   349.03 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.02s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt234
@@ -427,8 +427,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000012>')
 
 # Résultat commande #0010 (ASSE_MATRICE): '<00000014>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   322.33 /   320.97 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0010   user+syst:        0.05s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   349.37 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0010   user+syst:        0.00s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt235
@@ -439,8 +439,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000012>')
 
 # Résultat commande #0011 (ASSE_MATRICE): '<00000015>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   322.33 /   320.97 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0011   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   351.07 /   349.37 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0011   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt282
@@ -571,8 +571,8 @@ Dans l'intervalle ( 4.78191E+00 , 3.30491E+01 ) il y a bien 6 fréquence(s).
 
 #1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.01      0.00      0.00
 # Résultat commande #0012 (CALC_MODES): '<00000016>' de type <ModeResult>
-# Mémoire (Mo) :   324.10 /   324.10 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0012   user+syst:        0.16s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   352.46 /   352.46 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0012   user+syst:        0.03s (syst:        0.16s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt287
@@ -582,8 +582,8 @@ RECU_TABLE(CO='<00000016>',
            NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
 
 # Résultat commande #0014 (RECU_TABLE): '<00000017>' de type <Table>
-# Mémoire (Mo) :   324.14 /   324.14 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0014   user+syst:        0.05s (syst:        0.14s, elaps:        0.00s)
+# Mémoire (Mo) :   352.49 /   352.48 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0014   user+syst:        0.05s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt285
@@ -709,8 +709,8 @@ Dans l'intervalle ( 4.78191E+00 , 4.97038E+01 ) il y a bien 10 fréquence(s).
 
 #1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
 # Résultat commande #0015 (CALC_MODES): '<00000018>' de type <ModeResult>
-# Mémoire (Mo) :   324.35 /   324.34 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0015   user+syst:        0.11s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   352.59 /   352.57 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0015   user+syst:        0.06s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt287
@@ -720,8 +720,8 @@ RECU_TABLE(CO='<00000018>',
            NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
 
 # Résultat commande #0017 (RECU_TABLE): '<00000019>' de type <Table>
-# Mémoire (Mo) :   324.35 /   324.34 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0017   user+syst:        0.02s (syst:        0.12s, elaps:        0.00s)
+# Mémoire (Mo) :   352.59 /   352.57 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0017   user+syst:        0.03s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
  ╔================================================================================================╗
@@ -744,7 +744,7 @@ RECU_TABLE(CO='<00000018>',
 .. _stg1_txt58
 # ----------------------------------------------------------------------------------------------
 # Commande #0018 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 58
 IMPR_RESU(FICHIER_UNIQUE='NON',
           FORMAT='MED',
@@ -759,14 +759,14 @@ IMPR_RESU(FICHIER_UNIQUE='NON',
 
 Création du fichier au format MED 3.3.1.
 
-# Mémoire (Mo) :   327.00 /   327.00 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0018   user+syst:        0.06s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   355.54 /   355.53 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0018   user+syst:        0.06s (syst:        0.02s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt65
 # ----------------------------------------------------------------------------------------------
 # Commande #0019 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 65
 chf = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
                      FORCE_NODALE=(_F(FY=12448890.0,
@@ -788,14 +788,14 @@ chf = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
                      VERI_NORM='OUI')
 
 # Résultat commande #0019 (AFFE_CHAR_MECA): chf ('<0000001a>') de type <MechanicalLoadReal>
-# Mémoire (Mo) :   327.27 /   327.27 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   355.87 /   355.87 /   216.94 /   204.27 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0019   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt67
 # ----------------------------------------------------------------------------------------------
 # Commande #0020 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 67
 stat = MECA_STATIQUE(CARA_ELEM='<00000005>',
                      CHAM_MATER='<00000004>',
@@ -836,14 +836,14 @@ La matrice est de taille 36 équations.
 Champ stocké <DEPL> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
 Champ stocké <SIEF_ELGA> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
 # Résultat commande #0020 (MECA_STATIQUE): stat ('<0000001b>') de type <ElasticResult>
-# Mémoire (Mo) :   328.16 /   328.15 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0020   user+syst:        0.06s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   356.79 /   356.79 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0020   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0021 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -859,14 +859,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0021 (POST_RELEVE_T): t ('<00000041>') de type <Table>
-# Mémoire (Mo) :   328.40 /   328.40 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0021   user+syst:        0.00s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   357.05 /   357.05 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0021   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0022 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -882,14 +882,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0022 (POST_RELEVE_T): t ('<00000042>') de type <Table>
-# Mémoire (Mo) :   328.41 /   328.41 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0022   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.05 /   357.05 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0022   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0023 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -905,14 +905,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0023 (POST_RELEVE_T): t ('<00000043>') de type <Table>
-# Mémoire (Mo) :   328.41 /   328.41 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0023   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.05 /   357.05 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0023   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0024 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -928,14 +928,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0024 (POST_RELEVE_T): t ('<00000044>') de type <Table>
-# Mémoire (Mo) :   328.45 /   328.45 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   357.12 /   357.11 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0024   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0025 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -951,14 +951,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0025 (POST_RELEVE_T): t ('<00000045>') de type <Table>
-# Mémoire (Mo) :   328.45 /   328.45 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   357.12 /   357.11 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0025   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0026 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -974,8 +974,8 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0026 (POST_RELEVE_T): t ('<00000046>') de type <Table>
-# Mémoire (Mo) :   328.45 /   328.45 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0026   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.12 /   357.11 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0026   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 RESSORTS : f CALC_MODES = 4.794 Hz | f Rayleigh = 4.898 Hz | note = 4.79 Hz
 
@@ -993,8 +993,8 @@ DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
               INFO=1)
 
 # Résultat commande #0027 (DEFI_MATERIAU): '<00000047>' de type <Material>
-# Mémoire (Mo) :   328.47 /   328.46 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0027   user+syst:        0.06s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   357.12 /   357.12 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0027   user+syst:        0.02s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt164
@@ -1006,8 +1006,8 @@ AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
               MAILLAGE='<00000001>')
 
 # Résultat commande #0028 (AFFE_MATERIAU): '<00000048>' de type <MaterialField>
-# Mémoire (Mo) :   328.47 /   328.46 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0028   user+syst:        0.05s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   357.12 /   357.12 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0028   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -1112,8 +1112,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0029 (AFFE_CARA_ELEM): '<00000049>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   328.68 /   328.68 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0029   user+syst:        0.08s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   357.25 /   357.25 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0029   user+syst:        0.08s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt219
@@ -1134,8 +1134,8 @@ AFFE_CHAR_MECA(DDL_IMPO=_F(DRX=0.0,
                VERI_NORM='OUI')
 
 # Résultat commande #0030 (AFFE_CHAR_MECA): '<0000004a>' de type <MechanicalLoadReal>
-# Mémoire (Mo) :   329.08 /   329.07 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0030   user+syst:        0.06s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   357.60 /   357.60 /   216.94 /   204.30 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0030   user+syst:        0.06s (syst:        0.03s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt231
@@ -1151,8 +1151,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0031 (CALC_MATR_ELEM): '<0000004c>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   329.09 /   329.09 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0031   user+syst:        0.03s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   357.61 /   357.60 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0031   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt232
@@ -1166,8 +1166,8 @@ CALC_MATR_ELEM(CARA_ELEM='<00000049>',
                OPTION='MASS_MECA')
 
 # Résultat commande #0032 (CALC_MATR_ELEM): '<00000054>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   329.09 /   329.09 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0032   user+syst:        0.08s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   357.61 /   357.60 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0032   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt233
@@ -1188,8 +1188,8 @@ La matrice est de taille 48 équations.
 744 termes non nuls si elle n'est pas symétrique.
   Soit un taux de remplissage de  32.292 %.
 # Résultat commande #0033 (NUME_DDL): '<00000058>' de type <DOFNumbering>
-# Mémoire (Mo) :   329.09 /   329.09 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0033   user+syst:        0.03s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   357.61 /   357.60 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0033   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt234
@@ -1200,8 +1200,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000058>')
 
 # Résultat commande #0034 (ASSE_MATRICE): '<0000005a>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   329.14 /   329.14 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0034   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   357.64 /   357.63 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0034   user+syst:        0.02s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt235
@@ -1212,8 +1212,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000058>')
 
 # Résultat commande #0035 (ASSE_MATRICE): '<0000005b>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   329.14 /   329.14 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0035   user+syst:        0.05s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   357.64 /   357.63 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0035   user+syst:        0.00s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt282
@@ -1342,8 +1342,8 @@ Dans l'intervalle ( 7.64774E+00 , 2.98000E+01 ) il y a bien 5 fréquence(s).
 
 #1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
 # Résultat commande #0036 (CALC_MODES): '<0000005c>' de type <ModeResult>
-# Mémoire (Mo) :   329.54 /   329.53 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0036   user+syst:        0.09s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   357.77 /   357.77 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0036   user+syst:        0.09s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt287
@@ -1353,8 +1353,8 @@ RECU_TABLE(CO='<0000005c>',
            NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
 
 # Résultat commande #0038 (RECU_TABLE): '<0000005d>' de type <Table>
-# Mémoire (Mo) :   329.54 /   329.53 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0038   user+syst:        0.00s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   357.77 /   357.77 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0038   user+syst:        0.00s (syst:        0.14s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt285
@@ -1478,10 +1478,10 @@ Dans l'intervalle ( 7.64774E+00 , 6.74780E+01 ) il y a bien 10 fréquence(s).
 
 ------------------------------------------------------------------------
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.01      0.00      0.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
 # Résultat commande #0039 (CALC_MODES): '<0000005e>' de type <ModeResult>
-# Mémoire (Mo) :   329.59 /   329.57 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0039   user+syst:        0.09s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   357.80 /   357.79 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0039   user+syst:        0.06s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt287
@@ -1491,14 +1491,14 @@ RECU_TABLE(CO='<0000005e>',
            NOM_PARA=('NUME_MODE', 'FREQ', 'MASS_GENE', 'MASS_EFFE_DX', 'MASS_EFFE_DY', 'MASS_EFFE_DZ', 'MASS_EFFE_UN_DX', 'MASS_EFFE_UN_DY', 'MASS_EFFE_UN_DZ'))
 
 # Résultat commande #0041 (RECU_TABLE): '<0000005f>' de type <Table>
-# Mémoire (Mo) :   329.59 /   329.57 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0041   user+syst:        0.02s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   357.80 /   357.79 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0041   user+syst:        0.06s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt65
 # ----------------------------------------------------------------------------------------------
 # Commande #0042 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 65
 chf = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
                      FORCE_NODALE=(_F(FY=12448890.0,
@@ -1518,14 +1518,14 @@ chf = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
                      VERI_NORM='OUI')
 
 # Résultat commande #0042 (AFFE_CHAR_MECA): chf ('<00000060>') de type <MechanicalLoadReal>
-# Mémoire (Mo) :   329.59 /   329.57 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0042   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.80 /   357.79 /   216.94 /   204.35 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0042   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt67
 # ----------------------------------------------------------------------------------------------
 # Commande #0043 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 67
 stat = MECA_STATIQUE(CARA_ELEM='<00000049>',
                      CHAM_MATER='<00000048>',
@@ -1568,14 +1568,14 @@ La matrice est de taille 48 équations.
 Champ stocké <DEPL> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
 Champ stocké <SIEF_ELGA> à l'instant  0.000000000000e+00 pour le numéro d'ordre 1
 # Résultat commande #0043 (MECA_STATIQUE): stat ('<00000061>') de type <ElasticResult>
-# Mémoire (Mo) :   329.82 /   329.38 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   357.82 /   357.80 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0043   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0044 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -1591,14 +1591,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0044 (POST_RELEVE_T): t ('<00000089>') de type <Table>
-# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   357.82 /   357.80 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0044   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0045 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -1614,14 +1614,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0045 (POST_RELEVE_T): t ('<0000008a>') de type <Table>
-# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0045   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.82 /   357.80 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0045   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0046 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -1637,14 +1637,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0046 (POST_RELEVE_T): t ('<0000008b>') de type <Table>
-# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0046   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.82 /   357.80 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0046   user+syst:        0.00s (syst:        0.02s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0047 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -1660,14 +1660,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0047 (POST_RELEVE_T): t ('<0000008c>') de type <Table>
-# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0047   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.82 /   357.80 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0047   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0048 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -1683,14 +1683,14 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0048 (POST_RELEVE_T): t ('<0000008d>') de type <Table>
-# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   357.82 /   357.80 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0048   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt72
 # ----------------------------------------------------------------------------------------------
 # Commande #0049 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_pv4ll4gs\E2_modal_rayleigh.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_a_n4dpac\E2_modal_rayleigh.comm.changed.py,
 ligne 72
 t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                             FORMAT_C='MODULE',
@@ -1706,8 +1706,8 @@ t = POST_RELEVE_T(ACTION=_F(CRITERE='RELATIF',
                   INFO=1)
 
 # Résultat commande #0049 (POST_RELEVE_T): t ('<0000008e>') de type <Table>
-# Mémoire (Mo) :   329.82 /   329.39 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0049   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   357.82 /   357.80 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0049   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 ENCASTRE : f CALC_MODES = 7.667 Hz | f Rayleigh = 7.831 Hz | note = 4.79 Hz
 
@@ -1736,9 +1736,9 @@ No database in results, objects not saved on processor #0
 
 <I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
   
- <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     204.38 Mo
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     204.37 Mo
  <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     216.94 Mo
- <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     329.82 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     357.82 Mo
   
  <I>       FERMETURE DES BASES EFFECTUEE
   
@@ -1752,17 +1752,17 @@ No database in results, objects not saved on processor #0
      VOLUME DES LECTURES               :                     0  Mo.
      VOLUME DES ECRITURES              :                     0  Mo.
   
-   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     204.38 Mo
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     204.37 Mo
      - IMPOSE DE NOMBREUX ACCES DISQUE
      - RALENTIT LA VITESSE D'EXECUTION
    MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     216.94 Mo
      - LIMITE LES ACCES DISQUE
      - AMELIORE LA VITESSE D'EXECUTION
-   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     329.82 Mo
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     357.82 Mo
      - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
        LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
   
- <I>       FIN D'EXECUTION LE : MA-10-NOVE-2026 15:46:33
+ <I>       FIN D'EXECUTION LE : JE-12-NOVE-2026 09:54:56
 INFO './glob.1' deleted
 Deleting './glob.2': No such file or directory
 INFO './vola.1' deleted
@@ -1771,65 +1771,65 @@ Deleting './vola.2': No such file or directory
  ********************************************************************************
  * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
  ********************************************************************************
- * DEBUT                    :       0.06 :       0.17 :       0.23 :       0.00 *
- * LIRE_MAILLAGE            :       0.00 :       0.06 :       0.06 :       0.00 *
- * AFFE_MODELE              :       0.02 :       0.12 :       0.14 :       0.00 *
+ * DEBUT                    :       0.05 :       0.16 :       0.20 :       0.00 *
+ * LIRE_MAILLAGE            :       0.00 :       0.08 :       0.08 :       0.00 *
+ * AFFE_MODELE              :       0.00 :       0.06 :       0.06 :       0.00 *
+ * DEFI_MATERIAU            :       0.00 :       0.08 :       0.08 :       0.00 *
+ * AFFE_MATERIAU            :       0.03 :       0.05 :       0.08 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.16 :       0.06 :       0.22 :       0.00 *
+ * CALC_MATR_ELEM           :       0.02 :       0.09 :       0.11 :       0.00 *
+ * CALC_MATR_ELEM           :       0.02 :       0.09 :       0.11 :       0.00 *
+ * NUME_DDL                 :       0.02 :       0.08 :       0.09 :       0.00 *
+ * ASSE_MATRICE             :       0.00 :       0.09 :       0.09 :       0.00 *
+ * ASSE_MATRICE             :       0.03 :       0.08 :       0.11 :       0.00 *
+ * CALC_MODES               :       0.03 :       0.16 :       0.19 :       0.00 *
+ * RECU_TABLE               :       0.05 :       0.08 :       0.12 :       0.00 *
+ * CALC_MODES               :       0.06 :       0.11 :       0.17 :       0.00 *
+ * RECU_TABLE               :       0.03 :       0.11 :       0.14 :       0.00 *
+ * IMPR_RESU                :       0.06 :       0.02 :       0.08 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MECA_STATIQUE            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
  * DEFI_MATERIAU            :       0.02 :       0.06 :       0.08 :       0.00 *
  * AFFE_MATERIAU            :       0.02 :       0.05 :       0.06 :       0.00 *
- * AFFE_CARA_ELEM           :       0.06 :       0.06 :       0.12 :       0.00 *
- * CALC_MATR_ELEM           :       0.02 :       0.08 :       0.09 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.08 :       0.08 :       0.16 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.06 :       0.03 :       0.09 :       0.00 *
  * CALC_MATR_ELEM           :       0.02 :       0.09 :       0.11 :       0.00 *
- * NUME_DDL                 :       0.03 :       0.14 :       0.17 :       0.00 *
- * ASSE_MATRICE             :       0.05 :       0.09 :       0.14 :       0.00 *
- * ASSE_MATRICE             :       0.03 :       0.09 :       0.12 :       0.00 *
- * CALC_MODES               :       0.16 :       0.11 :       0.27 :       0.00 *
- * RECU_TABLE               :       0.05 :       0.14 :       0.19 :       0.00 *
- * CALC_MODES               :       0.11 :       0.09 :       0.20 :       0.00 *
- * RECU_TABLE               :       0.02 :       0.12 :       0.14 :       0.00 *
- * IMPR_RESU                :       0.06 :       0.03 :       0.09 :       0.00 *
- * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
- * MECA_STATIQUE            :       0.06 :       0.00 :       0.06 :       0.00 *
- * POST_RELEVE_T            :       0.00 :       0.03 :       0.03 :       0.00 *
- * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
- * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
- * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
- * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
- * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
- * DEFI_MATERIAU            :       0.06 :       0.05 :       0.11 :       0.00 *
- * AFFE_MATERIAU            :       0.05 :       0.05 :       0.09 :       0.00 *
- * AFFE_CARA_ELEM           :       0.08 :       0.05 :       0.12 :       0.00 *
- * AFFE_CHAR_MECA           :       0.06 :       0.09 :       0.16 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.11 :       0.14 :       0.00 *
- * CALC_MATR_ELEM           :       0.08 :       0.05 :       0.12 :       0.00 *
- * NUME_DDL                 :       0.03 :       0.11 :       0.14 :       0.00 *
- * ASSE_MATRICE             :       0.03 :       0.08 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.05 :       0.09 :       0.14 :       0.00 *
- * CALC_MODES               :       0.09 :       0.09 :       0.19 :       0.00 *
- * RECU_TABLE               :       0.00 :       0.11 :       0.11 :       0.00 *
- * CALC_MODES               :       0.09 :       0.09 :       0.19 :       0.00 *
- * RECU_TABLE               :       0.02 :       0.11 :       0.12 :       0.00 *
- * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_MATR_ELEM           :       0.03 :       0.08 :       0.11 :       0.00 *
+ * NUME_DDL                 :       0.03 :       0.09 :       0.12 :       0.00 *
+ * ASSE_MATRICE             :       0.02 :       0.08 :       0.09 :       0.00 *
+ * ASSE_MATRICE             :       0.00 :       0.09 :       0.09 :       0.00 *
+ * CALC_MODES               :       0.09 :       0.08 :       0.17 :       0.00 *
+ * RECU_TABLE               :       0.00 :       0.14 :       0.14 :       0.00 *
+ * CALC_MODES               :       0.06 :       0.09 :       0.16 :       0.00 *
+ * RECU_TABLE               :       0.06 :       0.09 :       0.16 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.00 :       0.02 :       0.00 *
  * MECA_STATIQUE            :       0.03 :       0.00 :       0.03 :       0.00 *
  * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
- * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.02 :       0.02 :       0.00 *
+ * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
  * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
  * POST_RELEVE_T            :       0.02 :       0.00 :       0.02 :       0.00 *
- * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
- * POST_RELEVE_T            :       0.00 :       0.00 :       0.00 :       0.00 *
- * FIN                      :       0.05 :       0.03 :       0.08 :       0.00 *
+ * FIN                      :       0.06 :       0.03 :       0.09 :       0.00 *
  *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
- *  . check syntax          :       0.22 :       0.00 :       0.22 :       0.00 *
- *  . fortran               :       0.31 :       0.31 :       0.62 :       0.00 *
+ *  . check syntax          :       0.30 :       0.00 :       0.30 :       0.00 *
+ *  . fortran               :       0.22 :       0.23 :       0.45 :       0.00 *
  *  . cleanup               :       0.00 :       0.00 :       0.00 :       0.00 *
  ********************************************************************************
- * TOTAL_JOB                :       1.70 :       2.80 :       4.50 :       0.00 *
+ * TOTAL_JOB                :       1.41 :       2.55 :       3.95 :       0.00 *
  ********************************************************************************
 
-# Mémoire (Mo) :   329.82 /   329.44 /   216.94 /   204.38 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0050   user+syst:        0.05s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   357.84 /   357.84 /   216.94 /   204.37 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0050   user+syst:        0.06s (syst:        0.03s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
-EXECUTION_CODE_ASTER_EXIT_30992=0
+EXECUTION_CODE_ASTER_EXIT_25472=0
 
 
 

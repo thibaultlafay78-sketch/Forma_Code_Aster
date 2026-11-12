@@ -12,7 +12,7 @@ Ouverture en écriture du fichier ./vola.1
                                     révision n/a - branche 'n/a'                                    
                                      Copyright EDF 1991 - 2026                                      
                                                                                                     
-                              Exécution du : Tue Nov 10 15:16:39 2026                               
+                              Exécution du : Thu Nov 12 09:55:28 2026                               
                                         Nom de la machine :                                         
                                               WF-0078                                               
                                         Architecture : 64bit                                        
@@ -86,13 +86,13 @@ Fin de lecture (durée  0.000000  s.)
 
                       Mémoire limite pour l'allocation dynamique : 4198.40 Mo                       
                               ajouté à l'initialisation du processus :                              
-                                             322.30 Mo                                              
-                               Limite cible du processus : 4520.70 Mo                               
+                                             351.17 Mo                                              
+                               Limite cible du processus : 4549.57 Mo                               
                          Taille limite des fichiers d'échange : 2048.00 Go                          
-# Mémoire (Mo) :   322.30 /   314.29 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0001   user+syst:        0.05s (syst:        0.14s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   343.16 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.06s (syst:        0.17s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py:38: ResourceWarning: unclosed file <_io.TextIOWrapper name='fort.91' mode='r' encoding='utf-8'>
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py:38: ResourceWarning: unclosed file <_io.TextIOWrapper name='fort.91' mode='r' encoding='utf-8'>
   exec(compile(open("fort.91", encoding="utf-8").read(), "brochette.comm", "exec"))
 
 .. _stg1_txt142
@@ -196,8 +196,8 @@ NOMBRE DE GROUPES DE MAILLES              13
 --------------------------------------------------------------------------------
 
 # Résultat commande #0002 (LIRE_MAILLAGE): '<00000001>' de type <Mesh>
-# Mémoire (Mo) :   322.30 /   315.35 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0002   user+syst:        0.05s (syst:        0.02s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   344.16 /   216.94 /   187.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.03s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt147
@@ -228,8 +228,8 @@ DIS_T            _                POI1         MECA_DIS_T_N     5
 POU_D_T          _                SEG2         MECA_POU_D_T     5
 #2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
 # Résultat commande #0003 (AFFE_MODELE): '<00000002>' de type <Model>
-# Mémoire (Mo) :   322.30 /   318.37 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0003   user+syst:        0.05s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   347.17 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.03s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 Rayleigh béton : f1 = 4.794 Hz, f2 = 17.112 Hz -> AMOR_ALPHA = 1.0172e-03 s, AMOR_BETA = 3.2941e+00 1/s
 Only the first 500 values are checked.
@@ -237,7 +237,7 @@ Only the first 500 values are checked.
 .. _stg1_txt97
 # ----------------------------------------------------------------------------------------------
 # Commande #0004 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 97
 DEFI_FONCTION(INFO=1,
               INTERPOL='LIN',
@@ -249,15 +249,15 @@ DEFI_FONCTION(INFO=1,
               VERIF='CROISSANT')
 
 # Résultat commande #0004 (DEFI_FONCTION): '<00000003>' de type <Function>
-# Mémoire (Mo) :   322.30 /   320.52 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0004   user+syst:        0.12s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   348.82 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.14s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 Only the first 500 values are checked.
 
 .. _stg1_txt97
 # ----------------------------------------------------------------------------------------------
 # Commande #0005 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 97
 DEFI_FONCTION(INFO=1,
               INTERPOL='LIN',
@@ -269,15 +269,15 @@ DEFI_FONCTION(INFO=1,
               VERIF='CROISSANT')
 
 # Résultat commande #0005 (DEFI_FONCTION): '<00000004>' de type <Function>
-# Mémoire (Mo) :   322.30 /   320.91 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0005   user+syst:        0.14s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   349.12 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.12s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 Only the first 500 values are checked.
 
 .. _stg1_txt97
 # ----------------------------------------------------------------------------------------------
 # Commande #0006 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 97
 DEFI_FONCTION(INFO=1,
               INTERPOL='LIN',
@@ -289,14 +289,14 @@ DEFI_FONCTION(INFO=1,
               VERIF='CROISSANT')
 
 # Résultat commande #0006 (DEFI_FONCTION): '<00000005>' de type <Function>
-# Mémoire (Mo) :   322.30 /   321.09 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0006   user+syst:        0.28s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   349.43 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.17s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt100
 # ----------------------------------------------------------------------------------------------
 # Commande #0007 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 100
 LINST = DEFI_LIST_REEL(DEBUT=0.0,
                        INFO=1,
@@ -304,20 +304,20 @@ LINST = DEFI_LIST_REEL(DEBUT=0.0,
                                      PAS=0.005))
 
 # Résultat commande #0007 (DEFI_LIST_REEL): LINST ('<00000006>') de type <ListOfFloats>
-# Mémoire (Mo) :   322.30 /   321.14 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   351.17 /   349.49 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0007   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt104
 # ----------------------------------------------------------------------------------------------
 # Commande #0008 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 104
 LFREQ = DEFI_LIST_REEL(INFO=1,
                        VALE=(0.5, 0.5134911573176756, 0.5273463372868918, 0.5415753620813668, 0.5561883188998005, 0.571195567116862, 0.586607745627127, 0.6024357803871723, 0.6186908921611723, 0.6353846044754913, 0.6525287517879073, 0.6701354878772616, 0.6882172944594804, 0.7067869900360764, 0.7258577389814026, 0.7454430608751035, 0.7655568400863748, 0.7862133356168307, 0.807427191208953, 0.8292134457272909, 0.8515875438197685, 0.8745653468666594, 0.8981631442249908, 0.9223976647763459, 0.9472860887862544, 0.9728460600835764, 0.9990956985685134, 1.026053613058115, 1.053738914478388, 1.0821712294123573, 1.1113707140136864, 1.141358068295719, 1.1721545508060707, 1.2037819936971788, 1.2362628182034865, 1.2696200505362392, 1.3038773382071585, 1.3390589667925683, 1.3751898771498536, 1.412295683098461, 1.4504026895779722, 1.4895379112961247, 1.5297290918800006, 1.571004723543957, 1.6133940672882432, 1.6569271736426237, 1.701634903969712, 1.7475489523431185, 1.794701868015919, 1.8431270784953775, 1.892858913240275, 1.9439326279976534, 1.9963844297962117, 2.050251502614089, 2.1055720337392243, 2.162385240840972, 2.220731399772183, 2.2806518731214407, 2.342189139535706, 2.4053868238341614, 2.4702897279345826, 2.53694386261419, 2.6053964801274696, 2.675696107704105, 2.7478925819507625, 2.822037084181106, 2.8981821766991094, 2.9763818400613724, 3.0566915113448534, 3.139168123447168, 3.223870145447285, 3.3108576240552585, 3.4001922261803696, 3.491937282647843, 3.586157833095161, 3.6829206720797645, 3.7822943964308595, 3.884349453878883, 3.9891581929970976, 4.096794914490735, 4.207335923870032, 4.320859585544508, 4.437446378376844, 4.557178952735707, 4.6801421890880235, 4.806423258172178, 4.9361116827948495, 5.069299401295254, 5.206080832721801, 5.346552943767371, 5.490815317510666, 5.638970224012344, 5.791122692816023, 5.947380587405508, 6.107854681671062, 6.272658738438915, 6.441909590119658, 6.6157272215327545, 6.7942348549658105, 6.977559037528966, 7.16582973086631, 7.3591804032879, 7.557748124387727, 7.761673662214693, 7.97110158306549, 8.186180353970105, 8.407062447942659, 8.633904452072095, 8.866867178529466, 9.106115778570418, 9.351819859613737, 9.604153605478963, 9.86329589986824, 10.129430453180056, 10.40274593274467, 10.683436096573603, 10.971699930718023, 11.267741790333318, 11.57177154454999, 11.884004725253444, 12.204662679878227, 12.533972728325033, 12.872168324111612, 13.219489219871996, 13.576181637321216, 13.942498441806098, 14.318699321565798, 14.705050971829278, 15.101827283880056, 15.509309539222441, 15.927786608986798, 16.357555158715208, 16.798919858672775, 17.252193599833536, 17.71769771569424, 18.19576221007315, 18.68672599105537, 19.190937111250623, 19.708753014533627, 20.240540789442203, 20.786677429412595, 21.34755010003655, 21.923556413529663, 22.515104710605396, 23.122614349954834, 23.746516005537206, 24.387251971892006, 25.04527647768919, 25.721056007739563, 26.415069633693886, 27.12780935366493, 27.859780441013328, 28.61150180254456, 29.38350634637074, 30.17634135969836, 30.990568896809506, 31.826766177511736, 32.685525996339116, 33.5674571427943, 34.473184832929846, 35.40335115257458, 36.35861551251916, 37.33965511598372, 38.347165438698696, 39.38186072193954, 40.4444744788645, 41.53576001451463, 42.65649095984471, 43.80746182016326, 44.989488538371056, 46.20340907339691, 47.45008399424113, 48.730397090047596, 50.04525599663687, 51.39559283994483, 52.782364896822635, 54.20655527366663, 55.66917360335924, 57.17125676101507, 58.71386959903924, 60.29810570201951, 61.92508816198708, 63.595970374595645, 65.31193685678348, 67.0742040864974, 68.88402136507506, 70.74267170289578, 72.65147272892862, 74.61177762482224, 76.62497608419805, 78.69249529782816, 80.81580096539507, 82.99639833455124, 85.23583326801506, 87.53569333945899, 89.89760895896791, 92.32325452886457, 94.81434963072196, 97.37266024440432, 100.0))
 
 # Résultat commande #0008 (DEFI_LIST_REEL): LFREQ ('<00000007>') de type <ListOfFloats>
-# Mémoire (Mo) :   322.30 /   321.14 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   351.17 /   349.49 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0008   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -335,8 +335,8 @@ DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
               INFO=1)
 
 # Résultat commande #0009 (DEFI_MATERIAU): '<00000008>' de type <Material>
-# Mémoire (Mo) :   322.30 /   321.22 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0009   user+syst:        0.03s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   349.67 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.00s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt164
@@ -348,8 +348,8 @@ AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
               MAILLAGE='<00000001>')
 
 # Résultat commande #0010 (AFFE_MATERIAU): '<00000009>' de type <MaterialField>
-# Mémoire (Mo) :   322.30 /   321.39 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0010   user+syst:        0.02s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   349.84 /   216.94 /   204.17 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0010   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -454,8 +454,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0011 (AFFE_CARA_ELEM): '<0000000a>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   322.39 /   322.38 /   216.94 /   204.20 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0011   user+syst:        0.08s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   350.76 /   216.94 /   204.20 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0011   user+syst:        0.17s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -560,8 +560,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0012 (AFFE_CARA_ELEM): '<0000000b>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   322.43 /   322.42 /   216.94 /   204.21 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0012   user+syst:        0.05s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   351.17 /   350.76 /   216.94 /   204.21 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0012   user+syst:        0.08s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt259
@@ -576,8 +576,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0013 (CALC_MATR_ELEM): '<0000000d>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   322.94 /   322.93 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0013   user+syst:        0.05s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   351.27 /   351.27 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0013   user+syst:        0.05s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt260
@@ -590,8 +590,8 @@ CALC_MATR_ELEM(CARA_ELEM='<0000000a>',
                OPTION='MASS_MECA')
 
 # Résultat commande #0014 (CALC_MATR_ELEM): '<00000014>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   322.98 /   322.98 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0014   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   351.32 /   351.31 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0014   user+syst:        0.05s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt261
@@ -606,8 +606,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0015 (CALC_MATR_ELEM): '<00000019>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   322.98 /   322.98 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0015   user+syst:        0.05s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   351.32 /   351.31 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0015   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt262
@@ -628,8 +628,8 @@ La matrice est de taille 36 équations.
 576 termes non nuls si elle n'est pas symétrique.
   Soit un taux de remplissage de  44.444 %.
 # Résultat commande #0016 (NUME_DDL): '<0000001f>' de type <DOFNumbering>
-# Mémoire (Mo) :   323.20 /   323.20 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0016   user+syst:        0.05s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   351.54 /   351.54 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0016   user+syst:        0.00s (syst:        0.12s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt263
@@ -640,8 +640,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<0000001f>')
 
 # Résultat commande #0017 (ASSE_MATRICE): '<00000021>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   323.37 /   323.37 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0017   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   351.71 /   351.70 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0017   user+syst:        0.02s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt264
@@ -652,8 +652,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<0000001f>')
 
 # Résultat commande #0018 (ASSE_MATRICE): '<00000022>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   323.37 /   323.37 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0018   user+syst:        0.05s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   351.71 /   351.70 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0018   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt265
@@ -664,8 +664,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<0000001f>')
 
 # Résultat commande #0019 (ASSE_MATRICE): '<00000023>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   323.37 /   323.37 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0019   user+syst:        0.03s (syst:        0.12s, elaps:        0.00s)
+# Mémoire (Mo) :   351.71 /   351.70 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0019   user+syst:        0.02s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt271
@@ -680,14 +680,14 @@ COMB_MATR_ASSE(COMB_R=(_F(COEF_R=0.0010171754950018318,
 # Dépend de :
 # - '<00000023>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000022>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   323.49 /   323.49 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   351.83 /   351.82 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0020   user+syst:        0.05s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt120
 # ----------------------------------------------------------------------------------------------
 # Commande #0021 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 120
 CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
                          MATR_MASS='<00000022>',
@@ -696,14 +696,14 @@ CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
 # Résultat commande #0021 (CALC_CHAR_SEISME): CHSEI ('<00000025>') de type <FieldOnNodesReal>
 # Dépend de :
 # - '<00000022>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   323.57 /   323.57 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   351.91 /   351.90 /   216.94 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0021   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0022 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000003>',
@@ -36853,21 +36853,21 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.94      0.00      1.00
-#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):      0.12      0.00      0.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      1.04      0.00      3.00
+#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):      0.14      0.00      0.00
 # Résultat commande #0022 (DYNA_VIBRA): dyn ('<00000026>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000022>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000021>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000024>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   350.56 /   350.54 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0022   user+syst:        3.27s (syst:        1.08s, elaps:        0.00s)
+# Mémoire (Mo) :   379.06 /   378.75 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0022   user+syst:        3.11s (syst:        1.23s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0023 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -36879,14 +36879,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0023 (RECU_FONCTION): a_rel ('<00000027>') de type <Function>
-# Mémoire (Mo) :   350.98 /   350.98 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0023   user+syst:        0.30s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   379.43 /   379.42 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0023   user+syst:        0.33s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0024 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -36900,14 +36900,14 @@ As an alternative, you can create a new view using np.reshape (with copy=False i
   values.shape = (2, size)
 Only the first 500 values are checked.
 # Résultat commande #0024 (CALC_FONCTION): a_abs ('<00000028>') de type <Function>
-# Mémoire (Mo) :   352.95 /   352.95 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0024   user+syst:        0.20s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   381.03 /   381.03 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0024   user+syst:        0.19s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0026 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -36920,14 +36920,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0026 (CALC_FONCTION): sro ('<00000029>') de type <Function>
-# Mémoire (Mo) :   352.96 /   352.96 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   381.04 /   381.04 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0026   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0028 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -36939,14 +36939,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0028 (RECU_FONCTION): a_rel ('<0000002a>') de type <Function>
-# Mémoire (Mo) :   352.96 /   352.96 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0028   user+syst:        0.31s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   381.06 /   381.05 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0028   user+syst:        0.38s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0029 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -36957,14 +36957,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0029 (CALC_FONCTION): a_abs ('<0000002b>') de type <Function>
-# Mémoire (Mo) :   353.34 /   353.34 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0029   user+syst:        0.20s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   381.48 /   381.47 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0029   user+syst:        0.19s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0031 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -36977,15 +36977,15 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0031 (CALC_FONCTION): sro ('<0000002c>') de type <Function>
-# Mémoire (Mo) :   353.34 /   353.34 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0031   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   381.48 /   381.47 /   232.98 /   204.55 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0031   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas A, signal 1 : terminé
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0033 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000004>',
@@ -73135,21 +73135,21 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.99      0.00      1.00
-#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):      0.06      0.00      0.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.94      0.00      0.00
+#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):      0.05      0.00      0.00
 # Résultat commande #0033 (DYNA_VIBRA): dyn ('<0000002d>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000022>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000021>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000024>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   379.90 /   377.37 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0033   user+syst:        3.27s (syst:        0.88s, elaps:        0.00s)
+# Mémoire (Mo) :   408.23 /   405.62 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0033   user+syst:        3.47s (syst:        1.17s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0034 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -73161,14 +73161,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0034 (RECU_FONCTION): a_rel ('<0000002e>') de type <Function>
-# Mémoire (Mo) :   379.90 /   367.88 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0034   user+syst:        0.39s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   408.23 /   394.19 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0034   user+syst:        0.39s (syst:        0.02s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0035 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -73179,14 +73179,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0035 (CALC_FONCTION): a_abs ('<0000002f>') de type <Function>
-# Mémoire (Mo) :   379.90 /   364.37 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0035   user+syst:        0.19s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   408.23 /   395.91 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0035   user+syst:        0.25s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0037 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -73199,14 +73199,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0037 (CALC_FONCTION): sro ('<00000030>') de type <Function>
-# Mémoire (Mo) :   379.90 /   364.42 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   408.23 /   395.95 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0037   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0039 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -73218,14 +73218,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0039 (RECU_FONCTION): a_rel ('<00000031>') de type <Function>
-# Mémoire (Mo) :   379.90 /   364.44 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0039   user+syst:        0.30s (syst:        0.02s, elaps:        0.00s)
+# Mémoire (Mo) :   408.23 /   395.95 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0039   user+syst:        0.47s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0040 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -73236,14 +73236,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0040 (CALC_FONCTION): a_abs ('<00000032>') de type <Function>
-# Mémoire (Mo) :   379.90 /   364.46 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0040   user+syst:        0.17s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   408.23 /   396.08 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0040   user+syst:        0.23s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0042 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -73256,15 +73256,15 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0042 (CALC_FONCTION): sro ('<00000033>') de type <Function>
-# Mémoire (Mo) :   379.90 /   364.50 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0042   user+syst:        0.05s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   408.23 /   396.12 /   243.56 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0042   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas A, signal 2 : terminé
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0044 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000005>',
@@ -109414,20 +109414,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.85      0.00      0.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      1.14      0.00      0.00
 # Résultat commande #0044 (DYNA_VIBRA): dyn ('<00000034>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000022>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000021>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000024>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   414.93 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0044   user+syst:        2.86s (syst:        0.73s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   443.91 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0044   user+syst:        3.89s (syst:        0.84s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0045 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -109439,14 +109439,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0045 (RECU_FONCTION): a_rel ('<00000035>') de type <Function>
-# Mémoire (Mo) :   414.93 /   367.05 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0045   user+syst:        0.30s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   395.34 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0045   user+syst:        0.44s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0046 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -109457,14 +109457,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0046 (CALC_FONCTION): a_abs ('<00000036>') de type <Function>
-# Mémoire (Mo) :   414.93 /   368.24 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0046   user+syst:        0.17s (syst:        0.02s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   397.20 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0046   user+syst:        0.30s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0048 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -109477,14 +109477,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0048 (CALC_FONCTION): sro ('<00000037>') de type <Function>
-# Mémoire (Mo) :   414.93 /   368.32 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   443.92 /   397.24 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0048   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0050 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -109496,14 +109496,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0050 (RECU_FONCTION): a_rel ('<00000038>') de type <Function>
-# Mémoire (Mo) :   414.93 /   368.33 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0050   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   397.24 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0050   user+syst:        0.50s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0051 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -109514,14 +109514,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0051 (CALC_FONCTION): a_abs ('<00000039>') de type <Function>
-# Mémoire (Mo) :   414.93 /   368.43 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0051   user+syst:        0.19s (syst:        0.02s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   397.34 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0051   user+syst:        0.33s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0053 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -109534,7 +109534,7 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0053 (CALC_FONCTION): sro ('<0000003a>') de type <Function>
-# Mémoire (Mo) :   414.93 /   368.44 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   443.92 /   397.34 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0053   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas A, signal 3 : terminé
@@ -109553,8 +109553,8 @@ DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
               INFO=1)
 
 # Résultat commande #0055 (DEFI_MATERIAU): '<0000003b>' de type <Material>
-# Mémoire (Mo) :   414.93 /   368.44 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0055   user+syst:        0.03s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   397.34 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0055   user+syst:        0.06s (syst:        0.03s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt164
@@ -109566,8 +109566,8 @@ AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
               MAILLAGE='<00000001>')
 
 # Résultat commande #0056 (AFFE_MATERIAU): '<0000003c>' de type <MaterialField>
-# Mémoire (Mo) :   414.93 /   368.44 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0056   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   397.34 /   262.71 /   213.61 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0056   user+syst:        0.03s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -109672,8 +109672,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0057 (AFFE_CARA_ELEM): '<0000003d>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   414.93 /   402.27 /   262.71 /   223.71 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0057   user+syst:        0.12s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   431.89 /   262.71 /   223.71 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0057   user+syst:        0.08s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -109778,8 +109778,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0058 (AFFE_CARA_ELEM): '<0000003e>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   414.93 /   402.27 /   262.71 /   223.71 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0058   user+syst:        0.09s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   431.90 /   262.71 /   223.71 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0058   user+syst:        0.08s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt259
@@ -109794,8 +109794,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0059 (CALC_MATR_ELEM): '<00000040>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   402.27 /   262.71 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0059   user+syst:        0.05s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   431.90 /   262.71 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0059   user+syst:        0.05s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt260
@@ -109808,8 +109808,8 @@ CALC_MATR_ELEM(CARA_ELEM='<0000003d>',
                OPTION='MASS_MECA')
 
 # Résultat commande #0060 (CALC_MATR_ELEM): '<00000047>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   402.27 /   262.71 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0060   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   431.90 /   262.71 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0060   user+syst:        0.09s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt261
@@ -109824,8 +109824,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0061 (CALC_MATR_ELEM): '<0000004c>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   402.27 /   262.71 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0061   user+syst:        0.05s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   431.90 /   262.71 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0061   user+syst:        0.03s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt262
@@ -109846,8 +109846,8 @@ La matrice est de taille 36 équations.
 576 termes non nuls si elle n'est pas symétrique.
   Soit un taux de remplissage de  44.444 %.
 # Résultat commande #0062 (NUME_DDL): '<00000052>' de type <DOFNumbering>
-# Mémoire (Mo) :   414.93 /   404.31 /   262.77 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0062   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   433.95 /   262.77 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0062   user+syst:        0.02s (syst:        0.12s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt263
@@ -109858,8 +109858,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000052>')
 
 # Résultat commande #0063 (ASSE_MATRICE): '<00000054>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   404.48 /   262.97 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0063   user+syst:        0.03s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   433.98 /   262.97 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0063   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt264
@@ -109870,8 +109870,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000052>')
 
 # Résultat commande #0064 (ASSE_MATRICE): '<00000055>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   404.48 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0064   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   433.98 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0064   user+syst:        0.08s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt265
@@ -109882,8 +109882,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000052>')
 
 # Résultat commande #0065 (ASSE_MATRICE): '<00000056>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   404.48 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0065   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   433.98 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0065   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt271
@@ -109898,14 +109898,14 @@ COMB_MATR_ASSE(COMB_R=(_F(COEF_R=0.0010171754950018318,
 # Dépend de :
 # - '<00000056>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000055>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   404.48 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0066   user+syst:        0.02s (syst:        0.14s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   433.98 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0066   user+syst:        0.05s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt120
 # ----------------------------------------------------------------------------------------------
 # Commande #0067 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 120
 CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
                          MATR_MASS='<00000055>',
@@ -109914,14 +109914,14 @@ CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
 # Résultat commande #0067 (CALC_CHAR_SEISME): CHSEI ('<00000058>') de type <FieldOnNodesReal>
 # Dépend de :
 # - '<00000055>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   414.93 /   404.48 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0067   user+syst:        0.00s (syst:        0.02s, elaps:        0.00s)
+# Mémoire (Mo) :   443.92 /   433.98 /   262.98 /   223.85 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0067   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0068 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000003>',
@@ -146071,21 +146071,21 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.88      0.00      1.00
-#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):      0.07      0.00      0.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      1.09      0.00      2.00
+#3      Dechargement de la memoire sur disque             CPU (USER+SYST/SYST/ELAPS):      0.08      0.00      0.00
 # Résultat commande #0068 (DYNA_VIBRA): dyn ('<00000059>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000055>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000054>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000057>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.05 /   395.86 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0068   user+syst:        3.02s (syst:        2.33s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   424.68 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0068   user+syst:        4.03s (syst:        2.50s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0069 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -146097,14 +146097,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0069 (RECU_FONCTION): a_rel ('<0000005a>') de type <Function>
-# Mémoire (Mo) :   434.05 /   385.09 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0069   user+syst:        0.45s (syst:        0.02s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   414.07 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0069   user+syst:        0.44s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0070 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -146115,14 +146115,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0070 (CALC_FONCTION): a_abs ('<0000005b>') de type <Function>
-# Mémoire (Mo) :   434.05 /   386.52 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0070   user+syst:        0.17s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   414.56 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0070   user+syst:        0.31s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0072 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -146135,14 +146135,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0072 (CALC_FONCTION): sro ('<0000005c>') de type <Function>
-# Mémoire (Mo) :   434.05 /   386.54 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0072   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   414.61 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0072   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0074 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -146154,14 +146154,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0074 (RECU_FONCTION): a_rel ('<0000005d>') de type <Function>
-# Mémoire (Mo) :   434.05 /   386.55 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0074   user+syst:        0.41s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   414.61 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0074   user+syst:        0.50s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0075 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -146172,14 +146172,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0075 (CALC_FONCTION): a_abs ('<0000005e>') de type <Function>
-# Mémoire (Mo) :   434.05 /   386.58 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0075   user+syst:        0.19s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   414.62 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0075   user+syst:        0.30s (syst:        0.02s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0077 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -146192,15 +146192,15 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0077 (CALC_FONCTION): sro ('<0000005f>') de type <Function>
-# Mémoire (Mo) :   434.05 /   386.61 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0077   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   414.62 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0077   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas B, signal 1 : terminé
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0079 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000004>',
@@ -182350,20 +182350,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.85      0.00      1.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      1.39      0.00      1.00
 # Résultat commande #0079 (DYNA_VIBRA): dyn ('<00000060>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000055>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000054>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000057>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.05 /   433.81 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0079   user+syst:        2.72s (syst:        0.38s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   462.71 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0079   user+syst:        4.28s (syst:        0.44s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0080 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -182375,14 +182375,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0080 (RECU_FONCTION): a_rel ('<00000061>') de type <Function>
-# Mémoire (Mo) :   434.05 /   388.26 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0080   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   415.44 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0080   user+syst:        0.39s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0081 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -182393,14 +182393,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0081 (CALC_FONCTION): a_abs ('<00000062>') de type <Function>
-# Mémoire (Mo) :   434.05 /   388.88 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0081   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   416.84 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0081   user+syst:        0.20s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0083 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -182413,14 +182413,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0083 (CALC_FONCTION): sro ('<00000063>') de type <Function>
-# Mémoire (Mo) :   434.05 /   388.92 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   462.91 /   416.85 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0083   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0085 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -182432,14 +182432,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0085 (RECU_FONCTION): a_rel ('<00000064>') de type <Function>
-# Mémoire (Mo) :   434.05 /   388.92 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   462.91 /   416.85 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0085   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0086 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -182450,14 +182450,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0086 (CALC_FONCTION): a_abs ('<00000065>') de type <Function>
-# Mémoire (Mo) :   434.05 /   388.92 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0086   user+syst:        0.19s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   462.91 /   416.87 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0086   user+syst:        0.23s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0088 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -182470,7 +182470,7 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0088 (CALC_FONCTION): sro ('<00000066>') de type <Function>
-# Mémoire (Mo) :   434.05 /   388.92 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   462.91 /   416.87 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0088   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas B, signal 2 : terminé
@@ -182478,7 +182478,7 @@ cas B, signal 2 : terminé
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0090 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000005>',
@@ -218628,20 +218628,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.92      0.00      0.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.92      0.00      3.00
 # Résultat commande #0090 (DYNA_VIBRA): dyn ('<00000067>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000055>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000054>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000057>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   434.24 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0090   user+syst:        2.83s (syst:        0.22s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   463.32 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0090   user+syst:        3.16s (syst:        0.19s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0091 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -218653,14 +218653,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0091 (RECU_FONCTION): a_rel ('<00000068>') de type <Function>
-# Mémoire (Mo) :   434.25 /   387.25 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0091   user+syst:        0.42s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   414.77 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0091   user+syst:        0.41s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0092 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -218671,14 +218671,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0092 (CALC_FONCTION): a_abs ('<00000069>') de type <Function>
-# Mémoire (Mo) :   434.25 /   388.82 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   463.32 /   416.52 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0092   user+syst:        0.23s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0094 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -218691,14 +218691,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0094 (CALC_FONCTION): sro ('<0000006a>') de type <Function>
-# Mémoire (Mo) :   434.25 /   388.88 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   463.32 /   416.56 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0094   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0096 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -218710,14 +218710,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0096 (RECU_FONCTION): a_rel ('<0000006b>') de type <Function>
-# Mémoire (Mo) :   434.25 /   388.89 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0096   user+syst:        0.33s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   416.57 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0096   user+syst:        0.36s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0097 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -218728,14 +218728,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0097 (CALC_FONCTION): a_abs ('<0000006c>') de type <Function>
-# Mémoire (Mo) :   434.25 /   388.89 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0097   user+syst:        0.20s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   416.60 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0097   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0099 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -218748,8 +218748,8 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0099 (CALC_FONCTION): sro ('<0000006d>') de type <Function>
-# Mémoire (Mo) :   434.25 /   388.89 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0099   user+syst:        0.05s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   416.60 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0099   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas B, signal 3 : terminé
 
@@ -218767,8 +218767,8 @@ DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
               INFO=1)
 
 # Résultat commande #0101 (DEFI_MATERIAU): '<0000006e>' de type <Material>
-# Mémoire (Mo) :   434.25 /   388.89 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0101   user+syst:        0.03s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   416.60 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0101   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt164
@@ -218780,8 +218780,8 @@ AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
               MAILLAGE='<00000001>')
 
 # Résultat commande #0102 (AFFE_MATERIAU): '<0000006f>' de type <MaterialField>
-# Mémoire (Mo) :   434.25 /   388.89 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0102   user+syst:        0.00s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   416.60 /   293.27 /   232.09 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0102   user+syst:        0.03s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -218891,8 +218891,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0103 (AFFE_CARA_ELEM): '<00000070>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   434.25 /   422.74 /   293.27 /   242.18 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0103   user+syst:        0.08s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   450.64 /   293.27 /   242.18 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0103   user+syst:        0.09s (syst:        0.12s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -218997,8 +218997,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0104 (AFFE_CARA_ELEM): '<00000071>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   434.25 /   422.76 /   293.27 /   242.19 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0104   user+syst:        0.09s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   450.75 /   293.27 /   242.18 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0104   user+syst:        0.08s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt259
@@ -219013,8 +219013,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0105 (CALC_MATR_ELEM): '<00000073>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   422.79 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0105   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   450.75 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0105   user+syst:        0.06s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt260
@@ -219027,8 +219027,8 @@ CALC_MATR_ELEM(CARA_ELEM='<00000070>',
                OPTION='MASS_MECA')
 
 # Résultat commande #0106 (CALC_MATR_ELEM): '<0000007a>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   422.79 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0106   user+syst:        0.03s (syst:        0.16s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   450.75 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0106   user+syst:        0.06s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt261
@@ -219043,8 +219043,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0107 (CALC_MATR_ELEM): '<0000007f>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   422.79 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0107   user+syst:        0.03s (syst:        0.12s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   450.75 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0107   user+syst:        0.06s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt262
@@ -219065,7 +219065,7 @@ La matrice est de taille 36 équations.
 576 termes non nuls si elle n'est pas symétrique.
   Soit un taux de remplissage de  44.444 %.
 # Résultat commande #0108 (NUME_DDL): '<00000085>' de type <DOFNumbering>
-# Mémoire (Mo) :   434.25 /   424.83 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   463.32 /   452.80 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0108   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -219077,8 +219077,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000085>')
 
 # Résultat commande #0109 (ASSE_MATRICE): '<00000087>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   425.00 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0109   user+syst:        0.02s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   452.83 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0109   user+syst:        0.00s (syst:        0.12s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt264
@@ -219089,8 +219089,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000085>')
 
 # Résultat commande #0110 (ASSE_MATRICE): '<00000088>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   425.00 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0110   user+syst:        0.05s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   452.83 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0110   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt265
@@ -219101,8 +219101,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000085>')
 
 # Résultat commande #0111 (ASSE_MATRICE): '<00000089>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   425.00 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0111   user+syst:        0.02s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   452.83 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0111   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt268
@@ -219242,8 +219242,8 @@ CALC_MATR_ELEM(AMOR_FLUI='OUI',
  ╚================================================================================================╝
 
 # Résultat commande #0112 (CALC_MATR_ELEM): '<0000008b>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   425.07 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0112   user+syst:        0.02s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   452.89 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0112   user+syst:        0.05s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt270
@@ -219254,7 +219254,7 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<00000085>')
 
 # Résultat commande #0113 (ASSE_MATRICE): '<00000090>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   425.07 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   463.32 /   452.89 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0113   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -219273,14 +219273,14 @@ COMB_MATR_ASSE(COMB_R=(_F(COEF_R=0.0010171754950018318,
 # - '<00000089>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000088>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000090>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   425.07 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0114   user+syst:        0.02s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   463.32 /   452.89 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0114   user+syst:        0.03s (syst:        0.12s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt120
 # ----------------------------------------------------------------------------------------------
 # Commande #0115 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 120
 CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
                          MATR_MASS='<00000088>',
@@ -219289,14 +219289,14 @@ CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
 # Résultat commande #0115 (CALC_CHAR_SEISME): CHSEI ('<00000092>') de type <FieldOnNodesReal>
 # Dépend de :
 # - '<00000088>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   434.25 /   425.07 /   293.27 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   463.32 /   452.89 /   293.27 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0115   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0116 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000003>',
@@ -255446,20 +255446,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.93      0.00      0.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.99      0.00      2.00
 # Résultat commande #0116 (DYNA_VIBRA): dyn ('<00000093>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000088>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000087>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000091>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   471.77 /   318.08 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0116   user+syst:        2.89s (syst:        0.25s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   499.75 /   318.07 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0116   user+syst:        3.17s (syst:        0.22s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0117 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -255471,14 +255471,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0117 (RECU_FONCTION): a_rel ('<00000094>') de type <Function>
-# Mémoire (Mo) :   471.78 /   429.34 /   318.08 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0117   user+syst:        0.36s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   456.27 /   318.07 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0117   user+syst:        0.39s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0118 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -255489,14 +255489,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0118 (CALC_FONCTION): a_abs ('<00000095>') de type <Function>
-# Mémoire (Mo) :   471.78 /   430.98 /   318.08 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   499.75 /   457.93 /   318.07 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0118   user+syst:        0.20s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0120 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -255509,14 +255509,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0120 (CALC_FONCTION): sro ('<00000096>') de type <Function>
-# Mémoire (Mo) :   471.78 /   430.98 /   318.08 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   499.75 /   457.96 /   318.07 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0120   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0122 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -255528,14 +255528,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0122 (RECU_FONCTION): a_rel ('<00000097>') de type <Function>
-# Mémoire (Mo) :   471.78 /   430.98 /   318.08 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0122   user+syst:        0.33s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   457.96 /   318.07 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0122   user+syst:        0.39s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0123 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -255546,14 +255546,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0123 (CALC_FONCTION): a_abs ('<00000098>') de type <Function>
-# Mémoire (Mo) :   471.78 /   431.02 /   318.08 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0123   user+syst:        0.17s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   457.99 /   318.07 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0123   user+syst:        0.25s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0125 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -255566,7 +255566,7 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0125 (CALC_FONCTION): sro ('<00000099>') de type <Function>
-# Mémoire (Mo) :   471.78 /   431.02 /   318.08 /   242.33 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   499.75 /   457.99 /   318.07 /   242.32 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0125   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas C, signal 1 : terminé
@@ -255574,7 +255574,7 @@ cas C, signal 1 : terminé
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0127 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000004>',
@@ -291724,20 +291724,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.92      0.00      2.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.98      0.00      0.00
 # Résultat commande #0127 (DYNA_VIBRA): dyn ('<0000009a>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000088>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000087>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000091>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   428.36 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0127   user+syst:        3.02s (syst:        1.39s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   456.84 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0127   user+syst:        3.31s (syst:        1.61s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0128 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -291749,14 +291749,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0128 (RECU_FONCTION): a_rel ('<0000009b>') de type <Function>
-# Mémoire (Mo) :   471.78 /   419.98 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0128   user+syst:        0.30s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   446.85 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0128   user+syst:        0.33s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0129 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -291767,14 +291767,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0129 (CALC_FONCTION): a_abs ('<0000009c>') de type <Function>
-# Mémoire (Mo) :   471.78 /   421.52 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0129   user+syst:        0.17s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   448.70 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0129   user+syst:        0.23s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0131 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -291787,14 +291787,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0131 (CALC_FONCTION): sro ('<0000009d>') de type <Function>
-# Mémoire (Mo) :   471.78 /   421.56 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   499.75 /   448.73 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0131   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0133 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -291806,14 +291806,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0133 (RECU_FONCTION): a_rel ('<0000009e>') de type <Function>
-# Mémoire (Mo) :   471.78 /   421.56 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0133   user+syst:        0.39s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   448.73 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0133   user+syst:        0.31s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0134 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -291824,14 +291824,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0134 (CALC_FONCTION): a_abs ('<0000009f>') de type <Function>
-# Mémoire (Mo) :   471.78 /   421.57 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   499.75 /   448.61 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0134   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0136 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -291844,15 +291844,15 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0136 (CALC_FONCTION): sro ('<000000a0>') de type <Function>
-# Mémoire (Mo) :   471.78 /   421.57 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0136   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   448.65 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0136   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas C, signal 2 : terminé
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0138 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000005>',
@@ -328002,20 +328002,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.87      0.00      1.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.89      0.00      1.00
 # Résultat commande #0138 (DYNA_VIBRA): dyn ('<000000a1>') de type <FullTransientResult>
 # Dépend de :
 # - '<00000088>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000087>' de type <AssemblyMatrixDisplacementReal>
 # - '<00000091>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   466.00 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0138   user+syst:        2.69s (syst:        0.17s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   494.67 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0138   user+syst:        2.83s (syst:        0.25s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0139 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -328027,14 +328027,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0139 (RECU_FONCTION): a_rel ('<000000a2>') de type <Function>
-# Mémoire (Mo) :   471.78 /   430.67 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0139   user+syst:        0.33s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   463.95 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0139   user+syst:        0.36s (syst:        0.02s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0140 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -328045,14 +328045,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0140 (CALC_FONCTION): a_abs ('<000000a3>') de type <Function>
-# Mémoire (Mo) :   471.78 /   432.45 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0140   user+syst:        0.19s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   464.98 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0140   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0142 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -328065,14 +328065,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0142 (CALC_FONCTION): sro ('<000000a4>') de type <Function>
-# Mémoire (Mo) :   471.78 /   432.45 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0142   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   464.98 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0142   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0144 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -328084,14 +328084,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0144 (RECU_FONCTION): a_rel ('<000000a5>') de type <Function>
-# Mémoire (Mo) :   471.78 /   432.46 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0144   user+syst:        0.30s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   464.98 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0144   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0145 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -328102,14 +328102,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0145 (CALC_FONCTION): a_abs ('<000000a6>') de type <Function>
-# Mémoire (Mo) :   471.78 /   432.58 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0145   user+syst:        0.25s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   465.01 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0145   user+syst:        0.23s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0147 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -328122,8 +328122,8 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0147 (CALC_FONCTION): sro ('<000000a7>') de type <Function>
-# Mémoire (Mo) :   471.78 /   432.58 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0147   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   465.01 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0147   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas C, signal 3 : terminé
 
@@ -328141,8 +328141,8 @@ DEFI_MATERIAU(ELAS=_F(AMOR_ALPHA=0.0,
               INFO=1)
 
 # Résultat commande #0149 (DEFI_MATERIAU): '<000000a8>' de type <Material>
-# Mémoire (Mo) :   471.78 /   432.59 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0149   user+syst:        0.03s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   465.01 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0149   user+syst:        0.02s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt164
@@ -328154,8 +328154,8 @@ AFFE_MATERIAU(AFFE=_F(GROUP_MA='POUTRE',
               MAILLAGE='<00000001>')
 
 # Résultat commande #0150 (AFFE_MATERIAU): '<000000a9>' de type <MaterialField>
-# Mémoire (Mo) :   471.78 /   432.59 /   318.08 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0150   user+syst:        0.02s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   465.01 /   318.07 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0150   user+syst:        0.03s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -328265,8 +328265,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0151 (AFFE_CARA_ELEM): '<000000aa>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   471.78 /   465.84 /   318.67 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0151   user+syst:        0.08s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   498.17 /   318.66 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0151   user+syst:        0.06s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt208
@@ -328371,8 +328371,8 @@ AFFE_CARA_ELEM(DISCRET=(_F(CARA='M_T_D_N',
 # Résultat commande #0152 (AFFE_CARA_ELEM): '<000000ab>' de type <ElementaryCharacteristics>
 # Dépend de :
 # - '<00000002>' de type <Model>
-# Mémoire (Mo) :   471.78 /   465.85 /   318.71 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0152   user+syst:        0.08s (syst:        0.05s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   498.19 /   318.70 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0152   user+syst:        0.08s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt259
@@ -328387,8 +328387,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0153 (CALC_MATR_ELEM): '<000000ad>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   465.89 /   318.81 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0153   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   498.19 /   318.80 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0153   user+syst:        0.00s (syst:        0.14s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt260
@@ -328401,7 +328401,7 @@ CALC_MATR_ELEM(CARA_ELEM='<000000aa>',
                OPTION='MASS_MECA')
 
 # Résultat commande #0154 (CALC_MATR_ELEM): '<000000b4>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   465.90 /   318.81 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   499.75 /   498.19 /   318.80 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0154   user+syst:        0.08s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -328417,8 +328417,8 @@ CALC_MATR_ELEM(CALC_ELEM_MODELE='OUI',
                OPTION='RIGI_MECA')
 
 # Résultat commande #0155 (CALC_MATR_ELEM): '<000000b9>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   465.90 /   318.82 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0155   user+syst:        0.03s (syst:        0.08s, elaps:        0.00s)
+# Mémoire (Mo) :   499.75 /   498.19 /   318.81 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0155   user+syst:        0.08s (syst:        0.11s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt262
@@ -328439,8 +328439,8 @@ La matrice est de taille 36 équations.
 576 termes non nuls si elle n'est pas symétrique.
   Soit un taux de remplissage de  44.444 %.
 # Résultat commande #0156 (NUME_DDL): '<000000bf>' de type <DOFNumbering>
-# Mémoire (Mo) :   471.78 /   467.95 /   320.78 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0156   user+syst:        0.00s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   500.24 /   500.24 /   320.77 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0156   user+syst:        0.02s (syst:        0.12s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt263
@@ -328451,8 +328451,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<000000bf>')
 
 # Résultat commande #0157 (ASSE_MATRICE): '<000000c1>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   467.99 /   320.98 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0157   user+syst:        0.00s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   500.41 /   500.41 /   320.97 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0157   user+syst:        0.06s (syst:        0.05s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt264
@@ -328463,7 +328463,7 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<000000bf>')
 
 # Résultat commande #0158 (ASSE_MATRICE): '<000000c2>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   467.99 /   320.99 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   500.41 /   500.41 /   320.98 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0158   user+syst:        0.05s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
@@ -328475,8 +328475,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<000000bf>')
 
 # Résultat commande #0159 (ASSE_MATRICE): '<000000c3>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   467.99 /   320.99 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0159   user+syst:        0.06s (syst:        0.06s, elaps:        0.00s)
+# Mémoire (Mo) :   500.41 /   500.41 /   320.98 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0159   user+syst:        0.05s (syst:        0.06s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt268
@@ -328616,8 +328616,8 @@ CALC_MATR_ELEM(AMOR_FLUI='OUI',
  ╚================================================================================================╝
 
 # Résultat commande #0160 (CALC_MATR_ELEM): '<000000c5>' de type <ElementaryMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   467.99 /   320.99 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0160   user+syst:        0.02s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   500.41 /   500.41 /   320.98 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0160   user+syst:        0.06s (syst:        0.08s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt270
@@ -328628,8 +328628,8 @@ ASSE_MATRICE(INFO=1,
              NUME_DDL='<000000bf>')
 
 # Résultat commande #0161 (ASSE_MATRICE): '<000000ca>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   467.99 /   321.01 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0161   user+syst:        0.03s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   500.41 /   500.41 /   321.00 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0161   user+syst:        0.02s (syst:        0.12s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt271
@@ -328647,14 +328647,14 @@ COMB_MATR_ASSE(COMB_R=(_F(COEF_R=0.0010171754950018318,
 # - '<000000c3>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000c2>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000ca>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   467.99 /   321.01 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0162   user+syst:        0.05s (syst:        0.11s, elaps:        0.00s)
+# Mémoire (Mo) :   500.41 /   500.41 /   321.00 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0162   user+syst:        0.03s (syst:        0.09s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt120
 # ----------------------------------------------------------------------------------------------
 # Commande #0163 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 120
 CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
                          MATR_MASS='<000000c2>',
@@ -328663,14 +328663,14 @@ CHSEI = CALC_CHAR_SEISME(DIRECTION=(0.0, 1.0, 0.0),
 # Résultat commande #0163 (CALC_CHAR_SEISME): CHSEI ('<000000cc>') de type <FieldOnNodesReal>
 # Dépend de :
 # - '<000000c2>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   471.78 /   467.99 /   321.01 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   500.41 /   500.41 /   321.00 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0163   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0164 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000003>',
@@ -364820,20 +364820,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      1.01      0.00      2.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.84      0.00      2.00
 # Résultat commande #0164 (DYNA_VIBRA): dyn ('<000000cd>') de type <FullTransientResult>
 # Dépend de :
 # - '<000000c2>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000c1>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000cb>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   504.06 /   440.23 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0164   user+syst:        3.00s (syst:        0.30s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   540.38 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0164   user+syst:        2.89s (syst:        0.20s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0165 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -364845,14 +364845,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0165 (RECU_FONCTION): a_rel ('<000000ce>') de type <Function>
-# Mémoire (Mo) :   504.06 /   401.58 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0165   user+syst:        0.31s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   496.12 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0165   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0166 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -364863,14 +364863,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0166 (CALC_FONCTION): a_abs ('<000000cf>') de type <Function>
-# Mémoire (Mo) :   504.06 /   403.12 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0166   user+syst:        0.17s (syst:        0.02s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   497.94 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0166   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0168 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -364883,14 +364883,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0168 (CALC_FONCTION): sro ('<000000d0>') de type <Function>
-# Mémoire (Mo) :   504.06 /   403.12 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0168   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   497.98 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0168   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0170 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -364902,14 +364902,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0170 (RECU_FONCTION): a_rel ('<000000d1>') de type <Function>
-# Mémoire (Mo) :   504.06 /   403.13 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0170   user+syst:        0.33s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   497.98 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0170   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0171 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -364920,14 +364920,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0171 (CALC_FONCTION): a_abs ('<000000d2>') de type <Function>
-# Mémoire (Mo) :   504.06 /   403.14 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0171   user+syst:        0.20s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   498.05 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0171   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0173 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -364940,15 +364940,15 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0173 (CALC_FONCTION): sro ('<000000d3>') de type <Function>
-# Mémoire (Mo) :   504.06 /   403.14 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0173   user+syst:        0.05s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   498.05 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0173   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas D, signal 1 : terminé
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0175 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000004>',
@@ -401098,20 +401098,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.93      0.00      1.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.86      0.00      0.00
 # Résultat commande #0175 (DYNA_VIBRA): dyn ('<000000d4>') de type <FullTransientResult>
 # Dépend de :
 # - '<000000c2>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000c1>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000cb>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   504.06 /   447.20 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0175   user+syst:        2.95s (syst:        0.22s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   539.43 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0175   user+syst:        2.88s (syst:        0.22s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0176 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -401123,14 +401123,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0176 (RECU_FONCTION): a_rel ('<000000d5>') de type <Function>
-# Mémoire (Mo) :   504.06 /   405.92 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0176   user+syst:        0.31s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   501.35 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0176   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0177 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -401141,14 +401141,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0177 (CALC_FONCTION): a_abs ('<000000d6>') de type <Function>
-# Mémoire (Mo) :   504.06 /   407.44 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0177   user+syst:        0.20s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   502.94 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0177   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0179 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -401161,14 +401161,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0179 (CALC_FONCTION): sro ('<000000d7>') de type <Function>
-# Mémoire (Mo) :   504.06 /   407.44 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0179   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   502.94 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0179   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0181 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -401180,14 +401180,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0181 (RECU_FONCTION): a_rel ('<000000d8>') de type <Function>
-# Mémoire (Mo) :   504.06 /   407.44 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0181   user+syst:        0.44s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   502.94 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0181   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0182 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -401198,14 +401198,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0182 (CALC_FONCTION): a_abs ('<000000d9>') de type <Function>
-# Mémoire (Mo) :   504.06 /   407.45 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0182   user+syst:        0.28s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   502.99 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0182   user+syst:        0.19s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0184 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -401218,15 +401218,15 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0184 (CALC_FONCTION): sro ('<000000da>') de type <Function>
-# Mémoire (Mo) :   504.06 /   407.45 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0184   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   503.02 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0184   user+syst:        0.03s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas D, signal 2 : terminé
 
 .. _stg1_txt123
 # ----------------------------------------------------------------------------------------------
 # Commande #0186 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 123
 dyn = DYNA_VIBRA(BASE_CALCUL='PHYS',
                  EXCIT=_F(FONC_MULT='<00000005>',
@@ -437376,20 +437376,20 @@ possible.
                                                           Fin du calcul
 
 
-#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.86      0.00      1.00
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      1.05      0.00      2.00
 # Résultat commande #0186 (DYNA_VIBRA): dyn ('<000000db>') de type <FullTransientResult>
 # Dépend de :
 # - '<000000c2>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000c1>' de type <AssemblyMatrixDisplacementReal>
 # - '<000000cb>' de type <AssemblyMatrixDisplacementReal>
-# Mémoire (Mo) :   504.06 /   450.05 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0186   user+syst:        2.72s (syst:        0.17s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   540.02 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0186   user+syst:        3.47s (syst:        0.17s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0187 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N6',
@@ -437401,14 +437401,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0187 (RECU_FONCTION): a_rel ('<000000dc>') de type <Function>
-# Mémoire (Mo) :   504.06 /   408.16 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0187   user+syst:        0.38s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   501.89 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0187   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0188 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -437419,14 +437419,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0188 (CALC_FONCTION): a_abs ('<000000dd>') de type <Function>
-# Mémoire (Mo) :   504.06 /   409.86 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0188   user+syst:        0.17s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   503.26 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0188   user+syst:        0.22s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0190 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -437439,14 +437439,14 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0190 (CALC_FONCTION): sro ('<000000de>') de type <Function>
-# Mémoire (Mo) :   504.06 /   409.89 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   540.38 /   503.30 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0190   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt131
 # ----------------------------------------------------------------------------------------------
 # Commande #0192 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 131
 a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       GROUP_NO='N4',
@@ -437458,14 +437458,14 @@ a_rel = RECU_FONCTION(CRITERE='RELATIF',
                       RESULTAT=dyn)
 
 # Résultat commande #0192 (RECU_FONCTION): a_rel ('<000000df>') de type <Function>
-# Mémoire (Mo) :   504.06 /   409.90 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0192   user+syst:        0.34s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   503.30 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0192   user+syst:        0.41s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt134
 # ----------------------------------------------------------------------------------------------
 # Commande #0193 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 134
 a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
                                FONCTION=a_rel),
@@ -437476,14 +437476,14 @@ a_abs = CALC_FONCTION(COMB=(_F(COEF=1.0,
 
 Only the first 500 values are checked.
 # Résultat commande #0193 (CALC_FONCTION): a_abs ('<000000e0>') de type <Function>
-# Mémoire (Mo) :   504.06 /   409.94 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0193   user+syst:        0.17s (syst:        0.00s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   503.33 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0193   user+syst:        0.25s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
 .. _stg1_txt137
 # ----------------------------------------------------------------------------------------------
 # Commande #0195 de
-E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster_yb_cwap8\E4_spectres_plancher.comm.changed.py,
+E:\Forma_Basile\Forma_Code_Aster\.aster_tmp\run_aster__d3kgs6m\E4_spectres_plancher.comm.changed.py,
 ligne 137
 sro = CALC_FONCTION(INFO=1,
                     SPEC_OSCI=_F(AMOR_REDUIT=0.05,
@@ -437496,7 +437496,7 @@ sro = CALC_FONCTION(INFO=1,
                                  TYPE_RESU='FONCTION'))
 
 # Résultat commande #0195 (CALC_FONCTION): sro ('<000000e1>') de type <Function>
-# Mémoire (Mo) :   504.06 /   409.94 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
+# Mémoire (Mo) :   540.38 /   503.33 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
 # Fin commande #0195   user+syst:        0.02s (syst:        0.00s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 cas D, signal 3 : terminé
@@ -437526,33 +437526,33 @@ No database in results, objects not saved on processor #0
 
 <I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
   
- <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     308.92 Mo
- <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     357.61 Mo
- <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     504.06 Mo
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     308.91 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     357.60 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     540.38 Mo
   
  <I>       FERMETURE DES BASES EFFECTUEE
   
    STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
      TAILLE CUMULEE MAXIMUM            :                   358  Mo.
      TAILLE CUMULEE LIBEREE            :                   597  Mo.
-     NOMBRE TOTAL D'ALLOCATIONS        :               5614619
-     NOMBRE TOTAL DE LIBERATIONS       :               5560232
+     NOMBRE TOTAL D'ALLOCATIONS        :               5614545
+     NOMBRE TOTAL DE LIBERATIONS       :               5560158
      APPELS AU MECANISME DE LIBERATION :                     8
      TAILLE MEMOIRE CUMULEE RECUPEREE  :                   420  Mo.
      VOLUME DES LECTURES               :                     3  Mo.
      VOLUME DES ECRITURES              :                   343  Mo.
   
-   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     308.92 Mo
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     308.91 Mo
      - IMPOSE DE NOMBREUX ACCES DISQUE
      - RALENTIT LA VITESSE D'EXECUTION
-   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     357.61 Mo
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     357.60 Mo
      - LIMITE LES ACCES DISQUE
      - AMELIORE LA VITESSE D'EXECUTION
-   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     504.06 Mo
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     540.38 Mo
      - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
        LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
   
- <I>       FIN D'EXECUTION LE : MA-10-NOVE-2026 15:18:36
+ <I>       FIN D'EXECUTION LE : JE-12-NOVE-2026 09:57:42
 INFO './glob.1' deleted
 Deleting './glob.2': No such file or directory
 INFO './vola.1' deleted
@@ -437561,168 +437561,168 @@ Deleting './vola.2': No such file or directory
  ********************************************************************************
  * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
  ********************************************************************************
- * DEBUT                    :       0.05 :       0.14 :       0.19 :       0.00 *
- * LIRE_MAILLAGE            :       0.05 :       0.02 :       0.06 :       0.00 *
- * AFFE_MODELE              :       0.05 :       0.03 :       0.08 :       0.00 *
- * DEFI_FONCTION            :       0.12 :       0.00 :       0.12 :       0.00 *
+ * DEBUT                    :       0.06 :       0.17 :       0.23 :       0.00 *
+ * LIRE_MAILLAGE            :       0.03 :       0.05 :       0.08 :       0.00 *
+ * AFFE_MODELE              :       0.03 :       0.05 :       0.08 :       0.00 *
  * DEFI_FONCTION            :       0.14 :       0.00 :       0.14 :       0.00 *
- * DEFI_FONCTION            :       0.28 :       0.00 :       0.28 :       0.00 *
+ * DEFI_FONCTION            :       0.12 :       0.00 :       0.12 :       0.00 *
+ * DEFI_FONCTION            :       0.17 :       0.00 :       0.17 :       0.00 *
  * DEFI_LIST_REEL           :       0.00 :       0.00 :       0.00 :       0.00 *
  * DEFI_LIST_REEL           :       0.02 :       0.00 :       0.02 :       0.00 *
- * DEFI_MATERIAU            :       0.03 :       0.03 :       0.06 :       0.00 *
- * AFFE_MATERIAU            :       0.02 :       0.06 :       0.08 :       0.00 *
- * AFFE_CARA_ELEM           :       0.08 :       0.03 :       0.11 :       0.00 *
- * AFFE_CARA_ELEM           :       0.05 :       0.08 :       0.12 :       0.00 *
- * CALC_MATR_ELEM           :       0.05 :       0.09 :       0.14 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.08 :       0.11 :       0.00 *
- * CALC_MATR_ELEM           :       0.05 :       0.06 :       0.11 :       0.00 *
- * NUME_DDL                 :       0.05 :       0.06 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.02 :       0.09 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.05 :       0.06 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.03 :       0.12 :       0.16 :       0.00 *
+ * DEFI_MATERIAU            :       0.00 :       0.08 :       0.08 :       0.00 *
+ * AFFE_MATERIAU            :       0.02 :       0.05 :       0.06 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.17 :       0.06 :       0.23 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.08 :       0.08 :       0.16 :       0.00 *
+ * CALC_MATR_ELEM           :       0.05 :       0.08 :       0.12 :       0.00 *
+ * CALC_MATR_ELEM           :       0.05 :       0.08 :       0.12 :       0.00 *
+ * CALC_MATR_ELEM           :       0.03 :       0.09 :       0.12 :       0.00 *
+ * NUME_DDL                 :       0.00 :       0.12 :       0.12 :       0.00 *
+ * ASSE_MATRICE             :       0.02 :       0.11 :       0.12 :       0.00 *
+ * ASSE_MATRICE             :       0.03 :       0.08 :       0.11 :       0.00 *
+ * ASSE_MATRICE             :       0.02 :       0.11 :       0.12 :       0.00 *
  * COMB_MATR_ASSE           :       0.05 :       0.08 :       0.12 :       0.00 *
  * CALC_CHAR_SEISME         :       0.00 :       0.00 :       0.00 :       0.00 *
- * DYNA_VIBRA               :       3.27 :       1.08 :       4.34 :       0.00 *
- * RECU_FONCTION            :       0.30 :       0.00 :       0.30 :       0.00 *
- * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.31 :       0.00 :       0.31 :       0.00 *
- * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * DYNA_VIBRA               :       3.27 :       0.88 :       4.14 :       0.00 *
- * RECU_FONCTION            :       0.39 :       0.00 :       0.39 :       0.00 *
+ * DYNA_VIBRA               :       3.11 :       1.23 :       4.34 :       0.00 *
+ * RECU_FONCTION            :       0.33 :       0.00 :       0.33 :       0.00 *
  * CALC_FONCTION            :       0.19 :       0.00 :       0.19 :       0.00 *
  * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.30 :       0.02 :       0.31 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.00 :       0.17 :       0.00 *
- * CALC_FONCTION            :       0.05 :       0.00 :       0.05 :       0.00 *
- * DYNA_VIBRA               :       2.86 :       0.73 :       3.59 :       0.00 *
- * RECU_FONCTION            :       0.30 :       0.00 :       0.30 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.02 :       0.19 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
- * CALC_FONCTION            :       0.19 :       0.02 :       0.20 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * DEFI_MATERIAU            :       0.03 :       0.05 :       0.08 :       0.00 *
- * AFFE_MATERIAU            :       0.02 :       0.05 :       0.06 :       0.00 *
- * AFFE_CARA_ELEM           :       0.12 :       0.11 :       0.23 :       0.00 *
- * AFFE_CARA_ELEM           :       0.09 :       0.05 :       0.14 :       0.00 *
- * CALC_MATR_ELEM           :       0.05 :       0.06 :       0.11 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.09 :       0.12 :       0.00 *
- * CALC_MATR_ELEM           :       0.05 :       0.08 :       0.12 :       0.00 *
- * NUME_DDL                 :       0.02 :       0.09 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.03 :       0.06 :       0.09 :       0.00 *
- * ASSE_MATRICE             :       0.03 :       0.08 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.03 :       0.08 :       0.11 :       0.00 *
- * COMB_MATR_ASSE           :       0.02 :       0.14 :       0.16 :       0.00 *
- * CALC_CHAR_SEISME         :       0.00 :       0.02 :       0.02 :       0.00 *
- * DYNA_VIBRA               :       3.02 :       2.33 :       5.34 :       0.00 *
- * RECU_FONCTION            :       0.45 :       0.02 :       0.47 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.00 :       0.17 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.41 :       0.00 :       0.41 :       0.00 *
+ * RECU_FONCTION            :       0.38 :       0.00 :       0.38 :       0.00 *
  * CALC_FONCTION            :       0.19 :       0.00 :       0.19 :       0.00 *
+ * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * DYNA_VIBRA               :       3.47 :       1.17 :       4.64 :       0.00 *
+ * RECU_FONCTION            :       0.39 :       0.02 :       0.41 :       0.00 *
+ * CALC_FONCTION            :       0.25 :       0.00 :       0.25 :       0.00 *
  * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * DYNA_VIBRA               :       2.72 :       0.38 :       3.09 :       0.00 *
- * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
- * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
- * CALC_FONCTION            :       0.19 :       0.00 :       0.19 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * DYNA_VIBRA               :       2.83 :       0.22 :       3.05 :       0.00 *
- * RECU_FONCTION            :       0.42 :       0.00 :       0.42 :       0.00 *
+ * RECU_FONCTION            :       0.47 :       0.00 :       0.47 :       0.00 *
  * CALC_FONCTION            :       0.23 :       0.00 :       0.23 :       0.00 *
  * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.33 :       0.00 :       0.33 :       0.00 *
- * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
- * CALC_FONCTION            :       0.05 :       0.00 :       0.05 :       0.00 *
- * DEFI_MATERIAU            :       0.03 :       0.03 :       0.06 :       0.00 *
- * AFFE_MATERIAU            :       0.00 :       0.06 :       0.06 :       0.00 *
- * AFFE_CARA_ELEM           :       0.08 :       0.06 :       0.14 :       0.00 *
- * AFFE_CARA_ELEM           :       0.09 :       0.06 :       0.16 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.09 :       0.12 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.16 :       0.19 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.12 :       0.16 :       0.00 *
- * NUME_DDL                 :       0.03 :       0.08 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.02 :       0.08 :       0.09 :       0.00 *
- * ASSE_MATRICE             :       0.05 :       0.06 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.02 :       0.08 :       0.09 :       0.00 *
- * CALC_MATR_ELEM           :       0.02 :       0.11 :       0.12 :       0.00 *
- * ASSE_MATRICE             :       0.02 :       0.09 :       0.11 :       0.00 *
- * COMB_MATR_ASSE           :       0.02 :       0.09 :       0.11 :       0.00 *
- * CALC_CHAR_SEISME         :       0.00 :       0.00 :       0.00 :       0.00 *
- * DYNA_VIBRA               :       2.89 :       0.25 :       3.14 :       0.00 *
- * RECU_FONCTION            :       0.36 :       0.00 :       0.36 :       0.00 *
- * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.33 :       0.00 :       0.33 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.00 :       0.17 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * DYNA_VIBRA               :       3.02 :       1.39 :       4.41 :       0.00 *
- * RECU_FONCTION            :       0.30 :       0.00 :       0.30 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.00 :       0.17 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.39 :       0.00 :       0.39 :       0.00 *
- * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
- * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
- * DYNA_VIBRA               :       2.69 :       0.17 :       2.86 :       0.00 *
- * RECU_FONCTION            :       0.33 :       0.00 :       0.33 :       0.00 *
- * CALC_FONCTION            :       0.19 :       0.00 :       0.19 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.30 :       0.00 :       0.30 :       0.00 *
- * CALC_FONCTION            :       0.25 :       0.00 :       0.25 :       0.00 *
- * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
- * DEFI_MATERIAU            :       0.03 :       0.03 :       0.06 :       0.00 *
- * AFFE_MATERIAU            :       0.02 :       0.05 :       0.06 :       0.00 *
- * AFFE_CARA_ELEM           :       0.08 :       0.06 :       0.14 :       0.00 *
- * AFFE_CARA_ELEM           :       0.08 :       0.05 :       0.12 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.09 :       0.12 :       0.00 *
- * CALC_MATR_ELEM           :       0.08 :       0.06 :       0.14 :       0.00 *
- * CALC_MATR_ELEM           :       0.03 :       0.08 :       0.11 :       0.00 *
- * NUME_DDL                 :       0.00 :       0.11 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.00 :       0.11 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.05 :       0.06 :       0.11 :       0.00 *
- * ASSE_MATRICE             :       0.06 :       0.06 :       0.12 :       0.00 *
- * CALC_MATR_ELEM           :       0.02 :       0.11 :       0.12 :       0.00 *
- * ASSE_MATRICE             :       0.03 :       0.11 :       0.14 :       0.00 *
- * COMB_MATR_ASSE           :       0.05 :       0.11 :       0.16 :       0.00 *
- * CALC_CHAR_SEISME         :       0.00 :       0.00 :       0.00 :       0.00 *
- * DYNA_VIBRA               :       3.00 :       0.30 :       3.30 :       0.00 *
- * RECU_FONCTION            :       0.31 :       0.00 :       0.31 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.02 :       0.19 :       0.00 *
- * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * RECU_FONCTION            :       0.33 :       0.00 :       0.33 :       0.00 *
- * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
- * CALC_FONCTION            :       0.05 :       0.00 :       0.05 :       0.00 *
- * DYNA_VIBRA               :       2.95 :       0.22 :       3.17 :       0.00 *
- * RECU_FONCTION            :       0.31 :       0.00 :       0.31 :       0.00 *
- * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
- * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * DYNA_VIBRA               :       3.89 :       0.84 :       4.73 :       0.00 *
  * RECU_FONCTION            :       0.44 :       0.00 :       0.44 :       0.00 *
- * CALC_FONCTION            :       0.28 :       0.00 :       0.28 :       0.00 *
+ * CALC_FONCTION            :       0.30 :       0.00 :       0.30 :       0.00 *
  * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * DYNA_VIBRA               :       2.72 :       0.17 :       2.89 :       0.00 *
- * RECU_FONCTION            :       0.38 :       0.00 :       0.38 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.00 :       0.17 :       0.00 *
+ * RECU_FONCTION            :       0.50 :       0.00 :       0.50 :       0.00 *
+ * CALC_FONCTION            :       0.33 :       0.00 :       0.33 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * DEFI_MATERIAU            :       0.06 :       0.03 :       0.09 :       0.00 *
+ * AFFE_MATERIAU            :       0.03 :       0.05 :       0.08 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.08 :       0.11 :       0.19 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.08 :       0.08 :       0.16 :       0.00 *
+ * CALC_MATR_ELEM           :       0.05 :       0.09 :       0.14 :       0.00 *
+ * CALC_MATR_ELEM           :       0.09 :       0.06 :       0.16 :       0.00 *
+ * CALC_MATR_ELEM           :       0.03 :       0.11 :       0.14 :       0.00 *
+ * NUME_DDL                 :       0.02 :       0.12 :       0.14 :       0.00 *
+ * ASSE_MATRICE             :       0.03 :       0.08 :       0.11 :       0.00 *
+ * ASSE_MATRICE             :       0.08 :       0.05 :       0.12 :       0.00 *
+ * ASSE_MATRICE             :       0.03 :       0.09 :       0.12 :       0.00 *
+ * COMB_MATR_ASSE           :       0.05 :       0.08 :       0.12 :       0.00 *
+ * CALC_CHAR_SEISME         :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DYNA_VIBRA               :       4.03 :       2.50 :       6.53 :       0.00 *
+ * RECU_FONCTION            :       0.44 :       0.00 :       0.44 :       0.00 *
+ * CALC_FONCTION            :       0.31 :       0.00 :       0.31 :       0.00 *
+ * CALC_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.50 :       0.00 :       0.50 :       0.00 *
+ * CALC_FONCTION            :       0.30 :       0.02 :       0.31 :       0.00 *
+ * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * DYNA_VIBRA               :       4.28 :       0.44 :       4.72 :       0.00 *
+ * RECU_FONCTION            :       0.39 :       0.00 :       0.39 :       0.00 *
+ * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
  * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
  * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
- * CALC_FONCTION            :       0.17 :       0.00 :       0.17 :       0.00 *
+ * CALC_FONCTION            :       0.23 :       0.00 :       0.23 :       0.00 *
  * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
- * FIN                      :       0.05 :       0.03 :       0.08 :       0.00 *
+ * DYNA_VIBRA               :       3.16 :       0.19 :       3.34 :       0.00 *
+ * RECU_FONCTION            :       0.41 :       0.00 :       0.41 :       0.00 *
+ * CALC_FONCTION            :       0.23 :       0.00 :       0.23 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * RECU_FONCTION            :       0.36 :       0.00 :       0.36 :       0.00 *
+ * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
+ * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * DEFI_MATERIAU            :       0.02 :       0.05 :       0.06 :       0.00 *
+ * AFFE_MATERIAU            :       0.03 :       0.05 :       0.08 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.09 :       0.12 :       0.22 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.08 :       0.08 :       0.16 :       0.00 *
+ * CALC_MATR_ELEM           :       0.06 :       0.06 :       0.12 :       0.00 *
+ * CALC_MATR_ELEM           :       0.06 :       0.06 :       0.12 :       0.00 *
+ * CALC_MATR_ELEM           :       0.06 :       0.08 :       0.14 :       0.00 *
+ * NUME_DDL                 :       0.03 :       0.08 :       0.11 :       0.00 *
+ * ASSE_MATRICE             :       0.00 :       0.12 :       0.12 :       0.00 *
+ * ASSE_MATRICE             :       0.02 :       0.09 :       0.11 :       0.00 *
+ * ASSE_MATRICE             :       0.03 :       0.09 :       0.12 :       0.00 *
+ * CALC_MATR_ELEM           :       0.05 :       0.09 :       0.14 :       0.00 *
+ * ASSE_MATRICE             :       0.02 :       0.09 :       0.11 :       0.00 *
+ * COMB_MATR_ASSE           :       0.03 :       0.12 :       0.16 :       0.00 *
+ * CALC_CHAR_SEISME         :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DYNA_VIBRA               :       3.17 :       0.22 :       3.39 :       0.00 *
+ * RECU_FONCTION            :       0.39 :       0.00 :       0.39 :       0.00 *
+ * CALC_FONCTION            :       0.20 :       0.00 :       0.20 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * RECU_FONCTION            :       0.39 :       0.00 :       0.39 :       0.00 *
+ * CALC_FONCTION            :       0.25 :       0.00 :       0.25 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * DYNA_VIBRA               :       3.31 :       1.61 :       4.92 :       0.00 *
+ * RECU_FONCTION            :       0.33 :       0.00 :       0.33 :       0.00 *
+ * CALC_FONCTION            :       0.23 :       0.00 :       0.23 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * RECU_FONCTION            :       0.31 :       0.00 :       0.31 :       0.00 *
+ * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * DYNA_VIBRA               :       2.83 :       0.25 :       3.08 :       0.00 *
+ * RECU_FONCTION            :       0.36 :       0.02 :       0.38 :       0.00 *
+ * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
+ * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
+ * CALC_FONCTION            :       0.23 :       0.00 :       0.23 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * DEFI_MATERIAU            :       0.02 :       0.08 :       0.09 :       0.00 *
+ * AFFE_MATERIAU            :       0.03 :       0.05 :       0.08 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.06 :       0.11 :       0.17 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.08 :       0.09 :       0.17 :       0.00 *
+ * CALC_MATR_ELEM           :       0.00 :       0.14 :       0.14 :       0.00 *
+ * CALC_MATR_ELEM           :       0.08 :       0.06 :       0.14 :       0.00 *
+ * CALC_MATR_ELEM           :       0.08 :       0.11 :       0.19 :       0.00 *
+ * NUME_DDL                 :       0.02 :       0.12 :       0.14 :       0.00 *
+ * ASSE_MATRICE             :       0.06 :       0.05 :       0.11 :       0.00 *
+ * ASSE_MATRICE             :       0.05 :       0.06 :       0.11 :       0.00 *
+ * ASSE_MATRICE             :       0.05 :       0.06 :       0.11 :       0.00 *
+ * CALC_MATR_ELEM           :       0.06 :       0.08 :       0.14 :       0.00 *
+ * ASSE_MATRICE             :       0.02 :       0.12 :       0.14 :       0.00 *
+ * COMB_MATR_ASSE           :       0.03 :       0.09 :       0.12 :       0.00 *
+ * CALC_CHAR_SEISME         :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DYNA_VIBRA               :       2.89 :       0.20 :       3.09 :       0.00 *
+ * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
+ * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
+ * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
+ * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * DYNA_VIBRA               :       2.88 :       0.22 :       3.09 :       0.00 *
+ * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
+ * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
+ * CALC_FONCTION            :       0.19 :       0.00 :       0.19 :       0.00 *
+ * CALC_FONCTION            :       0.03 :       0.00 :       0.03 :       0.00 *
+ * DYNA_VIBRA               :       3.47 :       0.17 :       3.64 :       0.00 *
+ * RECU_FONCTION            :       0.34 :       0.00 :       0.34 :       0.00 *
+ * CALC_FONCTION            :       0.22 :       0.00 :       0.22 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * RECU_FONCTION            :       0.41 :       0.00 :       0.41 :       0.00 *
+ * CALC_FONCTION            :       0.25 :       0.00 :       0.25 :       0.00 *
+ * CALC_FONCTION            :       0.02 :       0.00 :       0.02 :       0.00 *
+ * FIN                      :       0.08 :       0.02 :       0.09 :       0.00 *
  *  . sdveri                :       0.00 :       0.00 :       0.00 :       0.00 *
- *  . check syntax          :       1.78 :       0.00 :       1.78 :       0.00 *
- *  . fortran               :      37.83 :       5.75 :      43.58 :       0.00 *
- *  . cleanup               :       0.05 :       0.00 :       0.05 :       0.00 *
+ *  . check syntax          :       1.97 :       0.00 :       1.97 :       0.00 *
+ *  . fortran               :      43.17 :       6.53 :      49.70 :       0.00 *
+ *  . cleanup               :       0.06 :       0.00 :       0.06 :       0.00 *
  ********************************************************************************
- * TOTAL_JOB                :      54.30 :      63.44 :     117.73 :       0.00 *
+ * TOTAL_JOB                :      62.48 :      67.67 :     130.16 :       0.00 *
  ********************************************************************************
 
-# Mémoire (Mo) :   504.06 /   410.00 /   357.61 /   308.92 (VmPeak / VmSize / Optimum / Minimum)
-# Fin commande #0197   user+syst:        0.05s (syst:        0.03s, elaps:        0.00s)
+# Mémoire (Mo) :   540.38 /   503.39 /   357.60 /   308.91 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0197   user+syst:        0.08s (syst:        0.02s, elaps:        0.00s)
 # ----------------------------------------------------------------------------------------------
 
-EXECUTION_CODE_ASTER_EXIT_31672=0
+EXECUTION_CODE_ASTER_EXIT_29116=0
 
 
 

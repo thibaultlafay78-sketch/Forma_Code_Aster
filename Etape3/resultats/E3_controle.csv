@@ -1,0 +1,8 @@
+critere,exigence,resultat,respecte
+Nombre de signaux,>= 3 par jeu,3,OUI
+Compatibilité à 5 %,Spectre moyen enveloppant le spectre cible,min(moyen/cible) = 1.000 à 4.21 Hz,OUI
+Amortissement 2 %,"Défauts locaux <= 10 %, sauf justification",défaut max = 6.2 % à 100.00 Hz,OUI
+Amortissement 7 %,"Défauts locaux <= 10 %, sauf justification",défaut max = 2.8 % à 4.10 Hz,OUI
+Amortissement 10 %,"Défauts locaux <= 10 %, sauf justification",défaut max = 7.5 % à 2.41 Hz,OUI
+Pas de temps,"<= 0,01 s",0.0050 s,OUI
+Indépendance,"|intercorrélation| <= 0,3, moyenne < 0,2",max |ρ| = 0.182 ; moyenne |ρ| = 0.125 (GLOBAL),OUI
