@@ -1,0 +1,447 @@
+# -*- coding: utf-8 -*-
+# =============================================================================
+#  ÉTAPE 6 — Décollement du radier, contact unilatéral
+#  Slide alimentée : Sujet 7 · exemple de décollement
+#
+#  Modèle brochette de l'étape 1 (mêmes poutres, masses, E calé), dont le
+#  discret DIS_TR unique du radier est remplacé, pour les DDL Z et RY, par
+#  une file de 25 appuis verticaux régulièrement espacés sur les 24 m du
+#  radier (direction X), reliés au nœud de radier par LIAISON_SOLIDE.
+#    kᵢ = K_RY / Σxᵢ²   cᵢ = C_RY / Σxᵢ²   (raideur et amortisseur de
+#    balancement de la note, répartis tels quels — choix du cahier)
+#  Les autres DDL du radier (X, Y, RX, RZ) gardent le discret de radier :
+#  raideur de la note et amortisseur de l'étape 4.
+#
+#  Deux comportements des appuis :
+#    'NL'  : contact unilatéral, RELATION='DIS_CHOC' (DEFI_MATERIAU /
+#            DIS_CONTACT : RIGI_NOR = kᵢ, AMOR_NOR = cᵢ, jeu nul). L'amortisseur
+#            n'agit que lorsque l'appui est au contact.
+#    'LIN' : contact bilatéral, RELATION='ELAS' (K_T_D_L = kᵢ, A_T_D_L = cᵢ).
+#            Le pourcentage d'appuis en traction est le décollement au sens
+#            du RCC-CW DA 5500.
+#
+#  Enchaînement par calcul : STAT_NON_LINE poids propre (t de -1 à 0), puis
+#  DYNA_NON_LINE (ETAT_INIT), Newmark accélération moyenne, Δt = 0,005 s,
+#  subdivision automatique en cas d'échec. Séisme horizontal X seul : les
+#  3 signaux de l'étape 3, échelles 1 et 2. 12 calculs (6 NL + 6 LIN), plus
+#  un contrôle du pas de temps (NL, échelle 2, Δt = 0,0025 s, RCC-CW DA 5310)
+#  et un contrôle de l'amortissement par lâcher (modèle linéaire).
+#
+#  Amortissement de la structure : comme à l'étape 4,
+#    C = AMOR_ALPHA·K_poutres + AMOR_BETA·M + C_sol
+#  - AMOR_ALPHA dans le DEFI_MATERIAU des poutres (Rayleigh, poutres seules) ;
+#  - AMOR_BETA·M : les masses étant portées par des discrets (RHO = 0), qui
+#    ignorent AMOR_ALPHA/AMOR_BETA du matériau (constaté à l'étape 4), la part
+#    β·M est apportée par des amortisseurs A_T_D_N / A_TR_D_N = β·m aux nœuds
+#    massiques (formulation en repère relatif : identique à β·M) ;
+#  - aucun amortissement de Rayleigh sur les discrets de sol (RCC-CW DA 3345).
+#
+#  Entrées : 91 ../commun/brochette.comm          92 ../Etape1/resultats/E1_E_retenu.csv
+#            93 ../Etape4/resultats/E4_amortissements.csv
+#            94 ../Etape3/resultats/E3_signaux.csv
+#  Sorties : 31 resultats/E6_series.csv   (séries temporelles de tous les calculs)
+#            32 resultats/E6_statique.csv (contrôle Σ Nᵢ = poids, par modèle)
+#            33 resultats/E6_parametres.csv
+#            34 resultats/E6_amortissement.csv (contrôle par lâcher)
+#  Version Code_Aster : 18.1.11 (mots-clés vérifiés sur le catalogue installé).
+# =============================================================================
+
+import os
+
+DEBUT(LANG="FR")
+
+# Données de la note et utilitaires du modèle commun, sans son maillage.
+BROCHETTE_DONNEES_SEULES = True
+exec(compile(open("fort.91", encoding="utf-8").read(), "brochette.comm", "exec"))
+E = lire_E_cale(92)
+
+# -----------------------------------------------------------------------------
+# Paramètres
+# -----------------------------------------------------------------------------
+N_APPUIS = 25                    # cahier : 25 nœuds sur la longueur de 24 m
+L_APPUI = 1.0                    # longueur des mailles SEG2 d'appui (m), sans effet
+DT = 0.005                       # s, pas des signaux (cahier)
+DT_CONTROLE = 0.0025             # s, contrôle du pas de temps (RCC-CW DA 5310)
+ECHELLES = (1.0, 2.0)
+MODELES = ("LIN", "NL")
+DIR_SEISME = "DX"                # séisme horizontal X seul (cahier)
+# Calcul rapide de mise au point : variable d'environnement E6_RAPIDE = durée (s)
+T_RAPIDE = float(os.environ.get("E6_RAPIDE", "0") or 0.0)
+
+X_APP = [-RADIER_LX / 2.0 + i * RADIER_LX / (N_APPUIS - 1) for i in range(N_APPUIS)]
+SX2 = sum(x * x for x in X_APP)
+
+# Amortissements retenus à l'étape 4 (Rayleigh béton et amortisseurs de sol)
+am = lire_csv(93)
+AMOR_ALPHA = am["AMOR_ALPHA_s"][0]
+AMOR_BETA = am["AMOR_BETA_1_s"][0]
+C_SOL = {d: am["c" + d][0] for d in ("X", "Y", "Z", "RX", "RY", "RZ")}
+
+K_APP = K_SOL["RY"] / SX2        # N/m par appui
+C_APP = C_SOL["RY"] / SX2        # N·s/m par appui
+print("Appuis : %d, sum x^2 = %.1f m2, k_i = %.4e N/m, c_i = %.4e N.s/m"
+      % (N_APPUIS, SX2, K_APP, C_APP))
+print("Raideur verticale totale des appuis : %.3e N/m (note K_Z = %.3e N/m)"
+      % (N_APPUIS * K_APP, K_SOL["Z"]))
+
+# Masses (note §II, figure 2) et inerties du radier (plaque mince, H1.6)
+M_RAD = RADIER_MASSE
+I_RAD = (M_RAD * RADIER_LY ** 2 / 12.0, M_RAD * RADIER_LX ** 2 / 12.0,
+         M_RAD * (RADIER_LX ** 2 + RADIER_LY ** 2) / 12.0)
+POIDS = MASSE_TOTALE_NOTE * G
+
+# -----------------------------------------------------------------------------
+# Maillage : brochette (NO1 radier … NO6 tête) + 25 nœuds sous le radier
+# (Rxx, z = 0) + 25 nœuds fixes (Fxx, z = -L_APPUI) ; SEG2 d'appui Rxx -> Fxx.
+# -----------------------------------------------------------------------------
+def ecrire_maillage_e6(nom="fort.20"):
+    n = len(NIVEAUX)
+    L = ["TITRE", "Brochette sur 25 appuis - etape 6", "FINSF", "COOR_3D"]
+    L.append("NO1  0.0  0.0  %.6f" % RADIER_Z)
+    for i, niv in enumerate(NIVEAUX):
+        L.append("NO%d  0.0  0.0  %.6f" % (i + 2, niv[1]))
+    for j, x in enumerate(X_APP):
+        L.append("R%02d  %.6f  0.0  %.6f" % (j + 1, x, RADIER_Z))
+        L.append("F%02d  %.6f  0.0  %.6f" % (j + 1, x, RADIER_Z - L_APPUI))
+    L += ["FINSF", "SEG2"]
+    for i in range(n):
+        L.append("S%d%d  NO%d  NO%d" % (i + 1, i + 2, i + 1, i + 2))
+    for j in range(N_APPUIS):
+        L.append("C%02d  R%02d  F%02d" % (j + 1, j + 1, j + 1))
+    L += ["FINSF", "POI1"]
+    for i in range(n + 1):
+        L.append("M%d  NO%d" % (i + 1, i + 1))
+    L.append("FINSF")
+
+    def grp(kind, nom_g, membres):
+        L.extend([kind, nom_g] + list(membres) + ["FINSF"])
+
+    grp("GROUP_MA", "POUTRE", ["S%d%d" % (i + 1, i + 2) for i in range(n)])
+    grp("GROUP_MA", "MASSES", ["M%d" % (i + 2) for i in range(n)])
+    grp("GROUP_MA", "RADIER", ["M1"])
+    grp("GROUP_MA", "APPUIS", ["C%02d" % (j + 1) for j in range(N_APPUIS)])
+    grp("GROUP_NO", "RADIER", ["NO1"])
+    grp("GROUP_NO", "SOUS_RADIER", ["R%02d" % (j + 1) for j in range(N_APPUIS)])
+    grp("GROUP_NO", "FIXES", ["F%02d" % (j + 1) for j in range(N_APPUIS)])
+    for i, niv in enumerate(NIVEAUX):
+        grp("GROUP_MA", niv[0], ["M%d" % (i + 2)])
+        grp("GROUP_MA", "T" + niv[0], ["S%d%d" % (i + 1, i + 2)])
+        grp("GROUP_NO", niv[0], ["NO%d" % (i + 2)])
+    L.append("FIN")
+    with open(nom, "w") as f:
+        f.write("\n".join(L) + "\n")
+
+
+ecrire_maillage_e6()
+MAIL = LIRE_MAILLAGE(UNITE=20, FORMAT="ASTER")
+
+MODELE = AFFE_MODELE(
+    MAILLAGE=MAIL,
+    AFFE=(
+        _F(GROUP_MA="POUTRE", PHENOMENE="MECANIQUE", MODELISATION="POU_D_T"),
+        _F(GROUP_MA=("MASSES", "APPUIS"), PHENOMENE="MECANIQUE", MODELISATION="DIS_T"),
+        _F(GROUP_MA="RADIER", PHENOMENE="MECANIQUE", MODELISATION="DIS_TR"),
+    ),
+)
+
+# -----------------------------------------------------------------------------
+# Matériaux : béton (Rayleigh α seul, cf. en-tête) ; contact des appuis.
+# DIS_CONTACT sur SEG2 : jeu = longueur - DIST_1 - DIST_2 = 0 (vérifié en
+# 18.1.11 par un essai statique : compression transmise, traction libre).
+# -----------------------------------------------------------------------------
+BETON = DEFI_MATERIAU(ELAS=_F(E=E, NU=NU_BETON, RHO=0.0, AMOR_ALPHA=AMOR_ALPHA, AMOR_BETA=0.0))
+CONTACT = DEFI_MATERIAU(DIS_CONTACT=_F(RIGI_NOR=K_APP, AMOR_NOR=C_APP,
+                                       DIST_1=0.5 * L_APPUI, DIST_2=0.5 * L_APPUI))
+CHMAT = AFFE_MATERIAU(MAILLAGE=MAIL, AFFE=(_F(GROUP_MA="POUTRE", MATER=BETON),
+                                          _F(GROUP_MA="APPUIS", MATER=CONTACT)))
+
+
+def cara_e6(modele):
+    """modele = 'LIN' (appuis élastiques amortis) ou 'NL' (DIS_CHOC : la
+    raideur et l'amortisseur viennent de DIS_CONTACT ; pas d'A_T_D_L, qui
+    agirait aussi en traction)."""
+    poutres = [_F(GROUP_MA="T" + n[0], SECTION="GENERALE",
+                  CARA=("A", "IY", "IZ", "JX", "AY", "AZ"), VALE=tuple(n[3:9]))
+               for n in NIVEAUX]
+    disc = []
+    for niv in NIVEAUX:
+        m = niv[2]
+        disc += [_F(GROUP_MA=niv[0], CARA="M_T_D_N", VALE=m),
+                 _F(GROUP_MA=niv[0], CARA="K_T_D_N", VALE=(0.0, 0.0, 0.0)),
+                 _F(GROUP_MA=niv[0], CARA="A_T_D_N", VALE=(AMOR_BETA * m,) * 3)]
+    k, b = K_SOL, AMOR_BETA
+    # Radier : Z et RY portés par les appuis ; X, Y, RX, RZ par le discret.
+    disc += [
+        _F(GROUP_MA="RADIER", CARA="K_TR_D_N", VALE=(k["X"], k["Y"], 0.0, k["RX"], 0.0, k["RZ"])),
+        _F(GROUP_MA="RADIER", CARA="M_TR_D_N",
+           VALE=(M_RAD,) + I_RAD + (0.0,) * 6),
+        _F(GROUP_MA="RADIER", CARA="A_TR_D_N",
+           VALE=(C_SOL["X"] + b * M_RAD, C_SOL["Y"] + b * M_RAD, b * M_RAD,
+                 C_SOL["RX"] + b * I_RAD[0], b * I_RAD[1], C_SOL["RZ"] + b * I_RAD[2])),
+        # REPERE='LOCAL' : axe x local = axe de la maille d'appui (vertical) ;
+        # par défaut DISCRET est en repère GLOBAL et kᵢ serait mis en X.
+        _F(GROUP_MA="APPUIS", CARA="K_T_D_L", VALE=(K_APP, 0.0, 0.0), REPERE="LOCAL"),
+        _F(GROUP_MA="APPUIS", CARA="M_T_D_L", VALE=0.0),
+    ]
+    if modele == "LIN":
+        disc.append(_F(GROUP_MA="APPUIS", CARA="A_T_D_L", VALE=(C_APP, 0.0, 0.0),
+                       REPERE="LOCAL"))
+    return AFFE_CARA_ELEM(MODELE=MODELE, POUTRE=poutres, DISCRET=disc,
+                          ORIENTATION=_F(GROUP_MA="POUTRE", CARA="VECT_Y", VALE=(0.0, 1.0, 0.0)))
+
+
+CARA = {m: cara_e6(m) for m in MODELES}
+COMPORT = {
+    "NL": (_F(RELATION="DIS_CHOC", GROUP_MA="APPUIS"),
+           _F(RELATION="ELAS", GROUP_MA=("POUTRE", "MASSES", "RADIER"))),
+    "LIN": (_F(RELATION="ELAS", GROUP_MA=("POUTRE", "MASSES", "RADIER", "APPUIS")),),
+}
+
+# -----------------------------------------------------------------------------
+# Chargements
+# -----------------------------------------------------------------------------
+BLOCAGE = AFFE_CHAR_MECA(MODELE=MODELE, DDL_IMPO=_F(GROUP_NO="FIXES", DX=0.0, DY=0.0, DZ=0.0))
+# Radier rigide : les 25 nœuds Rⱼ suivent le nœud de radier (cahier).
+SOLIDE = AFFE_CHAR_MECA(MODELE=MODELE, LIAISON_SOLIDE=_F(GROUP_NO=("RADIER", "SOUS_RADIER")))
+PESA = AFFE_CHAR_MECA(MODELE=MODELE, PESANTEUR=_F(GRAVITE=G, DIRECTION=(0.0, 0.0, -1.0)))
+# Mono-appui en repère relatif : F = -m·a_g(t) à chaque nœud massique, radier compris
+cmp_f = {"DX": "FX", "DY": "FY"}[DIR_SEISME]
+SEISME = AFFE_CHAR_MECA(MODELE=MODELE, FORCE_NODALE=(
+    [_F(GROUP_NO=n[0], **{cmp_f: -n[2]}) for n in NIVEAUX]
+    + [_F(GROUP_NO="RADIER", **{cmp_f: -M_RAD})]))
+# Poids propre appliqué en rampe de t = -1 à 0, puis constant
+RAMPE = DEFI_FONCTION(NOM_PARA="INST", VALE=(-1.0, 0.0, 0.0, 1.0),
+                      PROL_GAUCHE="CONSTANT", PROL_DROITE="CONSTANT")
+
+# -----------------------------------------------------------------------------
+# Signaux de l'étape 3 (m/s²)
+# -----------------------------------------------------------------------------
+sig = lire_csv(94)
+temps = sig["t_s"]
+noms_sig = [c for c in sig if c.startswith("acc")]
+if T_RAPIDE > 0:
+    noms_sig = noms_sig[:1]
+T_FIN = min(temps[-1], T_RAPIDE) if T_RAPIDE > 0 else temps[-1]
+ACC = {}
+for js, c in enumerate(noms_sig):
+    vale = []
+    for t, a in zip(temps, sig[c]):
+        vale += [t, a]
+    ACC[js + 1] = DEFI_FONCTION(NOM_PARA="INST", NOM_RESU="ACCE", VALE=vale,
+                                PROL_GAUCHE="CONSTANT", PROL_DROITE="CONSTANT")
+SIG_VAL = {js + 1: sig[c] for js, c in enumerate(noms_sig)}
+
+LSTAT = DEFI_LIST_REEL(DEBUT=-1.0, INTERVALLE=_F(JUSQU_A=0.0, NOMBRE=1))
+
+
+def liste_inst(dt):
+    l = DEFI_LIST_REEL(DEBUT=0.0, INTERVALLE=_F(JUSQU_A=T_FIN, PAS=dt))
+    return DEFI_LIST_INST(DEFI_LIST=_F(LIST_INST=l),
+                          ECHEC=_F(EVENEMENT="ERREUR", ACTION="DECOUPE",
+                                   SUBD_METHODE="MANUEL", SUBD_PAS=4, SUBD_NIVEAU=4))
+
+
+LINST = {DT: liste_inst(DT), DT_CONTROLE: liste_inst(DT_CONTROLE)}
+
+
+# -----------------------------------------------------------------------------
+# Calculs
+# -----------------------------------------------------------------------------
+def poids_propre(modele):
+    return STAT_NON_LINE(
+        MODELE=MODELE, CHAM_MATER=CHMAT, CARA_ELEM=CARA[modele],
+        EXCIT=(_F(CHARGE=BLOCAGE), _F(CHARGE=SOLIDE), _F(CHARGE=PESA, FONC_MULT=RAMPE)),
+        COMPORTEMENT=COMPORT[modele], INCREMENT=_F(LIST_INST=LSTAT),
+        # Au départ aucun appui n'est comprimé : la matrice tangente de DIS_CHOC
+        # n'a pas de raideur verticale (matrice singulière). Matrice élastique
+        # (K_T_D_L = kᵢ) : la loi étant linéaire en compression, Newton converge.
+        NEWTON=_F(MATRICE="ELASTIQUE", PREDICTION="ELASTIQUE"))
+
+
+def efforts_appuis(res):
+    """{inst: [N_1 … N_25]} : réaction verticale des nœuds fixes, positive en
+    compression (convention vérifiée par l'essai statique)."""
+    res = CALC_CHAMP(reuse=res, RESULTAT=res, FORCE="REAC_NODA")
+    tab = CREA_TABLE(RESU=_F(RESULTAT=res, NOM_CHAM="REAC_NODA", GROUP_NO="FIXES",
+                             NOM_CMP="DZ")).EXTR_TABLE().values()
+    ordre = {round(x, 6): j for j, x in enumerate(X_APP)}
+    out = {}
+    for t, x, n in zip(tab["INST"], tab["COOR_X"], tab["DZ"]):
+        out.setdefault(round(t, 9), [0.0] * N_APPUIS)[ordre[round(x, 6)]] = n
+    return out
+
+
+# Poids propre et contrôle Σ Nᵢ = poids total
+STAT = {}
+f_stat = open("fort.32", "w")
+f_stat.write("modele,somme_N_N,poids_N,ecart_rel,enfoncement_m,N_min_N,N_max_N\n")
+for m in MODELES:
+    STAT[m] = poids_propre(m)
+    N0 = efforts_appuis(STAT[m])[0.0]
+    uz = RECU_FONCTION(RESULTAT=STAT[m], NOM_CHAM="DEPL", NOM_CMP="DZ",
+                       GROUP_NO="RADIER").Valeurs()[1][-1]
+    f_stat.write("%s,%.6e,%.6e,%.6e,%.6e,%.6e,%.6e\n"
+                 % (m, sum(N0), POIDS, sum(N0) / POIDS - 1.0, -uz, min(N0), max(N0)))
+    print("Poids propre %s : somme N = %.4e N, poids = %.4e N, enfoncement = %.3f mm"
+          % (m, sum(N0), POIDS, -1e3 * uz))
+f_stat.close()
+
+f_ser = open("fort.31", "w")
+f_ser.write("modele,signal,echelle,dt_s,t_s,n_contact,pct_contact,moment_Nm,"
+            "moment_avec_amortisseurs_Nm,rotation_rad,acc_tete_abs_g,somme_N_N,ag_g\n")
+ECART_NL = []   # contrôle : réaction DIS_CHOC = kᵢ·δᵢ (convention et cinématique)
+
+
+def calcul_sismique(modele, js, echelle, dt):
+    """Un calcul sismique ; écrit les séries dans fort.31.
+
+    Définitions, communes aux deux modèles :
+      δᵢ = enfoncement de l'appui i (> 0 en compression), déduit de la
+           cinématique du radier rigide : δᵢ = -(DZ₀ - xᵢ·DRY₀) ;
+      appui au contact (NL) ou comprimé (LIN) : δᵢ > 0 ;
+      Nᵢ = effort du ressort, positif en compression : kᵢ·δᵢ (LIN), kᵢ·max(δᵢ, 0)
+           (NL ; c'est la réaction REAC_NODA du nœud fixe, contrôlée ci-dessous) ;
+      moment de renversement M = Σ Nᵢ·xᵢ.
+    L'effort des amortisseurs d'appui n'est pas restitué par REAC_NODA, ni avec
+    DIS_CHOC (AMOR_NOR) ni avec A_T_D_L (matrice C). Il agit bien sur la
+    réponse (vérifié : sans AMOR_NOR, M max +12 % à l'échelle 2), mais M ne
+    retient que la part des ressorts, identique pour les deux modèles. Pour le
+    modèle linéaire, la colonne moment_avec_amortisseurs_Nm ajoute Σ cᵢ·δ̇ᵢ·xᵢ.
+    """
+    fonc = CALC_FONCTION(COMB=_F(FONCTION=ACC[js], COEF=echelle))
+    res = DYNA_NON_LINE(
+        MODELE=MODELE, CHAM_MATER=CHMAT, CARA_ELEM=CARA[modele],
+        EXCIT=(_F(CHARGE=BLOCAGE), _F(CHARGE=SOLIDE), _F(CHARGE=PESA, FONC_MULT=RAMPE),
+               _F(CHARGE=SEISME, FONC_MULT=fonc)),
+        COMPORTEMENT=COMPORT[modele],
+        ETAT_INIT=_F(EVOL_NOLI=STAT[modele]),
+        INCREMENT=_F(LIST_INST=LINST[dt]),
+        SCHEMA_TEMPS=_F(SCHEMA="NEWMARK", BETA=0.25, GAMMA=0.5, FORMULATION="DEPLACEMENT"),
+        NEWTON=_F(MATRICE="TANGENTE", REAC_ITER=1),
+        CONVERGENCE=_F(RESI_GLOB_RELA=1.0e-6, ITER_GLOB_MAXI=20),
+        AFFICHAGE=_F(PAS=400),          # tableau de convergence tous les 2 s (taille du .mess)
+    )
+    N_aster = efforts_appuis(res) if modele == "NL" else None
+
+    def serie(cham, cmp, grno):
+        t, v = RECU_FONCTION(RESULTAT=res, NOM_CHAM=cham, NOM_CMP=cmp, GROUP_NO=grno).Valeurs()
+        return {round(ti, 9): vi for ti, vi in zip(t, v)}
+
+    uz, rot = serie("DEPL", "DZ", "RADIER"), serie("DEPL", "DRY", "RADIER")
+    vz, vrot = serie("VITE", "DZ", "RADIER"), serie("VITE", "DRY", "RADIER")
+    acc = serie("ACCE", DIR_SEISME, NIV_TETE)
+    tg, vg = (list(x) for x in fonc.Valeurs())
+    import bisect
+
+    def a_sol(t):
+        i = bisect.bisect_left(tg, t)
+        if i <= 0:
+            return vg[0]
+        if i >= len(tg):
+            return vg[-1]
+        return vg[i - 1] + (vg[i] - vg[i - 1]) * (t - tg[i - 1]) / (tg[i] - tg[i - 1])
+
+    mmax = 0.0
+    ref = POIDS / N_APPUIS
+    # Tous les instants archivés (y compris ceux d'une éventuelle subdivision)
+    for t in sorted(uz):
+        if t < 0.0:
+            continue
+        d = [-(uz[t] - x * rot[t]) for x in X_APP]
+        if modele == "NL":
+            Ni = [K_APP * max(di, 0.0) for di in d]
+            ECART_NL.extend(abs(a - b) / ref for a, b in zip(N_aster[t], Ni))
+            m_amor = float("nan")
+        else:
+            Ni = [K_APP * di for di in d]
+            dd = [-(vz[t] - x * vrot[t]) for x in X_APP]
+            m_amor = sum((K_APP * di + C_APP * ddi) * x for di, ddi, x in zip(d, dd, X_APP))
+        n_c = sum(1 for di in d if di > 0.0)
+        mom = sum(v * x for v, x in zip(Ni, X_APP))
+        mmax = max(mmax, abs(mom))
+        g_t = a_sol(t)
+        f_ser.write("%s,%d,%.1f,%.4f,%.6f,%d,%.6e,%.6e,%.6e,%.6e,%.6e,%.6e,%.6e\n"
+                    % (modele, js, echelle, dt, t, n_c, 100.0 * n_c / N_APPUIS, mom, m_amor,
+                       rot[t], (acc[t] + g_t) / G, sum(Ni), g_t / G))
+    f_ser.flush()
+    print("calcul %s, signal %d, echelle %.0f, dt %.4f s : M max = %.4e N.m"
+          % (modele, js, echelle, dt, mmax))
+    return mmax
+
+
+MMAX = {}
+for echelle in (ECHELLES if T_RAPIDE == 0 else (2.0,)):   # mise au point : échelle 2 seule
+    for js in ACC:
+        for m in MODELES:
+            MMAX[(m, js, echelle)] = calcul_sismique(m, js, echelle, DT)
+
+# Contrôle du pas de temps : non linéaire, échelle 2, signal le plus sévère
+js_ctrl = max((k[1] for k in MMAX if k[0] == "NL" and k[2] == 2.0),
+              key=lambda j: MMAX[("NL", j, 2.0)])
+calcul_sismique("NL", js_ctrl, 2.0, DT_CONTROLE)
+f_ser.close()
+ecart_dis_choc = max(ECART_NL) if ECART_NL else float("nan")
+print("Controle DIS_CHOC : max |N_aster - k.max(d, 0)| / N_statique = %.2e" % ecart_dis_choc)
+
+# -----------------------------------------------------------------------------
+# Contrôle de l'amortissement (modèle linéaire, sans pesanteur ni séisme) :
+# ξ du mode 1 en X attendu = φᵀCφ / (2ω φᵀMφ), C assemblée (AMOR_MECA :
+# α·K des poutres + amortisseurs discrets), comparé au ξ mesuré par décrément
+# logarithmique après une impulsion en tête dans DYNA_NON_LINE. Vérifie que
+# DYNA_NON_LINE prend bien en compte les deux parts de C.
+# -----------------------------------------------------------------------------
+kw = dict(MODELE=MODELE, CHAM_MATER=CHMAT, CARA_ELEM=CARA["LIN"], CHARGE=(BLOCAGE, SOLIDE))
+kel = CALC_MATR_ELEM(OPTION="RIGI_MECA", **kw)
+mel = CALC_MATR_ELEM(OPTION="MASS_MECA", **kw)
+ael = CALC_MATR_ELEM(OPTION="AMOR_MECA", RIGI_MECA=kel, MASS_MECA=mel, **kw)
+NUM = NUME_DDL(MATR_RIGI=kel)
+KA = ASSE_MATRICE(MATR_ELEM=kel, NUME_DDL=NUM)
+MA_ = ASSE_MATRICE(MATR_ELEM=mel, NUME_DDL=NUM)
+CA_ = ASSE_MATRICE(MATR_ELEM=ael, NUME_DDL=NUM)
+MODES = CALC_MODES(MATR_RIGI=KA, MATR_MASS=MA_, OPTION="PLUS_PETITE", CALC_FREQ=_F(NMAX_FREQ=10))
+tm = RECU_TABLE(CO=MODES, NOM_PARA=("NUME_MODE", "FREQ", "MASS_GENE", "MASS_EFFE_UN_DX")
+                ).EXTR_TABLE().values()
+i1 = max(range(len(tm["FREQ"])), key=lambda i: tm["MASS_EFFE_UN_DX"][i])
+f1x = tm["FREQ"][i1]
+PROJ_BASE(BASE=MODES, MATR_ASSE_GENE=(_F(MATRICE=CO("CGEN"), MATR_ASSE=CA_),
+                                      _F(MATRICE=CO("MGEN"), MATR_ASSE=MA_)))
+cg = CGEN.toNumpy() if hasattr(CGEN, "toNumpy") else CGEN.EXTR_MATR_GENE()
+mg = MGEN.toNumpy() if hasattr(MGEN, "toNumpy") else MGEN.EXTR_MATR_GENE()
+xi_att = cg[i1][i1] / (2.0 * 2.0 * math.pi * f1x * mg[i1][i1])
+
+# Lâcher : impulsion triangulaire de 0,02 s en tête, puis oscillations libres
+IMPULS = AFFE_CHAR_MECA(MODELE=MODELE, FORCE_NODALE=_F(GROUP_NO=NIV_TETE, FX=1.0e7))
+F_IMP = DEFI_FONCTION(NOM_PARA="INST", VALE=(0.0, 0.0, 0.01, 1.0, 0.02, 0.0),
+                      PROL_GAUCHE="CONSTANT", PROL_DROITE="CONSTANT")
+L_LACHER = DEFI_LIST_REEL(DEBUT=0.0, INTERVALLE=_F(JUSQU_A=3.0, PAS=0.0025))
+LACHER = DYNA_NON_LINE(
+    MODELE=MODELE, CHAM_MATER=CHMAT, CARA_ELEM=CARA["LIN"],
+    EXCIT=(_F(CHARGE=BLOCAGE), _F(CHARGE=SOLIDE), _F(CHARGE=IMPULS, FONC_MULT=F_IMP)),
+    COMPORTEMENT=COMPORT["LIN"], INCREMENT=_F(LIST_INST=L_LACHER),
+    SCHEMA_TEMPS=_F(SCHEMA="NEWMARK", FORMULATION="DEPLACEMENT"),
+    NEWTON=_F(MATRICE="TANGENTE", REAC_ITER=1))
+tl, ul = RECU_FONCTION(RESULTAT=LACHER, NOM_CHAM="DEPL", NOM_CMP="DX",
+                       GROUP_NO=NIV_TETE).Valeurs()
+# pics positifs après 0,3 s (le mode 2 en X, vers 19 Hz, est alors amorti)
+pics = [(tl[i], ul[i]) for i in range(1, len(ul) - 1)
+        if tl[i] > 0.3 and ul[i] > ul[i - 1] and ul[i] >= ul[i + 1] and ul[i] > 0.0]
+pics = [p for p in pics if p[1] > 0.02 * pics[0][1]] if pics else []
+if len(pics) >= 3:
+    nper = len(pics) - 1
+    delta = math.log(pics[0][1] / pics[-1][1]) / nper
+    xi_mes = delta / math.sqrt(4.0 * math.pi ** 2 + delta ** 2)
+    f_mes = nper / (pics[-1][0] - pics[0][0])
+else:
+    xi_mes, f_mes = float("nan"), float("nan")
+ecrire_csv(34, ["f1_X_modal_Hz", "xi_attendu", "f_lacher_Hz", "xi_lacher", "n_pics"],
+           [(f1x, xi_att, f_mes, xi_mes, len(pics))])
+print("Controle amortissement mode 1 X : f = %.3f Hz, xi attendu = %.2f %%, "
+      "lacher : f = %.3f Hz, xi = %.2f %%" % (f1x, 100 * xi_att, f_mes, 100 * xi_mes))
+
+ecrire_csv(33, ["n_appuis", "sum_x2_m2", "k_i_N_m", "c_i_N_s_m", "K_RY_Nm_rad", "C_RY_Nms_rad",
+                "AMOR_ALPHA_s", "AMOR_BETA_1_s", "poids_N", "signal_ctrl_dt", "t_fin_s",
+                "ecart_N_dis_choc"],
+           [(N_APPUIS, SX2, K_APP, C_APP, K_SOL["RY"], C_SOL["RY"], AMOR_ALPHA, AMOR_BETA,
+             POIDS, js_ctrl, T_FIN, ecart_dis_choc)])
+
+FIN()

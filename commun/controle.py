@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Contrôle automatique des résultats des étapes 1 à 5.
+"""Contrôle automatique des résultats des étapes 1 à 6.
 
-Compare les CSV produits aux valeurs de la note Maurel et aux critères du
+Compare les CSV produits aux valeurs de la note de référence (Maurel) et aux critères du
 cahier des charges, et affiche OK / ÉCART / ABSENT pour chaque point.
 N'a pas besoin de matplotlib.
 
@@ -148,6 +148,46 @@ if p and os.path.exists(pu.chemin("Etape5", "resultats", "E5_RA_tran.txt")):
             ra = np.abs(cour["AX_RA"][1]).max() / pu.G
             verif("E5", "rocher déconvolué (CL)", "PGA %.2f g" % ra, "< PGA surface, pas de divergence",
                   ra < np.abs(a).max() / pu.G)
+
+# --- Étape 6 -----------------------------------------------------------------
+p = fichier("Etape6", "E6_statique.csv")
+if p:
+    st = pu.lire_csv(p)
+    for m, e in zip(st["modele"], st["ecart_rel"]):
+        verif("E6", "Σ Nᵢ = poids, sans séisme (%s)" % m, "écart %.1e" % e, "< 1e-6", abs(e) < 1e-6)
+p = fichier("Etape6", "E6_parametres.csv")
+if p:
+    pa = pu.lire_csv(p)
+    e = pa["ecart_N_dis_choc"][0]
+    verif("E6", "réaction DIS_CHOC = kᵢ·max(δᵢ, 0)", "écart max %.1e" % e, "< 1e-6 (× N statique)",
+          e < 1e-6)
+p = fichier("Etape6", "E6_amortissement.csv")
+if p:
+    am = pu.lire_csv(p)
+    xa, xm = am["xi_attendu"][0], am["xi_lacher"][0]
+    verif("E6", "amortissement mode 1 X (lâcher)", "%.1f %% / %.1f %% attendu" % (100 * xm, 100 * xa),
+          "écart < 15 %", abs(xm / xa - 1) < 0.15)
+p = fichier("Etape6", "E6_controle_dt.csv")
+if p:
+    cd = pu.lire_csv(p)
+    for g_, e in zip(cd["grandeur"], cd["ecart_rel"]):
+        verif("E6", "pas de temps ÷ 2 : %s" % g_, "écart %+.1f %%" % (100 * e), "< 10 % (DA 5310)",
+              abs(e) < 0.10)
+p = pu.chemin("Etape6", "figures", "E6_resume.csv")
+if os.path.exists(p):
+    rs = pu.lire_csv(p)
+    def _min(m, ech):
+        return min(c for mm, e, dt, c in zip(rs["modele"], rs["echelle"], rs["dt_s"],
+                                             rs["surface_min_contact_pct"])
+                   if mm == m and e == ech and abs(dt - 0.005) < 1e-9)
+    c1, c2 = _min("NL", 1.0), _min("NL", 2.0)
+    verif("E6", "contact min unilatéral ×1 → ×2", "%.0f %% → %.0f %%" % (c1, c2),
+          "décroît avec l'échelle", c2 < c1)
+    l1, l2 = _min("LIN", 1.0), _min("LIN", 2.0)
+    verif("E6", "unilatéral ×2 : contact < comprimé bilatéral", "%.0f %% / %.0f %%" % (c2, l2),
+          "le décollement s'amplifie", c2 <= l2)
+else:
+    absent("Etape6", "figures/E6_resume.csv")
 
 # --- Affichage ---------------------------------------------------------------
 w = [max(len(str(l[i])) for l in lignes) for i in range(5)]

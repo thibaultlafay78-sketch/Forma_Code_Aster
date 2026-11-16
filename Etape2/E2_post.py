@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Étape 2 — figure E2_rayleigh.png : barres groupées (CALC_MODES, Rayleigh,
-note) pour les deux configurations (ressorts / base encastrée).
+"""Étape 2 — figure E2_rayleigh.png (+ .svg, .csv) : barres groupées
+(CALC_MODES, Rayleigh) pour les deux configurations ; la valeur de la note de
+référence (4,79 Hz) n'est tracée que pour la base sur ressorts, seule
+configuration à laquelle elle correspond.
 
 Usage : python Etape2/E2_post.py   (après exécution de E2_modal_rayleigh.export)
 """
@@ -11,34 +13,35 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "commun"))
 import post_utils as pu  # noqa: E402
-from post_utils import plt  # noqa: E402
 
 r = pu.lire_csv(pu.chemin("Etape2", "resultats", "E2_rayleigh.csv"))
 configs = list(r["config"])
 labels = {"RESSORTS": "Base sur ressorts", "ENCASTRE": "Base encastrée"}
+# 4,79 Hz : base sur ressorts uniquement (retouche v2.1) ; NaN = pas de barre
+f_ref = np.array([fn if c == "RESSORTS" else np.nan for c, fn in zip(configs, r["f_note_Hz"])])
 
 series = [("CALC_MODES", r["f_calc_modes_Hz"]),
           ("Rayleigh (déformée statique m·g)", r["f_rayleigh_Hz"]),
-          ("Note Maurel", r["f_note_Hz"])]
+          ("Note de référence", f_ref)]
 
 x = np.arange(len(configs))
 larg = 0.26
-fig, ax = plt.subplots(figsize=(7, 4.5))
+fig, ax = pu.nouvelle_figure(figsize=(7, 4.5))
 for k, (nom, vals) in enumerate(series):
-    b = ax.bar(x + (k - 1) * larg, vals, larg, label=nom)
-    ax.bar_label(b, fmt="%.2f", fontsize=8)
+    ok = ~np.isnan(vals)
+    b = ax.bar(x[ok] + (k - 1) * larg, vals[ok], larg, label=nom, color=pu.couleur(k))
+    ax.bar_label(b, fmt="%.2f", fontsize=pu.STYLE["taille_etiquette"])
 ax.set_xticks(x)
 ax.set_xticklabels([labels.get(c, c) for c in configs])
 ax.set_ylabel("Fréquence fondamentale (Hz)")
-ax.set_title("Fréquence fondamentale : calcul modal, Rayleigh et note")
-ax.legend(loc="upper left", fontsize=8)
-ax.grid(axis="y", alpha=0.3)
+ax.legend(loc="upper left")
+ax.grid(False, axis="x")
 
 pu.sauver_figure(fig, "Etape2", "E2_rayleigh", {
     "config": configs,
     "f_calc_modes_Hz": r["f_calc_modes_Hz"],
     "f_rayleigh_Hz": r["f_rayleigh_Hz"],
-    "f_note_Hz": r["f_note_Hz"],
+    "f_note_reference_Hz": f_ref,
 })
 
 for c, fm, fr in zip(configs, r["f_calc_modes_Hz"], r["f_rayleigh_Hz"]):

@@ -1,21 +1,84 @@
 # -*- coding: utf-8 -*-
-"""Utilitaires de post-traitement communs aux étapes 1 à 5 (hors Code_Aster).
+"""Utilitaires de post-traitement communs aux étapes 1 à 6 (hors Code_Aster).
 
-Conventions du cahier des charges :
-  - figures en g et en Hz, axes titrés avec unités ;
+Conventions du cahier des charges (v2.1, précisions du 16/11/2026) :
+  - figures en g et en Hz, axes titrés avec unités, légende ; PAS de titre dans
+    l'image (le titre est porté par la slide) ;
   - spectres à 5 % sauf indication contraire, fréquences log 0,5–100 Hz, 200 points ;
-  - une figure = un PNG nommé d'après l'étape et le cas, données dans un CSV du même nom.
+  - une figure = un PNG + un SVG nommés d'après l'étape et le cas ;
+  - CSV du même nom contenant TOUTES les séries tracées (cible, seuils,
+    références compris), une colonne par série, unité dans l'en-tête, point
+    décimal, sans arrondi ;
+  - style (police, tailles, épaisseurs, couleurs) défini UNIQUEMENT ici :
+    les scripts d'étape appellent trait(<rôle>) et n'écrivent aucune couleur.
+    Pas d'effort sur les couleurs : la mise aux couleurs de la formation sera
+    faite ensuite à partir des CSV.
 """
 import csv
 import os
 
 import numpy as np
 
+# -----------------------------------------------------------------------------
+# Style des figures : seul endroit où tailles, police, épaisseurs et couleurs
+# sont définies.
+# -----------------------------------------------------------------------------
+STYLE = {
+    "police": "DejaVu Sans",
+    "taille_police": 10,        # axes, graduations
+    "taille_legende": 8,
+    "taille_etiquette": 8,      # valeurs écrites sur les barres
+    "figsize": (8.0, 5.0),      # pouces
+    "dpi": 200,
+    "grille_alpha": 0.3,
+}
+
+# Rôle d'une série -> propriétés de trait. Couleurs : cycle matplotlib par
+# défaut ("C0", "C1"…) et gris/noir pour les séries de référence.
+ROLES = {
+    "serie":      dict(lw=1.6),                              # courbe principale (couleur du cycle)
+    "signal":     dict(lw=0.7, alpha=0.6),                   # signaux individuels
+    "temporel":   dict(lw=0.6),                              # accélérogramme
+    "moyenne":    dict(lw=1.8, color="black"),               # moyenne de plusieurs signaux
+    "cible":      dict(lw=1.8, ls="--", color="C3"),         # spectre cible
+    "sol":        dict(lw=1.2, ls="--", color="black"),      # spectre de sol
+    "controle":   dict(lw=1.2, ls=":", color="grey"),        # recalcul indépendant
+    "reference":  dict(lw=1.0, ls=":"),                      # référence (couleur du cycle)
+    "rapport":    dict(lw=1.6, color="black"),               # rapport de deux spectres
+    "seuil":      dict(lw=1.0, ls="--", color="grey"),       # seuil horizontal
+    "unite":      dict(lw=0.6, color="black"),               # ligne y = 1
+    "lineaire":   dict(lw=1.0, ls="--"),                     # modèle linéaire (couleur du cycle)
+}
+
+
+def couleur(i):
+    """i-ème couleur du cycle par défaut (pour associer deux séries)."""
+    return "C%d" % (i % 10)
+
+
+def trait(role, **surcharge):
+    """Propriétés de trait d'un rôle, éventuellement complétées (label, color=couleur(i))."""
+    kw = dict(ROLES[role])
+    kw.update(surcharge)
+    return kw
+
+
 try:   # matplotlib n'est nécessaire que pour les figures (pas pour controle.py)
     import matplotlib
 
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt  # noqa: E402
+
+    matplotlib.rcParams.update({
+        "font.family": STYLE["police"],
+        "font.size": STYLE["taille_police"],
+        "legend.fontsize": STYLE["taille_legende"],
+        "figure.figsize": STYLE["figsize"],
+        "savefig.dpi": STYLE["dpi"],
+        "axes.grid": True,
+        "grid.alpha": STYLE["grille_alpha"],
+        "svg.fonttype": "none",          # texte éditable dans le SVG
+    })
 except ImportError:
     plt = None
 
@@ -59,18 +122,36 @@ def ecrire_csv(path, colonnes):
 
 
 def _fmt(v):
-    return "%.6e" % v if isinstance(v, (float, np.floating)) else v
+    """Flottants sans arrondi (représentation exacte la plus courte, point
+    décimal) ; NaN -> case vide."""
+    if isinstance(v, (float, np.floating)):
+        return "" if np.isnan(v) else repr(float(v))
+    if isinstance(v, (np.integer,)):
+        return int(v)
+    return v
+
+
+def nouvelle_figure(nrows=1, ncols=1, **kw):
+    """plt.subplots avec la taille par défaut du style."""
+    return plt.subplots(nrows, ncols, figsize=kw.pop("figsize", STYLE["figsize"]), **kw)
 
 
 def sauver_figure(fig, etape, nom, colonnes):
-    """Enregistre <etape>/figures/<nom>.png et le CSV de données associé."""
+    """Enregistre <etape>/figures/<nom>.png, <nom>.svg et le CSV de données
+    associé. Refuse une figure titrée (le titre est porté par la slide)."""
+    for ax in fig.axes:
+        if ax.get_title():
+            raise ValueError("%s : pas de titre dans l'image (cahier v2.1)" % nom)
+    if fig._suptitle is not None and fig._suptitle.get_text():
+        raise ValueError("%s : pas de titre dans l'image (cahier v2.1)" % nom)
     dossier = chemin(etape, "figures")
     os.makedirs(dossier, exist_ok=True)
     fig.tight_layout()
-    fig.savefig(os.path.join(dossier, nom + ".png"), dpi=200)
+    fig.savefig(os.path.join(dossier, nom + ".png"), dpi=STYLE["dpi"])
+    fig.savefig(os.path.join(dossier, nom + ".svg"))
     ecrire_csv(os.path.join(dossier, nom + ".csv"), colonnes)
     plt.close(fig)
-    print("figure :", os.path.join(dossier, nom + ".png"))
+    print("figure :", os.path.join(dossier, nom + ".png"), "(+ .svg, .csv)")
 
 
 def spectre_oscillateur(t, acc, freqs=FREQS, xi=0.05):
@@ -102,10 +183,8 @@ def spectre_oscillateur(t, acc, freqs=FREQS, xi=0.05):
     return k * umax
 
 
-def axes_spectre(ax, titre=None):
+def axes_spectre(ax, ylabel="Accélération spectrale (g)"):
     ax.set_xscale("log")
     ax.set_xlabel("Fréquence (Hz)")
-    ax.set_ylabel("Accélération spectrale (g)")
-    ax.grid(True, which="both", alpha=0.3)
-    if titre:
-        ax.set_title(titre)
+    ax.set_ylabel(ylabel)
+    ax.grid(True, which="both", alpha=STYLE["grille_alpha"])

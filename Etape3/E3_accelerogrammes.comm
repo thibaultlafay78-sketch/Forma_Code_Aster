@@ -34,7 +34,7 @@ TB, TC, TD = 0.05, 0.25, 2.5
 
 def eta(xi):
     """Correction d'amortissement EC8 : η = √(10/(5+ξ%)) ≥ 0,55.
-    >>> RÈGLE DE PASSAGE À FIXER AVEC BASILE (point ouvert de l'étape 3)."""
+    Règle validée par B. Coq le 16/11/2026."""
     return max(math.sqrt(10.0 / (5.0 + 100.0 * xi)), 0.55)
 
 
@@ -78,7 +78,7 @@ SPEC5 = defi_cible(0.05)
 # 2. Génération (spectre médian, en g ; les signaux produits sont en m/s²)
 # -----------------------------------------------------------------------------
 DT = 0.005                 # note §IV : pas de temps de 0,005 s pour les signaux artificiels
-DUREE_PHASE_FORTE = 10.0   # s  >>> À FIXER AVEC BASILE (point ouvert)
+DUREE_PHASE_FORTE = 10.0   # s  (validée le 16/11/2026)
 NB_SIGNAUX = 3
 NB_ITER = 20               # itérations de correction spectrale du générateur
 

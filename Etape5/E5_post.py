@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Étape 5 — figure E5_surface_2entrees.png : spectres à 5 % en surface pour
-les deux lectures du signal (RA, CL) et leur rapport (second axe).
+"""Étape 5 — deux figures (retouche v2.1) :
+  E5_surface_2entrees.png (+ .svg, .csv) : spectres à 5 % en surface pour les
+      deux lectures du signal, rocher affleurant (RA) et champ libre (CL) ;
+  E5_rapport.png (+ .svg, .csv) : rapport RA / CL seul.
 
 Lit les fichiers IMPR_FONCTION (FORMAT='TABLEAU') produits par DEFI_SOL_EQUI.
 La colonne d'accélération en surface est repérée par SURFACE_COL (légende
@@ -18,7 +20,6 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "commun"))
 import post_utils as pu  # noqa: E402
-from post_utils import plt  # noqa: E402
 
 SURFACE_COL = "AX_CL"
 
@@ -84,26 +85,32 @@ iters = re.findall(r"CONVERGENCE ATTEINTE NOMBRE ITERATIONS=\s*(\d+)",
                    open(pu.chemin("Etape5", "resultats", "E5.mess"), errors="replace").read())
 print("itérations (RA, CL) :", iters)
 
-ref_path = pu.chemin("Etape5", "resultats", "E5_reference_python.csv")
-ref = pu.lire_csv(ref_path) if os.path.exists(ref_path) else None
+it = dict(zip(("RA", "CL"), iters)) if len(iters) == 2 else {}
 
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(pu.FREQS, spec["RA"], lw=1.8, label="Signal au rocher affleurant (RA)")
-ax.plot(pu.FREQS, spec["CL"], lw=1.8, label="Signal en surface, champ libre (CL)")
-if ref is not None:
-    ax.plot(ref["freq_Hz"], ref["surface_RA_g"], ":", color="C0", lw=1, label="RA, référence Python")
-    ax.plot(ref["freq_Hz"], ref["surface_BH_g"], ":", color="grey", lw=1,
-            label="En profondeur, base rigide (Python)")
-pu.axes_spectre(ax, "Spectres en surface à 5 %% — deux lectures du signal %s" %
-                ("(itérations RA/CL : %s)" % "/".join(iters) if iters else ""))
-ax2 = ax.twinx()
-ax2.plot(pu.FREQS, rapport, "k--", lw=1, label="Rapport RA / CL")
-ax2.axhline(1.0, color="k", lw=0.5)
-ax2.set_ylabel("Rapport RA / CL (–)")
-h1, l1 = ax.get_legend_handles_labels()
-h2, l2 = ax2.get_legend_handles_labels()
-ax.legend(h1 + h2, l1 + l2, fontsize=8, loc="upper left")
 
+def lib(texte, calc):
+    return texte + (" — %s itérations" % it[calc] if calc in it else "")
+
+
+# --- Figure 1 : spectres en surface RA et CL -----------------------------------
+fig, ax = pu.nouvelle_figure()
+ax.plot(pu.FREQS, spec["RA"], **pu.trait("serie", color=pu.couleur(0),
+                                         label=lib("Signal au rocher affleurant (RA)", "RA")))
+ax.plot(pu.FREQS, spec["CL"], **pu.trait("serie", color=pu.couleur(1),
+                                         label=lib("Signal en surface, champ libre (CL)", "CL")))
+pu.axes_spectre(ax, "Accélération spectrale en surface à 5 % (g)")
+ax.legend(loc="upper left")
 pu.sauver_figure(fig, "Etape5", "E5_surface_2entrees", {
-    "freq_Hz": pu.FREQS, "surface_RA_g": spec["RA"], "surface_CL_g": spec["CL"],
-    "rapport_RA_CL": rapport})
+    "freq_Hz": pu.FREQS, "Sa_surface_RA_g": spec["RA"], "Sa_surface_CL_g": spec["CL"]})
+
+# --- Figure 2 : rapport RA / CL seul -------------------------------------------
+fig, ax = pu.nouvelle_figure()
+ax.plot(pu.FREQS, rapport, **pu.trait("rapport", label="Rapport des spectres en surface RA / CL"))
+ax.axhline(1.0, **pu.trait("unite"))
+ax.set_xscale("log")
+ax.set_xlabel("Fréquence (Hz)")
+ax.set_ylabel("Rapport RA / CL (–)")
+ax.grid(True, which="both", alpha=pu.STYLE["grille_alpha"])
+ax.legend(loc="upper left")
+pu.sauver_figure(fig, "Etape5", "E5_rapport", {
+    "freq_Hz": pu.FREQS, "rapport_RA_CL": rapport, "reference_1": np.ones_like(rapport)})

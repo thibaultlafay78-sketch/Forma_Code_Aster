@@ -1,9 +1,9 @@
-﻿# Enchaîne les 5 calculs Code_Aster, les post-traitements et le contrôle.
+﻿# Enchaîne les 6 calculs Code_Aster, les post-traitements et le contrôle.
 # Usage (depuis la racine du projet) :
 #   powershell -ExecutionPolicy Bypass -File commun\tout_lancer.ps1            # tout
 #   powershell -ExecutionPolicy Bypass -File commun\tout_lancer.ps1 -Depuis 4  # étapes 4 et 5 seulement
-# Durée indicative : E1 30 s, E2 10 s, E3 2 min, E4 3 min, E5 11 min.
-param([int]$Depuis = 1, [int]$Jusqua = 5)
+# Durée indicative : E1 30 s, E2 10 s, E3 2 min, E4 3 min, E5 11 min, E6 ≈ 1 h.
+param([int]$Depuis = 1, [int]$Jusqua = 6)
 
 $racine = Split-Path $PSScriptRoot
 $py = "F:\miniforge3\envs\aster\python.exe"
@@ -14,7 +14,8 @@ $etapes = @(
     @{n = 2; exp = "Etape2\E2_modal_rayleigh.export";     post = @("Etape2\E2_post.py")},
     @{n = 3; exp = "Etape3\E3_accelerogrammes.export";    post = @("Etape3\E3_post.py")},
     @{n = 4; exp = "Etape4\E4_spectres_plancher.export";  post = @("Etape4\E4_post.py")},
-    @{n = 5; exp = "Etape5\E5_colonne_1D.export";         post = @("Etape5\E5_reference_python.py", "Etape5\E5_post.py")}
+    @{n = 5; exp = "Etape5\E5_colonne_1D.export";         post = @("Etape5\E5_reference_python.py", "Etape5\E5_post.py")},
+    @{n = 6; exp = "Etape6\E6_decollement.export";        post = @("Etape6\E6_post.py")}
 )
 & $py -c "import matplotlib" 2>$null
 $avecFigures = ($LASTEXITCODE -eq 0)

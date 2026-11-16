@@ -33,9 +33,9 @@ E = lire_E_cale(92)
 DIRECTION = {"DX": (1.0, 0.0, 0.0), "DY": (0.0, 1.0, 0.0)}[DIR_FOND]
 DT = 0.005                       # s (pas des signaux ; le cahier autorise plus fin)
 SEUIL_MASSE = 0.90               # « dernier mode significatif » : 90 % de masse cumulée (hypothèse)
-AMOR_EQUIPEMENT = None           # >>> À FOURNIR PAR BASILE (ex. 0.02) ; None = 5 % seul
+AMOR_EQUIPEMENT = None           # validé à 5 % le 16/11/2026, égal au 5 % de base : None
 AMORT_CAS_D = "NOTE"             # "NOTE" : amortisseurs du cas C conservés
-                                 # "RECALCULE" : c ∝ √K -> c_C/√2  >>> POINT À VALIDER
+                                 # "RECALCULE" : c ∝ √K -> c_C/√2  (NOTE validé le 16/11/2026)
 NIV_INTER = NOMS_NIV[len(NOMS_NIV) // 2]   # niveau intermédiaire (choix : niveau médian)
 NIV_SORTIE = (NIV_TETE, NIV_INTER)
 

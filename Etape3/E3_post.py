@@ -2,8 +2,8 @@
 """Étape 3 — figures et tableau de contrôle (guide ASN 2/01 §2.2.3).
 
 Sorties :
-  figures/E3_signaux.png (+ .csv)    les 3 signaux, en g
-  figures/E3_spectres.png (+ .csv)   spectres à 5 %, moyen et cible
+  figures/E3_signaux.png (+ .svg, .csv)    les 3 signaux, en g
+  figures/E3_spectres.png (+ .svg, .csv)   spectres à 5 %, moyen et cible
   resultats/E3_controle.csv          tableau de contrôle des critères
   resultats/E3_intercorrelation.csv  coefficients deux à deux
 
@@ -17,9 +17,8 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "commun"))
 import post_utils as pu  # noqa: E402
-from post_utils import plt  # noqa: E402
 
-# Définition de l'intercorrélation : >>> À RELIRE AVEC BASILE.
+# Définition de l'intercorrélation (validée le 16/11/2026 : GLOBAL) :
 #   "GLOBAL"  : coefficient de Pearson sur toute la durée ;
 #   "FENETRE" : max |ρ| sur fenêtres glissantes de FENETRE_S secondes.
 INTERCORR = "GLOBAL"
@@ -35,32 +34,33 @@ f = spe["freq_Hz"]
 dt = t[1] - t[0]
 
 # --- Figure E3_signaux ---------------------------------------------------------
-fig, axs = plt.subplots(len(accs), 1, figsize=(8, 6), sharex=True)
+fig, axs = pu.nouvelle_figure(len(accs), 1, figsize=(8, 6), sharex=True)
 for i, (ax, a) in enumerate(zip(axs, accs)):
-    ax.plot(t, a / pu.G, lw=0.6)
-    ax.set_ylabel("Acc. (g)")
-    ax.set_title("Signal %d — PGA = %.3f g" % (i + 1, np.abs(a).max() / pu.G), fontsize=9)
-    ax.grid(alpha=0.3)
+    ax.plot(t, a / pu.G, **pu.trait("temporel", color=pu.couleur(i),
+                                    label="Signal %d — PGA %.3f g" % (i + 1, np.abs(a).max() / pu.G)))
+    ax.set_ylabel("Accélération (g)")
+    ax.legend(loc="upper right")
 axs[-1].set_xlabel("Temps (s)")
 pu.sauver_figure(fig, "Etape3", "E3_signaux",
-                 {"t_s": t, **{"acc%d_g" % (i + 1): a / pu.G for i, a in enumerate(accs)}})
+                 {"t_s": t, **{"acc_signal%d_g" % (i + 1): a / pu.G for i, a in enumerate(accs)}})
 
 # --- Figure E3_spectres (5 %) -------------------------------------------------
+LEGENDE_CIBLE = "Spectre cible EC8 type 2, sol B, a_g·S = 0,333 g"
 s5 = [spe["s%d_05" % (i + 1)] for i in range(len(accs))]
 moy5 = np.mean(s5, axis=0)
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = pu.nouvelle_figure()
 for i, s in enumerate(s5):
-    ax.plot(f, s, lw=0.7, alpha=0.6, label="Signal %d" % (i + 1))
-ax.plot(f, moy5, "k", lw=1.8, label="Moyenne des 3 signaux")
-ax.plot(f, spe["cible_05"], "r--", lw=1.8, label="Spectre cible (EC8 zone 3, sol B)")
-colonnes = {"freq_Hz": f, **{"s%d_g" % (i + 1): s for i, s in enumerate(s5)},
-            "moyenne_g": moy5, "cible_g": spe["cible_05"]}
+    ax.plot(f, s, **pu.trait("signal", color=pu.couleur(i), label="Signal %d" % (i + 1)))
+ax.plot(f, moy5, **pu.trait("moyenne", label="Moyenne des 3 signaux"))
+ax.plot(f, spe["cible_05"], **pu.trait("cible", label=LEGENDE_CIBLE))
+colonnes = {"freq_Hz": f, **{"Sa_signal%d_g" % (i + 1): s for i, s in enumerate(s5)},
+            "Sa_moyenne_g": moy5, "Sa_cible_g": spe["cible_05"]}
 if CONTROLE_PYTHON:
     s5py = np.mean([pu.spectre_oscillateur(t, a / pu.G, f, 0.05) for a in accs], axis=0)
-    ax.plot(f, s5py, ":", color="grey", lw=1.2, label="Moyenne, recalcul Python")
-    colonnes["moyenne_python_g"] = s5py
-pu.axes_spectre(ax, "Spectres de réponse à 5 % d'amortissement")
-ax.legend(fontsize=8)
+    ax.plot(f, s5py, **pu.trait("controle", label="Moyenne, recalcul Python"))
+    colonnes["Sa_moyenne_recalcul_python_g"] = s5py
+pu.axes_spectre(ax, "Accélération spectrale à 5 % (g)")
+ax.legend()
 pu.sauver_figure(fig, "Etape3", "E3_spectres", colonnes)
 
 

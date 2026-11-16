@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # =============================================================================
-#  MODÈLE BROCHETTE COMMUN — inclus par les étapes 1, 2 et 4
+#  MODÈLE BROCHETTE COMMUN — inclus par les étapes 1, 2, 4 et 6 (données seules en 6)
 #  (lu par exec en UTF-8 sur fort.91, fichier déclaré dans chaque .export :
 #   F libr ../commun/brochette.comm D 91)
 #
@@ -138,20 +138,24 @@ def _ecrire_maillage(nom_fichier="fort.20"):
         f.write("\n".join(lignes) + "\n")
 
 
-_ecrire_maillage()
-MAIL = LIRE_MAILLAGE(UNITE=20, FORMAT="ASTER")
+# L'étape 6 construit son propre maillage (radier sur 25 appuis) : elle
+# définit BROCHETTE_DONNEES_SEULES = True avant de lire ce fichier.
+if not globals().get("BROCHETTE_DONNEES_SEULES", False):
+    _ecrire_maillage()
+    MAIL = LIRE_MAILLAGE(UNITE=20, FORMAT="ASTER")
 
 # -----------------------------------------------------------------------------
 # 3. CONSTRUCTION DU MODÈLE
 # -----------------------------------------------------------------------------
-MODELE = AFFE_MODELE(
-    MAILLAGE=MAIL,
-    AFFE=(
-        _F(GROUP_MA="POUTRE", PHENOMENE="MECANIQUE", MODELISATION="POU_D_T"),
-        _F(GROUP_MA="MASSES", PHENOMENE="MECANIQUE", MODELISATION="DIS_T"),
-        _F(GROUP_MA="RADIER", PHENOMENE="MECANIQUE", MODELISATION="DIS_TR"),
-    ),
-)
+if not globals().get("BROCHETTE_DONNEES_SEULES", False):
+    MODELE = AFFE_MODELE(
+        MAILLAGE=MAIL,
+        AFFE=(
+            _F(GROUP_MA="POUTRE", PHENOMENE="MECANIQUE", MODELISATION="POU_D_T"),
+            _F(GROUP_MA="MASSES", PHENOMENE="MECANIQUE", MODELISATION="DIS_T"),
+            _F(GROUP_MA="RADIER", PHENOMENE="MECANIQUE", MODELISATION="DIS_TR"),
+        ),
+    )
 
 
 def materiau_beton(E, amor_alpha=0.0, amor_beta=0.0):

@@ -2,8 +2,8 @@
 """Étape 4 — spectres de plancher moyens par cas, pics, figure.
 
 Sorties :
-  figures/E4_spectre_tete_4cas.png (+ .csv)   4 spectres moyens en tête + sol en pointillé
-  figures/E4_spectre_inter_4cas.png (+ .csv)  idem au niveau intermédiaire
+  figures/E4_spectre_tete_4cas.png (+ .svg, .csv)   4 spectres moyens en tête + sol en pointillé
+  figures/E4_spectre_inter_4cas.png (+ .svg, .csv)  idem au niveau intermédiaire
   resultats/E4_pics.csv                       fréquence et amplitude du pic principal
 Contrôle : cas C en tête comparé aux 5,4 g de la note (écart signalé, pas corrigé).
 
@@ -17,10 +17,9 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "commun"))
 import post_utils as pu  # noqa: E402
-from post_utils import plt  # noqa: E402
 
-SA_NOTE_TETE = 5.4   # g, note Maurel (cas C)
-XI = 0.05
+SA_NOTE_TETE = 5.4   # g, note de référence (Maurel, cas C)
+XI = 0.05   # 5 % ; amortissement d'équipement validé à 5 % (16/11/2026) : même valeur
 
 d = pu.lire_csv(pu.chemin("Etape4", "resultats", "E4_spectres.csv"))
 sol = pu.lire_csv(pu.chemin("Etape3", "resultats", "E3_spectres.csv"))
@@ -47,20 +46,22 @@ for key, par_sig in spectres.items():
 
 pics = {"cas": [], "niveau": [], "f_pic_Hz": [], "sa_pic_g": []}
 for niv, suffixe in ((niv_tete, "tete"), (niv_inter, "inter")):
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = pu.nouvelle_figure()
     colonnes = {}
-    for cas in cas_liste:
+    for k, cas in enumerate(cas_liste):
         f, sa = moyennes[(cas, niv)]
-        ax.plot(f, sa, lw=1.6, label=libelles.get(cas, cas))
+        ax.plot(f, sa, **pu.trait("serie", color=pu.couleur(k), label=libelles.get(cas, cas)))
         colonnes["freq_Hz"] = f
-        colonnes["cas_%s_g" % cas] = sa
-        k = int(np.argmax(sa))
+        colonnes["Sa_cas_%s_g" % cas] = sa
+        k_pic = int(np.argmax(sa))
         pics["cas"].append(cas); pics["niveau"].append(niv)
-        pics["f_pic_Hz"].append(f[k]); pics["sa_pic_g"].append(sa[k])
-    ax.plot(sol["freq_Hz"], sol["cible_05"], "k--", lw=1.2, label="Spectre de sol (cible 5 %)")
-    colonnes["sol_g"] = np.interp(colonnes["freq_Hz"], sol["freq_Hz"], sol["cible_05"])
-    pu.axes_spectre(ax, "Spectres de plancher moyens (3 signaux), niveau %s, ξ = 5 %%" % niv)
-    ax.legend(fontsize=8)
+        pics["f_pic_Hz"].append(f[k_pic]); pics["sa_pic_g"].append(sa[k_pic])
+    if not np.allclose(sol["freq_Hz"], colonnes["freq_Hz"]):
+        raise ValueError("grilles de fréquences différentes entre E3 et E4")
+    ax.plot(sol["freq_Hz"], sol["cible_05"], **pu.trait("sol", label="Spectre de sol (cible 5 %)"))
+    colonnes["Sa_sol_cible_g"] = sol["cible_05"]
+    pu.axes_spectre(ax, "Accélération spectrale à 5 % (g)")
+    ax.legend(title="Moyenne des 3 signaux, niveau %s" % niv)
     pu.sauver_figure(fig, "Etape4", "E4_spectre_%s_4cas" % suffixe, colonnes)
 
 pu.ecrire_csv(pu.chemin("Etape4", "resultats", "E4_pics.csv"), pics)
